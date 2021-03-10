@@ -1,20 +1,20 @@
-name: MyFramework
+name: MediaService
 options:
   bundleIdPrefix: com.rosberry
 targets:
-  MyFramework:
+  MediaService:
     type: framework
     platform: iOS
-    sources: [Sources/MyFramework]
+    sources: [Sources/MediaService]
     info:
-      path: MyFramework.xcodeproj/MyFramework.plist
-  MyFrameworkTests:
+      path: MediaService.xcodeproj/MediaService.plist
+  MediaServiceTests:
     type: bundle.unit-test
     platform: iOS
     deploymentTarget: "12.0"
-    sources: [Tests/MyFrameworkTests]
+    sources: [Tests/MediaServiceTests]
     info:
-      path: MyFramework.xcodeproj/MyFrameworkTests.plist
+      path: MediaService.xcodeproj/MediaServiceTests.plist
     postCompileScripts:
       - script: swiftlint
         name: Swiftlint
@@ -24,9 +24,9 @@ targets:
     deploymentTarget: "12.0"
     sources: [Sources/Example]
     info:
-      path: MyFramework.xcodeproj/Example.plist
+      path: MediaService.xcodeproj/Example.plist
     dependencies:
-      - target: MyFramework
+      - target: MediaService
     postCompileScripts:
       - script: swiftlint
         name: Swiftlint
