@@ -18,5 +18,15 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Allow this permission to use photo album.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow this permission to use photo album.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Allow this permission to use photo album.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow this permission to use photo album.</string>
 </dict>
 </plist>
