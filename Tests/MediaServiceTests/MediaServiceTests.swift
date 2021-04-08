@@ -9,5 +9,7 @@ final class MediaServiceTests: XCTestCase {
         XCTAssertEqual(MediaService().text, "Hello, World!")
     }
 
-    static var allTests = [("testExample", testExample)]
+    static var allTests = [
+        ("testExample", testExample),
+    ]
 }
