@@ -4,7 +4,7 @@
 import UIKit
 import MediaService
 
-final class ExampleViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     let dependencies = MediaLibraryServiceImp()
 
