@@ -10,19 +10,19 @@ public enum MediaItemFilter: Int, CaseIterable {
 
     var title: String {
         switch self {
-            case .video:
-                return L10n.MediaLibrary.Filter.videos
-            case .all:
-                return L10n.MediaLibrary.Filter.all
+        case .video:
+            return L10n.MediaLibrary.Filter.videos
+        case .all:
+            return L10n.MediaLibrary.Filter.all
         }
     }
-
+    
     public func matches(item: MediaItem) -> Bool {
         switch self {
-            case .video:
-                return item.type.isVideo
-            case .all:
-                return true
+        case .video:
+            return item.type.isVideo
+        case .all:
+            return true
         }
     }
 }

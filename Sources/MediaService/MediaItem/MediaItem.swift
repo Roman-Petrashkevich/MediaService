@@ -46,10 +46,10 @@ public final class MediaItem: Codable {
 
         public var isLivePhoto: Bool {
             switch self {
-                case .livePhoto:
-                    return true
-                default:
-                    return false
+            case .livePhoto:
+                return true
+            default:
+                return false
             }
         }
 
