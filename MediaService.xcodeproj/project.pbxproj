@@ -10,21 +10,28 @@
 		1D5316D922319C49520D203B /* MediaServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2240A87F57FB038C7EC1C5D2 /* MediaServiceTests.swift */; };
 		78D564F450CF807EF8D125B6 /* MediaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FFCED00C8054113707C0A /* MediaService.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A756EA9B7DBBBC779292C6F0 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42697A5AF25DAE56CE63A2DB /* XCTestManifests.swift */; };
-		A9FC8138261F160400074494 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC8120261F160400074494 /* Strings.swift */; };
-		A9FC8139261F160400074494 /* MainServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC812F261F160400074494 /* MainServiceFactory.swift */; };
-		A9FC813A261F160400074494 /* MediaLibraryServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC8131261F160400074494 /* MediaLibraryServiceImp.swift */; };
-		A9FC813B261F160400074494 /* MediaLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC8132261F160400074494 /* MediaLibraryService.swift */; };
 		A9FC8148261F183600074494 /* DeepDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8143261F183600074494 /* DeepDiff.framework */; };
 		A9FC814A261F183600074494 /* Framezilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8144261F183600074494 /* Framezilla.framework */; };
 		A9FC814C261F183600074494 /* Texstyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8145261F183600074494 /* Texstyle.framework */; };
 		A9FC814E261F183600074494 /* Ion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8146261F183600074494 /* Ion.framework */; };
 		A9FC8150261F183600074494 /* CollectionViewTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8147261F183600074494 /* CollectionViewTools.framework */; };
-		A9FC817B261F18B200074494 /* MediaItemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC8137261F160400074494 /* MediaItemCollection.swift */; };
-		A9FC8180261F18B600074494 /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC8136261F160400074494 /* MediaItem.swift */; };
-		A9FC8187261F18B800074494 /* MediaItemFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC8135261F160400074494 /* MediaItemFetchResult.swift */; };
-		A9FC818C261F18BB00074494 /* MediaItemFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC8134261F160400074494 /* MediaItemFilter.swift */; };
 		A9FC81A8261F1ED300074494 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC81A6261F1ED300074494 /* MainViewController.swift */; };
 		A9FC81A9261F1ED300074494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC81A7261F1ED300074494 /* AppDelegate.swift */; };
+		A9FC81E02622BC6400074494 /* MainCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC81DF2622BC6400074494 /* MainCellItem.swift */; };
+		A9FC81E52622BC6F00074494 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC81E42622BC6F00074494 /* MainCollectionViewCell.swift */; };
+		A9FC81FF2622C73400074494 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC81FE2622C73400074494 /* GalleryViewController.swift */; };
+		A9FC82042622C7FB00074494 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC82032622C7FB00074494 /* MainFactory.swift */; };
+		A9FC82092622CAEF00074494 /* GalleryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC82082622CAEF00074494 /* GalleryFactory.swift */; };
+		A9FC820F2622CB0600074494 /* GalleryCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC820E2622CB0600074494 /* GalleryCellItem.swift */; };
+		A9FC82142622CB1400074494 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC82132622CB1400074494 /* GalleryCollectionViewCell.swift */; };
+		A9FC82352622D37C00074494 /* MediaItemFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC821D2622D37B00074494 /* MediaItemFilter.swift */; };
+		A9FC82362622D37C00074494 /* MediaItemFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC821E2622D37B00074494 /* MediaItemFetchResult.swift */; };
+		A9FC82372622D37C00074494 /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC821F2622D37B00074494 /* MediaItem.swift */; };
+		A9FC82382622D37C00074494 /* MediaItemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC82202622D37B00074494 /* MediaItemCollection.swift */; };
+		A9FC82392622D37C00074494 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC82222622D37B00074494 /* Strings.swift */; };
+		A9FC823A2622D37C00074494 /* MainServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC82312622D37C00074494 /* MainServiceFactory.swift */; };
+		A9FC823B2622D37C00074494 /* MediaLibraryServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC82332622D37C00074494 /* MediaLibraryServiceImp.swift */; };
+		A9FC823C2622D37C00074494 /* MediaLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC82342622D37C00074494 /* MediaLibraryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,26 +47,6 @@
 /* Begin PBXFileReference section */
 		2240A87F57FB038C7EC1C5D2 /* MediaServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaServiceTests.swift; sourceTree = "<group>"; };
 		42697A5AF25DAE56CE63A2DB /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		A9FC8120261F160400074494 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		A9FC8121261F160400074494 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		A9FC8123261F160400074494 /* FunctionPro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Book.otf"; sourceTree = "<group>"; };
-		A9FC8124261F160400074494 /* clarikageo-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "clarikageo-medium.otf"; sourceTree = "<group>"; };
-		A9FC8125261F160400074494 /* Bauhaus_Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bauhaus_Demi.ttf; sourceTree = "<group>"; };
-		A9FC8126261F160400074494 /* FunctionPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Medium.otf"; sourceTree = "<group>"; };
-		A9FC8127261F160400074494 /* FunctionPro-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Demi.otf"; sourceTree = "<group>"; };
-		A9FC8128261F160400074494 /* LibreBaskerville-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Regular.ttf"; sourceTree = "<group>"; };
-		A9FC8129261F160400074494 /* Ayuthaya.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ayuthaya.ttf; sourceTree = "<group>"; };
-		A9FC812A261F160400074494 /* Helvetica-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Helvetica-Bold.ttf"; sourceTree = "<group>"; };
-		A9FC812B261F160400074494 /* FunctionPro-BookOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-BookOblique.otf"; sourceTree = "<group>"; };
-		A9FC812C261F160400074494 /* Bauhaus_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bauhaus_Medium.ttf; sourceTree = "<group>"; };
-		A9FC812D261F160400074494 /* FunctionPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Light.otf"; sourceTree = "<group>"; };
-		A9FC812F261F160400074494 /* MainServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainServiceFactory.swift; sourceTree = "<group>"; };
-		A9FC8131261F160400074494 /* MediaLibraryServiceImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaLibraryServiceImp.swift; sourceTree = "<group>"; };
-		A9FC8132261F160400074494 /* MediaLibraryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaLibraryService.swift; sourceTree = "<group>"; };
-		A9FC8134261F160400074494 /* MediaItemFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItemFilter.swift; sourceTree = "<group>"; };
-		A9FC8135261F160400074494 /* MediaItemFetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItemFetchResult.swift; sourceTree = "<group>"; };
-		A9FC8136261F160400074494 /* MediaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItem.swift; sourceTree = "<group>"; };
-		A9FC8137261F160400074494 /* MediaItemCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItemCollection.swift; sourceTree = "<group>"; };
 		A9FC8143261F183600074494 /* DeepDiff.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeepDiff.framework; path = Carthage/Build/iOS/DeepDiff.framework; sourceTree = "<group>"; };
 		A9FC8144261F183600074494 /* Framezilla.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Framezilla.framework; path = Carthage/Build/iOS/Framezilla.framework; sourceTree = "<group>"; };
 		A9FC8145261F183600074494 /* Texstyle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Texstyle.framework; path = Carthage/Build/iOS/Texstyle.framework; sourceTree = "<group>"; };
@@ -67,6 +54,34 @@
 		A9FC8147261F183600074494 /* CollectionViewTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CollectionViewTools.framework; path = Carthage/Build/iOS/CollectionViewTools.framework; sourceTree = "<group>"; };
 		A9FC81A6261F1ED300074494 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A9FC81A7261F1ED300074494 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A9FC81C0261F21B900074494 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A9FC81DF2622BC6400074494 /* MainCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellItem.swift; sourceTree = "<group>"; };
+		A9FC81E42622BC6F00074494 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		A9FC81FE2622C73400074494 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		A9FC82032622C7FB00074494 /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
+		A9FC82082622CAEF00074494 /* GalleryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryFactory.swift; sourceTree = "<group>"; };
+		A9FC820E2622CB0600074494 /* GalleryCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCellItem.swift; sourceTree = "<group>"; };
+		A9FC82132622CB1400074494 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		A9FC821D2622D37B00074494 /* MediaItemFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItemFilter.swift; sourceTree = "<group>"; };
+		A9FC821E2622D37B00074494 /* MediaItemFetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItemFetchResult.swift; sourceTree = "<group>"; };
+		A9FC821F2622D37B00074494 /* MediaItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItem.swift; sourceTree = "<group>"; };
+		A9FC82202622D37B00074494 /* MediaItemCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItemCollection.swift; sourceTree = "<group>"; };
+		A9FC82222622D37B00074494 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		A9FC82232622D37B00074494 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A9FC82252622D37B00074494 /* FunctionPro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Book.otf"; sourceTree = "<group>"; };
+		A9FC82262622D37B00074494 /* clarikageo-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "clarikageo-medium.otf"; sourceTree = "<group>"; };
+		A9FC82272622D37C00074494 /* Bauhaus_Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bauhaus_Demi.ttf; sourceTree = "<group>"; };
+		A9FC82282622D37C00074494 /* FunctionPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Medium.otf"; sourceTree = "<group>"; };
+		A9FC82292622D37C00074494 /* FunctionPro-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Demi.otf"; sourceTree = "<group>"; };
+		A9FC822A2622D37C00074494 /* LibreBaskerville-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Regular.ttf"; sourceTree = "<group>"; };
+		A9FC822B2622D37C00074494 /* Ayuthaya.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ayuthaya.ttf; sourceTree = "<group>"; };
+		A9FC822C2622D37C00074494 /* Helvetica-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Helvetica-Bold.ttf"; sourceTree = "<group>"; };
+		A9FC822D2622D37C00074494 /* FunctionPro-BookOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-BookOblique.otf"; sourceTree = "<group>"; };
+		A9FC822E2622D37C00074494 /* Bauhaus_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bauhaus_Medium.ttf; sourceTree = "<group>"; };
+		A9FC822F2622D37C00074494 /* FunctionPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Light.otf"; sourceTree = "<group>"; };
+		A9FC82312622D37C00074494 /* MainServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainServiceFactory.swift; sourceTree = "<group>"; };
+		A9FC82332622D37C00074494 /* MediaLibraryServiceImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaLibraryServiceImp.swift; sourceTree = "<group>"; };
+		A9FC82342622D37C00074494 /* MediaLibraryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaLibraryService.swift; sourceTree = "<group>"; };
 		AA881E6210959614F4762619 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69682CF519E07796D94EDEE /* MediaServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediaServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0FFCED00C8054113707C0A /* MediaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MediaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				581C82E1050AD84390F4EC4B /* Example */,
-				7113FACF86C61E6A570B1321 /* MediaService */,
 				682C4D58B0202FA87F1F99E4 /* MediaServiceTests */,
+				A9FC821B2622D37B00074494 /* MediaService */,
 				DFEF361FC4CC88B328B65513 /* Products */,
 				A9FC8142261F183600074494 /* Frameworks */,
 			);
@@ -103,8 +118,10 @@
 		581C82E1050AD84390F4EC4B /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				A9FC81FD2622C71900074494 /* GalleryViewController */,
+				A9FC81DD2622BC3500074494 /* MainViewController */,
+				A9FC81BF261F21A800074494 /* Resource */,
 				A9FC81A7261F1ED300074494 /* AppDelegate.swift */,
-				A9FC81A6261F1ED300074494 /* MainViewController.swift */,
 			);
 			name = Example;
 			path = Sources/Example;
@@ -120,74 +137,6 @@
 			path = Tests/MediaServiceTests;
 			sourceTree = "<group>";
 		};
-		7113FACF86C61E6A570B1321 /* MediaService */ = {
-			isa = PBXGroup;
-			children = (
-				A9FC8133261F160400074494 /* MediaItem */,
-				A9FC811F261F160400074494 /* Resource */,
-				A9FC812E261F160400074494 /* Services */,
-			);
-			name = MediaService;
-			path = Sources/MediaService;
-			sourceTree = "<group>";
-		};
-		A9FC811F261F160400074494 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				A9FC8120261F160400074494 /* Strings.swift */,
-				A9FC8121261F160400074494 /* Localizable.strings */,
-				A9FC8122261F160400074494 /* Fonts */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
-		A9FC8122261F160400074494 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				A9FC8123261F160400074494 /* FunctionPro-Book.otf */,
-				A9FC8124261F160400074494 /* clarikageo-medium.otf */,
-				A9FC8125261F160400074494 /* Bauhaus_Demi.ttf */,
-				A9FC8126261F160400074494 /* FunctionPro-Medium.otf */,
-				A9FC8127261F160400074494 /* FunctionPro-Demi.otf */,
-				A9FC8128261F160400074494 /* LibreBaskerville-Regular.ttf */,
-				A9FC8129261F160400074494 /* Ayuthaya.ttf */,
-				A9FC812A261F160400074494 /* Helvetica-Bold.ttf */,
-				A9FC812B261F160400074494 /* FunctionPro-BookOblique.otf */,
-				A9FC812C261F160400074494 /* Bauhaus_Medium.ttf */,
-				A9FC812D261F160400074494 /* FunctionPro-Light.otf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
-		A9FC812E261F160400074494 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				A9FC812F261F160400074494 /* MainServiceFactory.swift */,
-				A9FC8130261F160400074494 /* MediaLibraryService */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		A9FC8130261F160400074494 /* MediaLibraryService */ = {
-			isa = PBXGroup;
-			children = (
-				A9FC8131261F160400074494 /* MediaLibraryServiceImp.swift */,
-				A9FC8132261F160400074494 /* MediaLibraryService.swift */,
-			);
-			path = MediaLibraryService;
-			sourceTree = "<group>";
-		};
-		A9FC8133261F160400074494 /* MediaItem */ = {
-			isa = PBXGroup;
-			children = (
-				A9FC8134261F160400074494 /* MediaItemFilter.swift */,
-				A9FC8135261F160400074494 /* MediaItemFetchResult.swift */,
-				A9FC8136261F160400074494 /* MediaItem.swift */,
-				A9FC8137261F160400074494 /* MediaItemCollection.swift */,
-			);
-			path = MediaItem;
-			sourceTree = "<group>";
-		};
 		A9FC8142261F183600074494 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +147,120 @@
 				A9FC8145261F183600074494 /* Texstyle.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9FC81BF261F21A800074494 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC81C0261F21B900074494 /* Launch Screen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		A9FC81DD2622BC3500074494 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC81DE2622BC4900074494 /* CollectionViewCell */,
+				A9FC81A6261F1ED300074494 /* MainViewController.swift */,
+				A9FC82032622C7FB00074494 /* MainFactory.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		A9FC81DE2622BC4900074494 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC81DF2622BC6400074494 /* MainCellItem.swift */,
+				A9FC81E42622BC6F00074494 /* MainCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		A9FC81FD2622C71900074494 /* GalleryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC820D2622CAF300074494 /* GalleryCollectionViewCell */,
+				A9FC81FE2622C73400074494 /* GalleryViewController.swift */,
+				A9FC82082622CAEF00074494 /* GalleryFactory.swift */,
+			);
+			path = GalleryViewController;
+			sourceTree = "<group>";
+		};
+		A9FC820D2622CAF300074494 /* GalleryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC820E2622CB0600074494 /* GalleryCellItem.swift */,
+				A9FC82132622CB1400074494 /* GalleryCollectionViewCell.swift */,
+			);
+			path = GalleryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		A9FC821B2622D37B00074494 /* MediaService */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC821C2622D37B00074494 /* MediaItem */,
+				A9FC82212622D37B00074494 /* Resource */,
+				A9FC82302622D37C00074494 /* Services */,
+			);
+			name = MediaService;
+			path = Sources/MediaService;
+			sourceTree = "<group>";
+		};
+		A9FC821C2622D37B00074494 /* MediaItem */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC821D2622D37B00074494 /* MediaItemFilter.swift */,
+				A9FC821E2622D37B00074494 /* MediaItemFetchResult.swift */,
+				A9FC821F2622D37B00074494 /* MediaItem.swift */,
+				A9FC82202622D37B00074494 /* MediaItemCollection.swift */,
+			);
+			path = MediaItem;
+			sourceTree = "<group>";
+		};
+		A9FC82212622D37B00074494 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC82222622D37B00074494 /* Strings.swift */,
+				A9FC82232622D37B00074494 /* Localizable.strings */,
+				A9FC82242622D37B00074494 /* Fonts */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		A9FC82242622D37B00074494 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC82252622D37B00074494 /* FunctionPro-Book.otf */,
+				A9FC82262622D37B00074494 /* clarikageo-medium.otf */,
+				A9FC82272622D37C00074494 /* Bauhaus_Demi.ttf */,
+				A9FC82282622D37C00074494 /* FunctionPro-Medium.otf */,
+				A9FC82292622D37C00074494 /* FunctionPro-Demi.otf */,
+				A9FC822A2622D37C00074494 /* LibreBaskerville-Regular.ttf */,
+				A9FC822B2622D37C00074494 /* Ayuthaya.ttf */,
+				A9FC822C2622D37C00074494 /* Helvetica-Bold.ttf */,
+				A9FC822D2622D37C00074494 /* FunctionPro-BookOblique.otf */,
+				A9FC822E2622D37C00074494 /* Bauhaus_Medium.ttf */,
+				A9FC822F2622D37C00074494 /* FunctionPro-Light.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A9FC82302622D37C00074494 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC82312622D37C00074494 /* MainServiceFactory.swift */,
+				A9FC82322622D37C00074494 /* MediaLibraryService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A9FC82322622D37C00074494 /* MediaLibraryService */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC82332622D37C00074494 /* MediaLibraryServiceImp.swift */,
+				A9FC82342622D37C00074494 /* MediaLibraryService.swift */,
+			);
+			path = MediaLibraryService;
 			sourceTree = "<group>";
 		};
 		DFEF361FC4CC88B328B65513 /* Products */ = {
@@ -369,7 +432,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9FC81A9261F1ED300074494 /* AppDelegate.swift in Sources */,
+				A9FC82042622C7FB00074494 /* MainFactory.swift in Sources */,
 				A9FC81A8261F1ED300074494 /* MainViewController.swift in Sources */,
+				A9FC81FF2622C73400074494 /* GalleryViewController.swift in Sources */,
+				A9FC82092622CAEF00074494 /* GalleryFactory.swift in Sources */,
+				A9FC81E02622BC6400074494 /* MainCellItem.swift in Sources */,
+				A9FC81E52622BC6F00074494 /* MainCollectionViewCell.swift in Sources */,
+				A9FC82142622CB1400074494 /* GalleryCollectionViewCell.swift in Sources */,
+				A9FC820F2622CB0600074494 /* GalleryCellItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,14 +447,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9FC8138261F160400074494 /* Strings.swift in Sources */,
-				A9FC8139261F160400074494 /* MainServiceFactory.swift in Sources */,
-				A9FC813B261F160400074494 /* MediaLibraryService.swift in Sources */,
-				A9FC817B261F18B200074494 /* MediaItemCollection.swift in Sources */,
-				A9FC813A261F160400074494 /* MediaLibraryServiceImp.swift in Sources */,
-				A9FC818C261F18BB00074494 /* MediaItemFilter.swift in Sources */,
-				A9FC8180261F18B600074494 /* MediaItem.swift in Sources */,
-				A9FC8187261F18B800074494 /* MediaItemFetchResult.swift in Sources */,
+				A9FC82352622D37C00074494 /* MediaItemFilter.swift in Sources */,
+				A9FC823B2622D37C00074494 /* MediaLibraryServiceImp.swift in Sources */,
+				A9FC823C2622D37C00074494 /* MediaLibraryService.swift in Sources */,
+				A9FC82362622D37C00074494 /* MediaItemFetchResult.swift in Sources */,
+				A9FC82392622D37C00074494 /* Strings.swift in Sources */,
+				A9FC823A2622D37C00074494 /* MainServiceFactory.swift in Sources */,
+				A9FC82372622D37C00074494 /* MediaItem.swift in Sources */,
+				A9FC82382622D37C00074494 /* MediaItemCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +472,7 @@
 		2C6508EAB5EB3C38965F8805 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -480,6 +551,7 @@
 		69B6A6CBB30E9A97C9F0AC94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
