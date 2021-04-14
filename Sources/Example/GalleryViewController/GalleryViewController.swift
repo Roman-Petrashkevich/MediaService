@@ -51,7 +51,6 @@ final class GalleryViewController: UIViewController {
         view.addSubview(collectionView)
         view.backgroundColor = .black
         mediaService.fetchMediaItems(in: mediaItemCollection)
-        updateCollectionManager()
         mediaItemResultCollectorEventTriggered()
     }
 
@@ -64,21 +63,15 @@ final class GalleryViewController: UIViewController {
 
     private func mediaItemResultCollectorEventTriggered() {
         mediaItemResultCollector.subscribe { [weak self] mediaItemFetchResult in
-            guard let self = self,
-                  self.mediaItemCollection.title == mediaItemFetchResult.collection.title else {
+            guard let self = self else {
                 return
             }
-            mediaItemFetchResult.fetchResult.enumerateObjects { asset, _, _ in
-                if !self.mediaItemCollection.mediaItems.contains(.init(asset: asset)) {
-                    self.mediaItemCollection.mediaItems.append(.init(asset: asset))
-                }
-            }
-            self.updateCollectionManager()
+            self.updateCollectionManager(with: mediaItemFetchResult.fetchResult)
         }
     }
 
-    private func updateCollectionManager() {
-        let sectionItem = galleryFactory.makeSectionItem(mediaItems: mediaItemCollection.mediaItems)
+    private func updateCollectionManager(with results: PHFetchResult<PHAsset>) {
+        let sectionItem = galleryFactory.makeSectionItem(results: results)
         collectionViewManager.update(with: sectionItem, animated: true)
     }
 }

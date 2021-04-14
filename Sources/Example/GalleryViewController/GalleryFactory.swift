@@ -7,6 +7,7 @@
 
 import CollectionViewTools
 import MediaService
+import Photos
 
 final class GalleryFactory {
 
@@ -18,9 +19,13 @@ final class GalleryFactory {
         self.mediaService = mediaService
     }
 
-    func makeSectionItem(mediaItems: [MediaItem]) -> [GeneralCollectionViewDiffSectionItem] {
-        let cellItems = mediaItems.map { mediaItem in
-            GalleryCellItem(mediaService: mediaService, mediaItem: mediaItem)
+    func makeSectionItem(results: PHFetchResult<PHAsset>) -> [GeneralCollectionViewDiffSectionItem] {
+        var cellItems: [GalleryCellItem] = []
+        results.enumerateObjects { [weak self] asset, _, _ in
+            guard let self = self else {
+                return
+            }
+            cellItems.append(.init(mediaService: self.mediaService, asset: asset))
         }
 
         let sectionItem = GeneralCollectionViewDiffSectionItem()

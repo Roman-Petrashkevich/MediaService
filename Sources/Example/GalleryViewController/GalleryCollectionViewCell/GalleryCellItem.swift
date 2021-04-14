@@ -22,9 +22,9 @@ final class GalleryCellItem: CollectionViewDiffCellItem {
     private let internalInset: CGFloat = 1.5
     private let numberOfRows: Int = 3
 
-    init(mediaService: MediaLibraryServiceImp, mediaItem: MediaItem) {
+    init(mediaService: MediaLibraryServiceImp, asset: PHAsset) {
         self.mediaService = mediaService
-        self.mediaItem = mediaItem
+        self.mediaItem = .init(asset: asset)
     }
 
     func isEqual(to item: DiffItem) -> Bool {
