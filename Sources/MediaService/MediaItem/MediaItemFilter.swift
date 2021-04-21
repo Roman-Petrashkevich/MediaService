@@ -16,7 +16,7 @@ public enum MediaItemFilter: Int, CaseIterable {
             return L10n.MediaLibrary.Filter.all
         }
     }
-    
+
     public func matches(item: MediaItem) -> Bool {
         switch self {
         case .video:
