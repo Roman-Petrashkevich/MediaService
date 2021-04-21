@@ -152,7 +152,7 @@ final class MediaServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 
-    func testFetchThumbnailItem() {
+    func testFetchMediaItemThumbnailValue() {
         // Given
         let mediaItem: MediaItem = .init(asset: .init())
         let pencilImage = UIImage(systemName: "pencil")
@@ -166,7 +166,21 @@ final class MediaServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 
-    func testFetchThumbnailCollection() {
+    func testFetchMediaItemThumbnailNil() {
+        // Given
+        let mediaItem: MediaItem = .dummy
+        let expectation = self.expectation(description: "error")
+
+        //Then
+        service.fetchThumbnail(for: mediaItem, size: .zero, contentMode: .aspectFill) { image in
+            XCTAssertEqual(mediaItem.thumbnail, image, "is not equal image")
+            XCTAssertNil(image, "is not equal nil")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+    func testFetchMediaCollectionThumbnail() {
         // Given
         let mediaItemCollectionsMock: MediaItemCollection = .init(identifier: "12", title: "Recents")
         let pencilImage = UIImage(systemName: "pencil")
@@ -176,6 +190,21 @@ final class MediaServiceTests: XCTestCase {
         //Then
         service.fetchThumbnail(for: mediaItemCollectionsMock, size: pencilImage?.size ?? .zero, contentMode: .aspectFill) { image in
             XCTAssertEqual(mediaItemCollectionsMock.thumbnail, image, "is not equal image")
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+    func testFetchMediaCollectionThumbnailNil() {
+        // Given
+        let mediaItemCollectionsMock: MediaItemCollection = .init(identifier: "12", title: "Recents")
+        let expectation = self.expectation(description: "error")
+
+        //Then
+        service.fetchThumbnail(for: mediaItemCollectionsMock, size: .zero, contentMode: .aspectFill) { image in
+            XCTAssertEqual(mediaItemCollectionsMock.thumbnail, image, "is not equal image")
+            XCTAssertNil(image, "is not equal nil")
             expectation.fulfill()
         }
 
