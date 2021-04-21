@@ -11,15 +11,15 @@ import Photos
 
 class MediaLibraryServiceTestMock: MediaLibraryServiceTest {
     static var status: PHAuthorizationStatus = .authorized
-
-    private let mediaCollections: MediaItemCollection = .init(identifier: "12", title: "Recents")
+    static var mediaCollection: MediaItemCollection = .init(identifier: "12", title: "Recents")
 
     func fetchCollections(with type: PHAssetCollectionType, subtype: PHAssetCollectionSubtype, options: PHFetchOptions?) -> [MediaItemCollection] {
-        [mediaCollections]
+        [MediaLibraryServiceTestMock.mediaCollection]
     }
 
     func fetchAssetCollections(localIdentifiers: [String], options: PHFetchOptions?) -> PHAssetCollection? {
-        let assetCollection: PHAssetCollection = .transientAssetCollection(with: [.init(), .init(), .init()], title: mediaCollections.title)
+        let assetCollection: PHAssetCollection = .transientAssetCollection(with: [.init(), .init(), .init()],
+                                                                           title: MediaLibraryServiceTestMock.mediaCollection.title)
         return assetCollection
     }
 
