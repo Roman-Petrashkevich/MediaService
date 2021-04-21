@@ -10,6 +10,8 @@
 		1D5316D922319C49520D203B /* MediaServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2240A87F57FB038C7EC1C5D2 /* MediaServiceTests.swift */; };
 		78D564F450CF807EF8D125B6 /* MediaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FFCED00C8054113707C0A /* MediaService.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A756EA9B7DBBBC779292C6F0 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42697A5AF25DAE56CE63A2DB /* XCTestManifests.swift */; };
+		A94712B0262739D000BDB65A /* MediaLibraryServiceTestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94712AF262739D000BDB65A /* MediaLibraryServiceTestMock.swift */; };
+		A979900F262F2DDA00AA65E3 /* MediaLibraryServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799007262F2DB900AA65E3 /* MediaLibraryServiceTest.swift */; };
 		A9FC8148261F183600074494 /* DeepDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8143261F183600074494 /* DeepDiff.framework */; };
 		A9FC814A261F183600074494 /* Framezilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8144261F183600074494 /* Framezilla.framework */; };
 		A9FC814C261F183600074494 /* Texstyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8145261F183600074494 /* Texstyle.framework */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		2240A87F57FB038C7EC1C5D2 /* MediaServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaServiceTests.swift; sourceTree = "<group>"; };
 		42697A5AF25DAE56CE63A2DB /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		A94712AF262739D000BDB65A /* MediaLibraryServiceTestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLibraryServiceTestMock.swift; sourceTree = "<group>"; };
+		A9799007262F2DB900AA65E3 /* MediaLibraryServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLibraryServiceTest.swift; sourceTree = "<group>"; };
 		A9FC8143261F183600074494 /* DeepDiff.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeepDiff.framework; path = Carthage/Build/iOS/DeepDiff.framework; sourceTree = "<group>"; };
 		A9FC8144261F183600074494 /* Framezilla.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Framezilla.framework; path = Carthage/Build/iOS/Framezilla.framework; sourceTree = "<group>"; };
 		A9FC8145261F183600074494 /* Texstyle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Texstyle.framework; path = Carthage/Build/iOS/Texstyle.framework; sourceTree = "<group>"; };
@@ -88,6 +92,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A94712C02628596100BDB65A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0FAD58677086F61580F6D0E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -132,9 +143,18 @@
 			children = (
 				2240A87F57FB038C7EC1C5D2 /* MediaServiceTests.swift */,
 				42697A5AF25DAE56CE63A2DB /* XCTestManifests.swift */,
+				A94712AF262739D000BDB65A /* MediaLibraryServiceTestMock.swift */,
 			);
 			name = MediaServiceTests;
 			path = Tests/MediaServiceTests;
+			sourceTree = "<group>";
+		};
+		A9799003262F2D4900AA65E3 /* MediaLibraryServiceTest */ = {
+			isa = PBXGroup;
+			children = (
+				A9799007262F2DB900AA65E3 /* MediaLibraryServiceTest.swift */,
+			);
+			path = MediaLibraryServiceTest;
 			sourceTree = "<group>";
 		};
 		A9FC8142261F183600074494 /* Frameworks */ = {
@@ -248,6 +268,7 @@
 		A9FC82302622D37C00074494 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A9799003262F2D4900AA65E3 /* MediaLibraryServiceTest */,
 				A9FC82312622D37C00074494 /* MainServiceFactory.swift */,
 				A9FC82322622D37C00074494 /* MediaLibraryService */,
 			);
@@ -282,6 +303,7 @@
 			buildPhases = (
 				6619B101075743E5F822FA3A /* Sources */,
 				EF3D94F6D054254334FA046D /* Swiftlint */,
+				A94712C02628596100BDB65A /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -422,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94712B0262739D000BDB65A /* MediaLibraryServiceTestMock.swift in Sources */,
 				1D5316D922319C49520D203B /* MediaServiceTests.swift in Sources */,
 				A756EA9B7DBBBC779292C6F0 /* XCTestManifests.swift in Sources */,
 			);
@@ -447,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A979900F262F2DDA00AA65E3 /* MediaLibraryServiceTest.swift in Sources */,
 				A9FC82352622D37C00074494 /* MediaItemFilter.swift in Sources */,
 				A9FC823B2622D37C00074494 /* MediaLibraryServiceImp.swift in Sources */,
 				A9FC823C2622D37C00074494 /* MediaLibraryService.swift in Sources */,
@@ -576,12 +600,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = MediaService.xcodeproj/MediaServiceTests.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.MediaServiceTests;
 				SDKROOT = iphoneos;
@@ -621,12 +647,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = MediaService.xcodeproj/MediaServiceTests.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.MediaServiceTests;
 				SDKROOT = iphoneos;
