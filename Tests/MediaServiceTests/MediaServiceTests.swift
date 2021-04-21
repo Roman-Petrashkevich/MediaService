@@ -30,6 +30,74 @@ final class MediaServiceTests: XCTestCase {
     private lazy var mediaItemFetchProgressCollector: Collector<Float> = {
         .init(source: service.mediaItemFetchProgressEventSource)
     }()
+
+    func testPermissionAuthorizedStatus() {
+        //Given
+        let authStatus: PHAuthorizationStatus = .authorized
+        let expectation = self.expectation(description: "error")
+
+        //When
+        MediaLibraryServiceTestMock.status = .authorized
+        service.requestMediaLibraryPermissions()
+
+        //Then
+        permissionStatusCollector.subscribe { status in
+            XCTAssertEqual(status, authStatus, "Permission status is not equal")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+    func testPermissionDeniedStatus() {
+        //Given
+        let authStatus: PHAuthorizationStatus = .denied
+        let expectation = self.expectation(description: "error")
+
+        //When
+        MediaLibraryServiceTestMock.status = .denied
+        service.requestMediaLibraryPermissions()
+
+        //Then
+        permissionStatusCollector.subscribe { status in
+            XCTAssertEqual(status, authStatus, "Permission status is not equal")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+    func testPermissionNotDeterminedStatus() {
+        //Given
+        let authStatus: PHAuthorizationStatus = .notDetermined
+        let expectation = self.expectation(description: "error")
+
+        //When
+        MediaLibraryServiceTestMock.status = .notDetermined
+        service.requestMediaLibraryPermissions()
+
+        //Then
+        permissionStatusCollector.subscribe { status in
+            XCTAssertEqual(status, authStatus, "Permission status is not equal")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+    func testPermissionRestrictedStatus() {
+        //Given
+        let authStatus: PHAuthorizationStatus = .restricted
+        let expectation = self.expectation(description: "error")
+
+        //When
+        MediaLibraryServiceTestMock.status = .restricted
+        service.requestMediaLibraryPermissions()
+
+        //Then
+        permissionStatusCollector.subscribe { status in
+            XCTAssertEqual(status, authStatus, "Permission status is not equal")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
     }
 
     static var allTests = [
