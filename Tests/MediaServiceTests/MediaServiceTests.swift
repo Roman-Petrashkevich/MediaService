@@ -132,6 +132,21 @@ final class MediaServiceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.1)
     }
+
+    func testFetchThumbnailItem() {
+        // Given
+        let mediaItem: MediaItem = .init(asset: .init())
+        let pencilImage = UIImage(systemName: "pencil")
+        mediaItem.thumbnail = pencilImage
+        let expectation = self.expectation(description: "error")
+        //Then
+        service.fetchThumbnail(for: mediaItem, size: mediaItem.thumbnail?.size ?? .zero, contentMode: .aspectFill) { image in
+            XCTAssertEqual(mediaItem.thumbnail, image, "is not equal image")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
     }
 
     static var allTests = [
