@@ -164,6 +164,6 @@ final class MediaServiceTests: XCTestCase {
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("testPermissionAuthorizedStatus", testPermissionAuthorizedStatus)
     ]
 }
