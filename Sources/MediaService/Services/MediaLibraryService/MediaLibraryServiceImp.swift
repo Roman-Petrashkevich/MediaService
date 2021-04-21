@@ -28,10 +28,12 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
 
     private var didRegisterForMediaLibraryUpdates: Bool = false
 
+    public var mediaLibraryServiceTest: MediaLibraryServiceTest = MediaLibraryServiceTestImp()
+
     // MARK: - Permissions
 
     public func requestMediaLibraryPermissions() {
-        PHPhotoLibrary.requestAuthorization { (status: PHAuthorizationStatus) in
+        mediaLibraryServiceTest.requestMediaLibraryPermissions { (status: PHAuthorizationStatus) in
             DispatchQueue.main.async {
                 self.permissionStatusEmitter.replace(status)
             }
@@ -44,17 +46,17 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         DispatchQueue.global(qos: .background).async {
             var collections = [MediaItemCollection]()
 
-            if let userLibraryCollection = self.fetchCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary).first {
+            if let userLibraryCollection = self.mediaLibraryServiceTest.fetchCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil).first {
                 collections.append(userLibraryCollection)
             }
 
-            if let favoritesCollection = self.fetchCollections(with: .smartAlbum, subtype: .smartAlbumFavorites).first,
+            if let favoritesCollection = self.mediaLibraryServiceTest.fetchCollections(with: .smartAlbum, subtype: .smartAlbumFavorites, options: nil).first,
                 favoritesCollection.estimatedMediaItemsCount != 0 {
                 favoritesCollection.isFavorite = true
                 collections.append(favoritesCollection)
             }
 
-            let allCollections = self.fetchCollections(with: .album, subtype: .any).filter { collection in
+            let allCollections = self.mediaLibraryServiceTest.fetchCollections(with: .album, subtype: .any, options: nil).filter { collection in
                 collection.estimatedMediaItemsCount != 0
             }
             collections.append(contentsOf: allCollections)
@@ -87,8 +89,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
             return
         }
         DispatchQueue.global(qos: .background).async {
-            guard let assetCollection = PHAssetCollection.fetchAssetCollections(withLocalIdentifiers: [collection.identifier],
-                                                                                options: nil).firstObject else {
+            guard let assetCollection = self.mediaLibraryServiceTest.fetchAssetCollections(localIdentifiers: [collection.identifier], options: nil) else {
                 return
             }
             let mediaType: PHAssetMediaType? = filter == .all ? nil : .video
