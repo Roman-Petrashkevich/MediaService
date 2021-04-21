@@ -99,6 +99,25 @@ final class MediaServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 
+    func testPermissionLimitedStatus() {
+        if #available(iOS 14, *) {
+            //Given
+            let authStatus: PHAuthorizationStatus = .limited
+            let expectation = self.expectation(description: "error")
+
+            //When
+            MediaLibraryServiceTestMock.status = .limited
+            service.requestMediaLibraryPermissions()
+
+            //Then
+            permissionStatusCollector.subscribe { status in
+                XCTAssertEqual(status, authStatus, "Permission status is not equal")
+                expectation.fulfill()
+            }
+            wait(for: [expectation], timeout: 0.1)
+        }
+    }
+
     func testFetchMediaItemCollectionsCollector() {
         //Given
         let mediaItemCollectionsMock: [MediaItemCollection] = [
