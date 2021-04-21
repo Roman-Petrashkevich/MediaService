@@ -116,6 +116,22 @@ final class MediaServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 
+    func testFetchMediaItemsResultCollector() {
+        //Given
+        let mediaItemCollectionsMock: MediaItemCollection = .init(identifier: "12", title: "Recents")
+        let expectation = self.expectation(description: "error")
+
+        //When
+        service.fetchMediaItems(in: mediaItemCollectionsMock, filter: .all)
+
+        //Then
+        mediaItemResultCollector.subscribe { mediaResult in
+            XCTAssertEqual(mediaItemCollectionsMock.identifier, mediaResult.collection.identifier, "is not equal identifier")
+            XCTAssertEqual(mediaItemCollectionsMock.title, mediaResult.collection.title, "is not equal identifier")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
     }
 
     static var allTests = [
