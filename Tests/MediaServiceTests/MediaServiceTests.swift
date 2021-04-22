@@ -135,9 +135,10 @@ final class MediaServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 
-    func testFetchMediaItemsResultCollector() {
+    func testFetchMediaItemsResultWithFilterAll() {
         //Given
         let mediaItemCollectionsMock: MediaItemCollection = .init(identifier: "12", title: "Recents")
+        let filter: MediaItemFilter = .all
         let expectation = self.expectation(description: "error")
 
         //When
@@ -146,7 +147,25 @@ final class MediaServiceTests: XCTestCase {
         //Then
         mediaItemResultCollector.subscribe { mediaResult in
             XCTAssertEqual(mediaItemCollectionsMock.identifier, mediaResult.collection.identifier, "is not equal identifier")
-            XCTAssertEqual(mediaItemCollectionsMock.title, mediaResult.collection.title, "is not equal identifier")
+            XCTAssertEqual(filter, mediaResult.filter, "is not equal filter")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+    func testFetchMediaItemsResultWithFilterVideo() {
+        //Given
+        let mediaItemCollectionsMock: MediaItemCollection = .init(identifier: "12", title: "Recents")
+        let filter: MediaItemFilter = .video
+        let expectation = self.expectation(description: "error")
+
+        //When
+        service.fetchMediaItems(in: mediaItemCollectionsMock, filter: .video)
+
+        //Then
+        mediaItemResultCollector.subscribe { mediaResult in
+            XCTAssertEqual(mediaItemCollectionsMock.identifier, mediaResult.collection.identifier, "is not equal identifier")
+            XCTAssertEqual(filter, mediaResult.filter, "is not equal filter")
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.1)
@@ -158,6 +177,7 @@ final class MediaServiceTests: XCTestCase {
         let pencilImage = UIImage(systemName: "pencil")
         mediaItem.thumbnail = pencilImage
         let expectation = self.expectation(description: "error")
+
         //Then
         service.fetchThumbnail(for: mediaItem, size: mediaItem.thumbnail?.size ?? .zero, contentMode: .aspectFill) { image in
             XCTAssertEqual(mediaItem.thumbnail, image, "is not equal image")
@@ -208,7 +228,7 @@ final class MediaServiceTests: XCTestCase {
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 0.2)
     }
 
     static var allTests = [
