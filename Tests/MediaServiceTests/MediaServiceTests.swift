@@ -5,9 +5,12 @@ import Photos
 
 final class MediaServiceTests: XCTestCase {
 
+    private lazy var fetchCollectionsServiceMock = FetchCollectionServiceMock()
+    private lazy var permissionsServiceMock = PermissionsServiceMock()
+
     lazy var service: MediaLibraryService = {
-        let service = MediaLibraryServiceImp()
-        service.mediaLibraryServiceTest = MediaLibraryServiceTestMock()
+        let service = MediaLibraryServiceImp(fetchCollectionsService: fetchCollectionsServiceMock,
+                                             permissionsService: permissionsServiceMock)
         return service
     }()
 
@@ -37,7 +40,7 @@ final class MediaServiceTests: XCTestCase {
         let expectation = self.expectation(description: "error")
 
         //When
-        MediaLibraryServiceTestMock.status = .authorized
+        permissionsServiceMock.status = .authorized
         service.requestMediaLibraryPermissions()
 
         //Then
@@ -54,7 +57,7 @@ final class MediaServiceTests: XCTestCase {
         let expectation = self.expectation(description: "error")
 
         //When
-        MediaLibraryServiceTestMock.status = .denied
+        permissionsServiceMock.status = .denied
         service.requestMediaLibraryPermissions()
 
         //Then
@@ -71,7 +74,7 @@ final class MediaServiceTests: XCTestCase {
         let expectation = self.expectation(description: "error")
 
         //When
-        MediaLibraryServiceTestMock.status = .notDetermined
+        permissionsServiceMock.status = .notDetermined
         service.requestMediaLibraryPermissions()
 
         //Then
@@ -88,7 +91,7 @@ final class MediaServiceTests: XCTestCase {
         let expectation = self.expectation(description: "error")
 
         //When
-        MediaLibraryServiceTestMock.status = .restricted
+        permissionsServiceMock.status = .restricted
         service.requestMediaLibraryPermissions()
 
         //Then
@@ -106,7 +109,7 @@ final class MediaServiceTests: XCTestCase {
             let expectation = self.expectation(description: "error")
 
             //When
-            MediaLibraryServiceTestMock.status = .limited
+            permissionsServiceMock.status = .limited
             service.requestMediaLibraryPermissions()
 
             //Then
