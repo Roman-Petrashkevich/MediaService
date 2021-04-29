@@ -17,5 +17,5 @@ public class PermissionsServiceImp: PermissionsService {
             handler(status)
         }
     }
+    public init() {}
 }
-

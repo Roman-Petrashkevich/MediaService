@@ -36,4 +36,6 @@ public class FetchCollectionsServiceImp: FetchCollectionsService {
         }
         return assetCollection
     }
+
+    public init() {}
 }
