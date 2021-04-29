@@ -10,8 +10,10 @@
 		1D5316D922319C49520D203B /* MediaServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2240A87F57FB038C7EC1C5D2 /* MediaServiceTests.swift */; };
 		78D564F450CF807EF8D125B6 /* MediaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FFCED00C8054113707C0A /* MediaService.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A756EA9B7DBBBC779292C6F0 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42697A5AF25DAE56CE63A2DB /* XCTestManifests.swift */; };
-		A94712B0262739D000BDB65A /* MediaLibraryServiceTestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94712AF262739D000BDB65A /* MediaLibraryServiceTestMock.swift */; };
-		A979900F262F2DDA00AA65E3 /* MediaLibraryServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799007262F2DB900AA65E3 /* MediaLibraryServiceTest.swift */; };
+		A902B0F4263972FF00D557C5 /* PermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902B0EC263972F800D557C5 /* PermissionsService.swift */; };
+		A902B10D2639743600D557C5 /* PermissionsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902B1012639739E00D557C5 /* PermissionsServiceMock.swift */; };
+		A902B1142639743A00D557C5 /* FetchCollectionServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902B0FC2639738300D557C5 /* FetchCollectionServiceMock.swift */; };
+		A979900F262F2DDA00AA65E3 /* FetchCollectionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799007262F2DB900AA65E3 /* FetchCollectionsService.swift */; };
 		A9FC8148261F183600074494 /* DeepDiff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8143261F183600074494 /* DeepDiff.framework */; };
 		A9FC814A261F183600074494 /* Framezilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8144261F183600074494 /* Framezilla.framework */; };
 		A9FC814C261F183600074494 /* Texstyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8145261F183600074494 /* Texstyle.framework */; };
@@ -49,8 +51,10 @@
 /* Begin PBXFileReference section */
 		2240A87F57FB038C7EC1C5D2 /* MediaServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaServiceTests.swift; sourceTree = "<group>"; };
 		42697A5AF25DAE56CE63A2DB /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
-		A94712AF262739D000BDB65A /* MediaLibraryServiceTestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLibraryServiceTestMock.swift; sourceTree = "<group>"; };
-		A9799007262F2DB900AA65E3 /* MediaLibraryServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLibraryServiceTest.swift; sourceTree = "<group>"; };
+		A902B0EC263972F800D557C5 /* PermissionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsService.swift; sourceTree = "<group>"; };
+		A902B0FC2639738300D557C5 /* FetchCollectionServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCollectionServiceMock.swift; sourceTree = "<group>"; };
+		A902B1012639739E00D557C5 /* PermissionsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsServiceMock.swift; sourceTree = "<group>"; };
+		A9799007262F2DB900AA65E3 /* FetchCollectionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCollectionsService.swift; sourceTree = "<group>"; };
 		A9FC8143261F183600074494 /* DeepDiff.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeepDiff.framework; path = Carthage/Build/iOS/DeepDiff.framework; sourceTree = "<group>"; };
 		A9FC8144261F183600074494 /* Framezilla.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Framezilla.framework; path = Carthage/Build/iOS/Framezilla.framework; sourceTree = "<group>"; };
 		A9FC8145261F183600074494 /* Texstyle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Texstyle.framework; path = Carthage/Build/iOS/Texstyle.framework; sourceTree = "<group>"; };
@@ -141,20 +145,37 @@
 		682C4D58B0202FA87F1F99E4 /* MediaServiceTests */ = {
 			isa = PBXGroup;
 			children = (
+				A902B0FB2639736A00D557C5 /* MockServices */,
 				2240A87F57FB038C7EC1C5D2 /* MediaServiceTests.swift */,
 				42697A5AF25DAE56CE63A2DB /* XCTestManifests.swift */,
-				A94712AF262739D000BDB65A /* MediaLibraryServiceTestMock.swift */,
 			);
 			name = MediaServiceTests;
 			path = Tests/MediaServiceTests;
 			sourceTree = "<group>";
 		};
-		A9799003262F2D4900AA65E3 /* MediaLibraryServiceTest */ = {
+		A902B0E82639709B00D557C5 /* PermissionsService */ = {
 			isa = PBXGroup;
 			children = (
-				A9799007262F2DB900AA65E3 /* MediaLibraryServiceTest.swift */,
+				A902B0EC263972F800D557C5 /* PermissionsService.swift */,
 			);
-			path = MediaLibraryServiceTest;
+			path = PermissionsService;
+			sourceTree = "<group>";
+		};
+		A902B0FB2639736A00D557C5 /* MockServices */ = {
+			isa = PBXGroup;
+			children = (
+				A902B0FC2639738300D557C5 /* FetchCollectionServiceMock.swift */,
+				A902B1012639739E00D557C5 /* PermissionsServiceMock.swift */,
+			);
+			path = MockServices;
+			sourceTree = "<group>";
+		};
+		A9799003262F2D4900AA65E3 /* FetchCollectionsService */ = {
+			isa = PBXGroup;
+			children = (
+				A9799007262F2DB900AA65E3 /* FetchCollectionsService.swift */,
+			);
+			path = FetchCollectionsService;
 			sourceTree = "<group>";
 		};
 		A9FC8142261F183600074494 /* Frameworks */ = {
@@ -268,7 +289,8 @@
 		A9FC82302622D37C00074494 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A9799003262F2D4900AA65E3 /* MediaLibraryServiceTest */,
+				A902B0E82639709B00D557C5 /* PermissionsService */,
+				A9799003262F2D4900AA65E3 /* FetchCollectionsService */,
 				A9FC82312622D37C00074494 /* MainServiceFactory.swift */,
 				A9FC82322622D37C00074494 /* MediaLibraryService */,
 			);
@@ -444,8 +466,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A94712B0262739D000BDB65A /* MediaLibraryServiceTestMock.swift in Sources */,
 				1D5316D922319C49520D203B /* MediaServiceTests.swift in Sources */,
+				A902B1142639743A00D557C5 /* FetchCollectionServiceMock.swift in Sources */,
+				A902B10D2639743600D557C5 /* PermissionsServiceMock.swift in Sources */,
 				A756EA9B7DBBBC779292C6F0 /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,10 +493,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A979900F262F2DDA00AA65E3 /* MediaLibraryServiceTest.swift in Sources */,
+				A979900F262F2DDA00AA65E3 /* FetchCollectionsService.swift in Sources */,
 				A9FC82352622D37C00074494 /* MediaItemFilter.swift in Sources */,
 				A9FC823B2622D37C00074494 /* MediaLibraryServiceImp.swift in Sources */,
 				A9FC823C2622D37C00074494 /* MediaLibraryService.swift in Sources */,
+				A902B0F4263972FF00D557C5 /* PermissionsService.swift in Sources */,
 				A9FC82362622D37C00074494 /* MediaItemFetchResult.swift in Sources */,
 				A9FC82392622D37C00074494 /* Strings.swift in Sources */,
 				A9FC823A2622D37C00074494 /* MainServiceFactory.swift in Sources */,
