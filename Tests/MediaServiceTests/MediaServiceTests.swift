@@ -36,6 +36,8 @@ final class MediaServiceTests: XCTestCase {
         .init(source: service.mediaItemFetchProgressEventSource)
     }()
 
+    // MARK: - PermissionTest
+
     func testPermissionAuthorizedStatus() {
         //Given
         let authStatus: PHAuthorizationStatus = .authorized
@@ -123,6 +125,8 @@ final class MediaServiceTests: XCTestCase {
         }
     }
 
+    // MARK: - FetchMediaItemCollectorTest
+
     func testFetchMediaItemCollectionsCollector() {
         //Given
         let mediaItemCollectionsMock: [MediaItemCollection] = [
@@ -139,6 +143,8 @@ final class MediaServiceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.1)
     }
+
+    //MARK: - FetchMediaItemsResultTest
 
     func testFetchMediaItemsResultWithFilterAll() {
         //Given
@@ -176,7 +182,9 @@ final class MediaServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 
-    func testFetchMediaItemThumbnailValue() {
+    // MARK: - FetchMediaItemThumbnailTest
+
+    func testFetchMediaItemThumbnail() {
         // Given
         let mediaItem: MediaItem = .init(asset: .init())
         let pencilImage = UIImage(systemName: "pencil")
@@ -191,12 +199,13 @@ final class MediaServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 
-    func testFetchMediaItemThumbnailCacheValue() {
+    func testFetchMediaItemThumbnailFromCache() {
         //Given
         let asset = PHAsset()
         let mediaItem: MediaItem = .init(asset: asset)
         let pencilImage = UIImage(systemName: "pencil")
         let expectation = self.expectation(description: "error")
+        thumbnailCacheServiceMock.thumbnailCache.removeAllObjects()
 
         //When
         thumbnailCacheServiceMock.thumbnailCache.setObject(pencilImage ?? .add, forKey: asset.localIdentifier as NSString)
@@ -222,6 +231,8 @@ final class MediaServiceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.1)
     }
+
+    // MARK: - FethcMediaCollectionThumbnailTest
 
     func testFetchMediaCollectionThumbnail() {
         // Given
