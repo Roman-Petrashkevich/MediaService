@@ -7,10 +7,12 @@ final class MediaServiceTests: XCTestCase {
 
     private lazy var fetchCollectionsServiceMock = FetchCollectionServiceMock()
     private lazy var permissionsServiceMock = PermissionsServiceMock()
+    private lazy var thumbnailCacheServiceMock = ThumbnailCacheServiceMock()
 
     lazy var service: MediaLibraryService = {
         let service = MediaLibraryServiceImp(fetchCollectionsService: fetchCollectionsServiceMock,
-                                             permissionsService: permissionsServiceMock)
+                                             permissionsService: permissionsServiceMock,
+                                             thumbnailCacheService: thumbnailCacheServiceMock)
         return service
     }()
 
@@ -180,6 +182,24 @@ final class MediaServiceTests: XCTestCase {
         let pencilImage = UIImage(systemName: "pencil")
         mediaItem.thumbnail = pencilImage
         let expectation = self.expectation(description: "error")
+
+        //Then
+        service.fetchThumbnail(for: mediaItem, size: mediaItem.thumbnail?.size ?? .zero, contentMode: .aspectFill) { image in
+            XCTAssertEqual(mediaItem.thumbnail, image, "is not equal image")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+    func testFetchMediaItemThumbnailCacheValue() {
+        //Given
+        let asset = PHAsset()
+        let mediaItem: MediaItem = .init(asset: asset)
+        let pencilImage = UIImage(systemName: "pencil")
+        let expectation = self.expectation(description: "error")
+
+        //When
+        thumbnailCacheServiceMock.thumbnailCache.setObject(pencilImage ?? .add, forKey: asset.localIdentifier as NSString)
 
         //Then
         service.fetchThumbnail(for: mediaItem, size: mediaItem.thumbnail?.size ?? .zero, contentMode: .aspectFill) { image in
