@@ -24,12 +24,23 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
     public lazy var mediaItemFetchProgressEventSource: AnyEventSource<Float> = .init(mediaItemFetchProgressEmitter)
 
     private lazy var manager: PHCachingImageManager = .init()
-    private let thumbnailCache: NSCache<NSString, UIImage> = .init()
 
     private var didRegisterForMediaLibraryUpdates: Bool = false
 
     private let fetchCollectionsService: FetchCollectionsService
     private let permissionsService: PermissionsService
+    private let fetchAssetsService: FetchAssetsService
+    private let thumbnailCacheService: ThumbnailCacheService
+
+    public init(fetchCollectionsService: FetchCollectionsService = FetchCollectionsServiceImp(),
+                permissionsService: PermissionsService = PermissionsServiceImp(),
+                fetchAssetsService: FetchAssetsService = FetchAssetsServiceImp(),
+                thumbnailCacheService: ThumbnailCacheService = ThumbnailCacheServiceImp()) {
+        self.fetchCollectionsService = fetchCollectionsService
+        self.permissionsService = permissionsService
+        self.fetchAssetsService = fetchAssetsService
+        self.thumbnailCacheService = thumbnailCacheService
+    }
 
     // MARK: - Permissions
 
@@ -42,12 +53,6 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
     }
 
     // MARK: - Lists
-
-    init(fetchCollectionsService: FetchCollectionsService = FetchCollectionsServiceImp(),
-         permissionsService: PermissionsService = PermissionsServiceImp()) {
-        self.fetchCollectionsService = fetchCollectionsService
-        self.permissionsService = permissionsService
-    }
 
     public func fetchMediaItemCollections() {
         DispatchQueue.global(qos: .background).async {
@@ -75,28 +80,17 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         }
     }
 
-    private func fetchCollections(with type: PHAssetCollectionType,
-                                  subtype: PHAssetCollectionSubtype,
-                                  options: PHFetchOptions? = nil) -> [MediaItemCollection] {
-        let result = PHAssetCollection.fetchAssetCollections(with: type,
-                                                             subtype: subtype,
-                                                             options: options)
-        var collections = [MediaItemCollection]()
-        result.enumerateObjects { collection, _, _ in
-            let collection = MediaItemCollection(collection: collection)
-            collections.append(collection)
-        }
-        return collections
-    }
-
     public func fetchMediaItems(in collection: MediaItemCollection?, filter: MediaItemFilter = .all) {
         guard let collection = collection else {
-            let collection = fetchCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary).first
+            let collection = fetchCollectionsService.fetchCollections(with: .smartAlbum,
+                                                                      subtype: .smartAlbumUserLibrary,
+                                                                      options: nil).first
             fetchMediaItems(in: collection, filter: filter)
             return
         }
         DispatchQueue.global(qos: .background).async {
-            guard let assetCollection = self.fetchCollectionsService.fetchAssetCollections(localIdentifiers: [collection.identifier], options: nil) else {
+            guard let assetCollection = self.fetchCollectionsService.fetchAssetCollections(localIdentifiers: [collection.identifier],
+                                                                                           options: nil) else {
                 return
             }
             let mediaType: PHAssetMediaType? = filter == .all ? nil : .video
@@ -122,7 +116,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         }
 
         DispatchQueue.global(qos: .background).async {
-            guard let asset = self.makeAsset(item: item) else {
+            guard let asset = self.fetchAssetsService.makeAsset(item: item) else {
                 DispatchQueue.main.async {
                     completion(nil)
                 }
@@ -148,23 +142,15 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         }
 
         DispatchQueue.global(qos: .background).async {
-            guard let assetCollection = PHAssetCollection.fetchAssetCollections(withLocalIdentifiers: [collection.identifier],
-                                                                                options: nil).firstObject else {
+            guard let assetCollection = self.fetchCollectionsService.fetchAssetCollections(localIdentifiers: [collection.identifier],
+                                                                                           options: nil) else {
                 DispatchQueue.main.async {
                     completion(nil)
                 }
                 return
             }
 
-            let posterAsset: PHAsset?
-            if assetCollection.assetCollectionType == .smartAlbum || assetCollection.assetCollectionSubtype == .albumMyPhotoStream {
-                posterAsset = PHAsset.fetchAssets(in: assetCollection, options: nil).lastObject
-            }
-            else {
-                posterAsset = PHAsset.fetchAssets(in: assetCollection, options: nil).firstObject
-            }
-
-            guard let asset = posterAsset else {
+            guard let asset = self.fetchAssetsService.fetchAssets(assetCollection: assetCollection) else {
                 DispatchQueue.main.async {
                     completion(nil)
                 }
@@ -197,7 +183,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
     public func fetchImage(for item: MediaItem,
                            options: PHImageRequestOptions,
                            completion: @escaping Completion<UIImage?>) {
-        guard let asset = makeAsset(item: item) else {
+        guard let asset = fetchAssetsService.makeAsset(item: item) else {
             completion(nil)
             return
         }
@@ -217,7 +203,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
     }
 
     public func fetchVideoAsset(for item: MediaItem, completion: @escaping Completion<AVAsset?>) {
-        guard let asset = makeAsset(item: item) else {
+        guard let asset = fetchAssetsService.makeAsset(item: item) else {
             completion(nil)
             return
         }
@@ -313,20 +299,11 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         return url
     }
 
-    private func makeAsset(item: MediaItem) -> PHAsset? {
-        if let asset = item.asset {
-            return asset
-        }
-
-        let fetchOptions = PHFetchOptions()
-        return PHAsset.fetchAssets(withLocalIdentifiers: [item.identifier], options: fetchOptions).firstObject
-    }
-
     private func fetchThumbnail(for asset: PHAsset,
                                 size: CGSize,
                                 contentMode: PHImageContentMode,
                                 completion: @escaping Completion<UIImage?>) {
-        if let thumbnail = thumbnailCache.object(forKey: asset.localIdentifier as NSString) {
+        if let thumbnail = thumbnailCacheService.thumbnailCache.object(forKey: asset.localIdentifier as NSString) {
             completion(thumbnail)
             return
         }
@@ -340,7 +317,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                              contentMode: contentMode,
                              options: options) { [weak self] (image: UIImage?, _) in
             if let image = image {
-                self?.thumbnailCache.setObject(image, forKey: asset.localIdentifier as NSString)
+                self?.thumbnailCacheService.thumbnailCache.setObject(image, forKey: asset.localIdentifier as NSString)
             }
 
             completion(image)
