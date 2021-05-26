@@ -13,6 +13,9 @@
 		A902B0F4263972FF00D557C5 /* PermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902B0EC263972F800D557C5 /* PermissionsService.swift */; };
 		A902B10D2639743600D557C5 /* PermissionsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902B1012639739E00D557C5 /* PermissionsServiceMock.swift */; };
 		A902B1142639743A00D557C5 /* FetchCollectionServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902B0FC2639738300D557C5 /* FetchCollectionServiceMock.swift */; };
+		A9629B5E2656869300A1F85E /* FetchResultMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9629B5B2656863100A1F85E /* FetchResultMock.swift */; };
+		A9629B692657818200A1F85E /* CachingImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9629B67265780C100A1F85E /* CachingImageManager.swift */; };
+		A9629B6C265789A500A1F85E /* CachingImageManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9629B6A2657890400A1F85E /* CachingImageManagerMock.swift */; };
 		A96DE7782649298C00B77613 /* ThumbnailCacheServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E76098263AD76800929668 /* ThumbnailCacheServiceMock.swift */; };
 		A96DE7792649299600B77613 /* FetchAssetsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E76095263AD74800929668 /* FetchAssetsServiceMock.swift */; };
 		A979900F262F2DDA00AA65E3 /* FetchCollectionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799007262F2DB900AA65E3 /* FetchCollectionsService.swift */; };
@@ -58,6 +61,11 @@
 		A902B0EC263972F800D557C5 /* PermissionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsService.swift; sourceTree = "<group>"; };
 		A902B0FC2639738300D557C5 /* FetchCollectionServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCollectionServiceMock.swift; sourceTree = "<group>"; };
 		A902B1012639739E00D557C5 /* PermissionsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsServiceMock.swift; sourceTree = "<group>"; };
+		A9629B5B2656863100A1F85E /* FetchResultMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchResultMock.swift; sourceTree = "<group>"; };
+		A9629B67265780C100A1F85E /* CachingImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingImageManager.swift; sourceTree = "<group>"; };
+		A9629B6A2657890400A1F85E /* CachingImageManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingImageManagerMock.swift; sourceTree = "<group>"; };
+		A9629B6E26578F9900A1F85E /* VideoTest.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = VideoTest.mov; sourceTree = "<group>"; };
+		A9629B6F26578F9900A1F85E /* ImageTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ImageTest.png; sourceTree = "<group>"; };
 		A9799007262F2DB900AA65E3 /* FetchCollectionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCollectionsService.swift; sourceTree = "<group>"; };
 		A9E7608E263ACD4100929668 /* FetchAssetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAssetsService.swift; sourceTree = "<group>"; };
 		A9E76092263AD01D00929668 /* ThumbnailCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCacheService.swift; sourceTree = "<group>"; };
@@ -176,6 +184,8 @@
 				A902B1012639739E00D557C5 /* PermissionsServiceMock.swift */,
 				A9E76095263AD74800929668 /* FetchAssetsServiceMock.swift */,
 				A9E76098263AD76800929668 /* ThumbnailCacheServiceMock.swift */,
+				A9629B5B2656863100A1F85E /* FetchResultMock.swift */,
+				A9629B6A2657890400A1F85E /* CachingImageManagerMock.swift */,
 			);
 			path = MockServices;
 			sourceTree = "<group>";
@@ -287,6 +297,8 @@
 		A9FC82212622D37B00074494 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9629B6F26578F9900A1F85E /* ImageTest.png */,
+				A9629B6E26578F9900A1F85E /* VideoTest.mov */,
 				A9FC82222622D37B00074494 /* Strings.swift */,
 				A9FC82232622D37B00074494 /* Localizable.strings */,
 				A9FC82242622D37B00074494 /* Fonts */,
@@ -330,6 +342,7 @@
 			children = (
 				A9FC82332622D37C00074494 /* MediaLibraryServiceImp.swift */,
 				A9FC82342622D37C00074494 /* MediaLibraryService.swift */,
+				A9629B67265780C100A1F85E /* CachingImageManager.swift */,
 			);
 			path = MediaLibraryService;
 			sourceTree = "<group>";
@@ -499,6 +512,8 @@
 				A902B1142639743A00D557C5 /* FetchCollectionServiceMock.swift in Sources */,
 				A96DE7782649298C00B77613 /* ThumbnailCacheServiceMock.swift in Sources */,
 				A902B10D2639743600D557C5 /* PermissionsServiceMock.swift in Sources */,
+				A9629B6C265789A500A1F85E /* CachingImageManagerMock.swift in Sources */,
+				A9629B5E2656869300A1F85E /* FetchResultMock.swift in Sources */,
 				A756EA9B7DBBBC779292C6F0 /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +548,7 @@
 				A9FC82392622D37C00074494 /* Strings.swift in Sources */,
 				A9FC823A2622D37C00074494 /* MainServiceFactory.swift in Sources */,
 				A9FC82372622D37C00074494 /* MediaItem.swift in Sources */,
+				A9629B692657818200A1F85E /* CachingImageManager.swift in Sources */,
 				A9E76090263ACE8000929668 /* FetchAssetsService.swift in Sources */,
 				A9FC82382622D37C00074494 /* MediaItemCollection.swift in Sources */,
 			);
