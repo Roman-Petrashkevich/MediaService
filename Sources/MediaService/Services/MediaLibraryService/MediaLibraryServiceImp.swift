@@ -23,23 +23,24 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
     private lazy var mediaItemFetchProgressEmitter: Emitter<Float> = .init()
     public lazy var mediaItemFetchProgressEventSource: AnyEventSource<Float> = .init(mediaItemFetchProgressEmitter)
 
-    private lazy var manager: PHCachingImageManager = .init()
-
     private var didRegisterForMediaLibraryUpdates: Bool = false
 
     private let fetchCollectionsService: FetchCollectionsService
     private let permissionsService: PermissionsService
     private let fetchAssetsService: FetchAssetsService
     private let thumbnailCacheService: ThumbnailCacheService
+    private let cachingImageManager: CachingImageManager
 
     public init(fetchCollectionsService: FetchCollectionsService = FetchCollectionsServiceImp(),
                 permissionsService: PermissionsService = PermissionsServiceImp(),
                 fetchAssetsService: FetchAssetsService = FetchAssetsServiceImp(),
-                thumbnailCacheService: ThumbnailCacheService = ThumbnailCacheServiceImp()) {
+                thumbnailCacheService: ThumbnailCacheService = ThumbnailCacheServiceImp(),
+                cachingImageManager: CachingImageManager = CachingImageManagerImp()) {
         self.fetchCollectionsService = fetchCollectionsService
         self.permissionsService = permissionsService
         self.fetchAssetsService = fetchAssetsService
         self.thumbnailCacheService = thumbnailCacheService
+        self.cachingImageManager = cachingImageManager
     }
 
     // MARK: - Permissions
@@ -93,8 +94,12 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                                                                                            options: nil) else {
                 return
             }
+
             let mediaType: PHAssetMediaType? = filter == .all ? nil : .video
-            let fetchResult = self.fetchMediaItems(in: assetCollection, mediaType: mediaType)
+            guard let fetchResult = self.fetchCollectionsService.fetchMediaItems(in: assetCollection,
+                                                                                 mediaType: mediaType) else {
+                return
+            }
 
             DispatchQueue.main.async {
                 self.registerForMediaLibraryUpdatesIfNeeded()
@@ -188,7 +193,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
             return
         }
 
-        manager.requestImageData(for: asset, options: options) { (imageData: Data?, _, _, _) in
+        cachingImageManager.requestImageData(for: asset, options: options) { (imageData: Data?) in
             guard let data = imageData else {
                 completion(nil)
                 return
@@ -217,7 +222,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                 }
             }
 
-            manager.requestAVAsset(forVideo: asset, options: requestOptions) { (asset: AVAsset?, _, _) in
+            cachingImageManager.requestAVAsset(forVideo: asset, options: requestOptions) { (asset: AVAsset?) in
                 DispatchQueue.main.async {
                     self.mediaItemFetchProgressEmitter.discard()
                     completion(asset)
@@ -234,10 +239,10 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                 }
             }
 
-            manager.requestLivePhoto(for: asset,
+            cachingImageManager.requestLivePhoto(for: asset,
                                      targetSize: .zero,
                                      contentMode: .default,
-                                     options: requestOptions) { (photo: PHLivePhoto?, _) in
+                                     options: requestOptions) { (photo: PHLivePhoto?) in
                 guard let photo = photo else {
                     return completion(nil)
                 }
@@ -280,17 +285,6 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         didRegisterForMediaLibraryUpdates = true
     }
 
-    private func fetchMediaItems(in collection: PHAssetCollection,
-                                 mediaType: PHAssetMediaType?) -> PHFetchResult<PHAsset> {
-        let options = PHFetchOptions()
-
-        if let mediaType = mediaType {
-            options.predicate = NSPredicate(format: "mediaType = %d", mediaType.rawValue)
-        }
-
-        return PHAsset.fetchAssets(in: collection, options: options)
-    }
-
     private func prepareOutputURL(forAssetIdentifier identifier: String) -> URL {
         let url = URL(fileURLWithPath: NSTemporaryDirectory())
             .appendingPathComponent(identifier.replacingOccurrences(of: "/", with: "_"))
@@ -312,10 +306,10 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         options.deliveryMode = .opportunistic
         options.isNetworkAccessAllowed = true
 
-        manager.requestImage(for: asset,
-                             targetSize: size,
-                             contentMode: contentMode,
-                             options: options) { [weak self] (image: UIImage?, _) in
+        cachingImageManager.requestImage(for: asset,
+                                         targetSize: size,
+                                         contentMode: contentMode,
+                                         options: options) { [weak self] (image: UIImage?) in
             if let image = image {
                 self?.thumbnailCacheService.thumbnailCache.setObject(image, forKey: asset.localIdentifier as NSString)
             }
