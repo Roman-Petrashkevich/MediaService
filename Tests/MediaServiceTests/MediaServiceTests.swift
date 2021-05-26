@@ -8,11 +8,15 @@ final class MediaServiceTests: XCTestCase {
     private lazy var fetchCollectionsServiceMock = FetchCollectionServiceMock()
     private lazy var permissionsServiceMock = PermissionsServiceMock()
     private lazy var thumbnailCacheServiceMock = ThumbnailCacheServiceMock()
+    private lazy var fetchAssetServiceMock = FetchAssetsServiceMock()
+    private lazy var cachingImageManagerMock = CachingImageManagerMock()
 
     lazy var service: MediaLibraryService = {
         let service = MediaLibraryServiceImp(fetchCollectionsService: fetchCollectionsServiceMock,
                                              permissionsService: permissionsServiceMock,
-                                             thumbnailCacheService: thumbnailCacheServiceMock)
+                                             fetchAssetsService: fetchAssetServiceMock,
+                                             thumbnailCacheService: thumbnailCacheServiceMock,
+                                             cachingImageManager: cachingImageManagerMock)
         return service
     }()
 
@@ -144,42 +148,48 @@ final class MediaServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 
-    //MARK: - FetchMediaItemsResultTest
+    // MARK: - FetchMediaItemsResultTest
 
     func testFetchMediaItemsResultWithFilterAll() {
         //Given
         let mediaItemCollectionsMock: MediaItemCollection = .init(identifier: "12", title: "Recents")
-        let filter: MediaItemFilter = .all
+        let mediaTypes: [PHAssetMediaType] = [.video, .image, .image]
         let expectation = self.expectation(description: "error")
 
         //When
         service.fetchMediaItems(in: mediaItemCollectionsMock, filter: .all)
+        fetchCollectionsServiceMock.assets = [.init(), .init(), .init()]
 
         //Then
         mediaItemResultCollector.subscribe { mediaResult in
-            XCTAssertEqual(mediaItemCollectionsMock.identifier, mediaResult.collection.identifier, "is not equal identifier")
-            XCTAssertEqual(filter, mediaResult.filter, "is not equal filter")
+            mediaResult.fetchResult.enumerateObjects { _, index, _ in
+                XCTAssertEqual(mediaTypes[index], mediaResult.fetchResult.mediaType(index), "is not equal media type")
+            }
+            XCTAssertEqual(mediaTypes.count, mediaResult.fetchResult.count, "is not equal count")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 0.2)
     }
 
     func testFetchMediaItemsResultWithFilterVideo() {
         //Given
         let mediaItemCollectionsMock: MediaItemCollection = .init(identifier: "12", title: "Recents")
-        let filter: MediaItemFilter = .video
+        let mediaTypes: [PHAssetMediaType] = [.video]
         let expectation = self.expectation(description: "error")
 
         //When
         service.fetchMediaItems(in: mediaItemCollectionsMock, filter: .video)
+        fetchCollectionsServiceMock.assets = [.init()]
 
         //Then
         mediaItemResultCollector.subscribe { mediaResult in
-            XCTAssertEqual(mediaItemCollectionsMock.identifier, mediaResult.collection.identifier, "is not equal identifier")
-            XCTAssertEqual(filter, mediaResult.filter, "is not equal filter")
+            mediaResult.fetchResult.enumerateObjects { _, index, _ in
+                XCTAssertEqual(mediaTypes[index], mediaResult.fetchResult.mediaType(index), "is not equal media type")
+            }
+            XCTAssertEqual(mediaTypes.count, mediaResult.fetchResult.count, "is not equal count")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 0.2)
     }
 
     // MARK: - FetchMediaItemThumbnailTest
@@ -201,69 +211,120 @@ final class MediaServiceTests: XCTestCase {
 
     func testFetchMediaItemThumbnailFromCache() {
         //Given
-        let asset = PHAsset()
-        let mediaItem: MediaItem = .init(asset: asset)
+        let mediaItem: MediaItem = .dummy
         let pencilImage = UIImage(systemName: "pencil")
         let expectation = self.expectation(description: "error")
-        thumbnailCacheServiceMock.thumbnailCache.removeAllObjects()
 
         //When
-        thumbnailCacheServiceMock.thumbnailCache.setObject(pencilImage ?? .add, forKey: asset.localIdentifier as NSString)
-
-        //Then
-        service.fetchThumbnail(for: mediaItem, size: mediaItem.thumbnail?.size ?? .zero, contentMode: .aspectFill) { image in
-            XCTAssertEqual(mediaItem.thumbnail, image, "is not equal image")
-            expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 0.1)
-    }
-
-    func testFetchMediaItemThumbnailNil() {
-        // Given
-        let mediaItem: MediaItem = .dummy
-        let expectation = self.expectation(description: "error")
+        thumbnailCacheServiceMock.thumbnailCache.removeAllObjects()
+        thumbnailCacheServiceMock.thumbnailCache.setObject(pencilImage ?? UIImage(),
+                                                           forKey: fetchAssetServiceMock.fetchAsset.localIdentifier as NSString)
 
         //Then
         service.fetchThumbnail(for: mediaItem, size: .zero, contentMode: .aspectFill) { image in
-            XCTAssertEqual(mediaItem.thumbnail, image, "is not equal image")
-            XCTAssertNil(image, "is not equal nil")
+            XCTAssertEqual(pencilImage, image, "is not equal image")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 0.2)
     }
 
     // MARK: - FethcMediaCollectionThumbnailTest
 
     func testFetchMediaCollectionThumbnail() {
         // Given
-        let mediaItemCollectionsMock: MediaItemCollection = .init(identifier: "12", title: "Recents")
+        let mediaItemCollections: MediaItemCollection = .init(identifier: "12", title: "Recents")
         let pencilImage = UIImage(systemName: "pencil")
-        mediaItemCollectionsMock.thumbnail = pencilImage
+        mediaItemCollections.thumbnail = pencilImage
         let expectation = self.expectation(description: "error")
 
         //Then
-        service.fetchThumbnail(for: mediaItemCollectionsMock, size: pencilImage?.size ?? .zero, contentMode: .aspectFill) { image in
-            XCTAssertEqual(mediaItemCollectionsMock.thumbnail, image, "is not equal image")
+        service.fetchThumbnail(for: mediaItemCollections, size: pencilImage?.size ?? .zero, contentMode: .aspectFill) { image in
+            XCTAssertEqual(mediaItemCollections.thumbnail, image, "is not equal image")
             expectation.fulfill()
         }
 
         wait(for: [expectation], timeout: 0.1)
     }
 
-    func testFetchMediaCollectionThumbnailNil() {
+    func testFetchMediaCollectionThumbnailFromCache() {
         // Given
-        let mediaItemCollectionsMock: MediaItemCollection = .init(identifier: "12", title: "Recents")
+        let mediaItemCollection: MediaItemCollection = .init(identifier: "12", title: "Recents")
+        let pencilImage = UIImage(systemName: "pencil")
         let expectation = self.expectation(description: "error")
 
+        //When
+        thumbnailCacheServiceMock.thumbnailCache.setObject(pencilImage ?? UIImage(),
+                                                           forKey: fetchAssetServiceMock.fetchAsset.localIdentifier as NSString)
+
         //Then
-        service.fetchThumbnail(for: mediaItemCollectionsMock, size: .zero, contentMode: .aspectFill) { image in
-            XCTAssertEqual(mediaItemCollectionsMock.thumbnail, image, "is not equal image")
-            XCTAssertNil(image, "is not equal nil")
+        service.fetchThumbnail(for: mediaItemCollection, size: .zero, contentMode: .aspectFill) { image in
+            XCTAssertEqual(pencilImage, image, "is not equal image")
             expectation.fulfill()
         }
-
-        wait(for: [expectation], timeout: 0.2)
+        wait(for: [expectation], timeout: 0.4)
     }
+
+    func testFetchImage() {
+        // Given
+        let mediaItem: MediaItem = .init(asset: .init())
+        let pencilData = UIImage(systemName: "pencil")?.pngData() ?? .init()
+        let pencilImage = UIImage(data: pencilData)
+        let expectation = self.expectation(description: "error")
+
+        //When
+        cachingImageManagerMock.pencilData = pencilData
+
+        //Then
+        service.fetchImage(for: mediaItem) { image in
+            XCTAssertEqual(pencilImage?.pngData(), image?.pngData(), "is not equal image")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+    func testFetchAVAssetIsVideo() {
+        // Given
+        let mediaItem: MediaItem = .init(asset: .init())
+        let url: URL = Bundle.main.url(forResource: "VideoTest", withExtension: ".mov") ?? .init(fileURLWithPath: "")
+        let avAssetMock: AVAsset = .init(url: url)
+        let expectation = self.expectation(description: "error")
+
+        //When
+        cachingImageManagerMock.initialAVAsset = avAssetMock
+        mediaItem.type = .video(avAssetMock.duration.seconds)
+
+        //Then
+        service.fetchVideoAsset(for: mediaItem) { avAsset in
+            XCTAssertEqual(avAssetMock, avAsset, "is not equal avAsset")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+//    func testFetchAVAssetIsLivePhoto() {
+//        let mediaItem: MediaItem = .init(asset: .init())
+//        var livePhotoMock: PHLivePhoto?
+//        let expectation = self.expectation(description: "error")
+//
+//        let videoURL: URL = .init(fileURLWithPath: "/Users/evgenijsvarckopf/MediaService/Sources/MediaService/Resource/VideoTest.mov")
+//        let imageURL: URL = .init(fileURLWithPath: "/Users/evgenijsvarckopf/MediaService/Sources/MediaService/Resource/ImageTest.png")
+//
+//        PHLivePhoto.request(withResourceFileURLs: [videoURL, imageURL],
+//                            placeholderImage: nil,
+//                            targetSize: .zero,
+//                            contentMode: .default) { livePhoto, _ in
+//            livePhotoMock = livePhoto
+//        }
+//        //When
+//        mediaItem.type = .livePhoto
+//
+//        //Then
+//        service.fetchVideoAsset(for: mediaItem) { livePhoto in
+//            XCTAssertEqual(livePhoto, livePhoto, "is not equal avAsset")
+//            expectation.fulfill()
+//        }
+//        wait(for: [expectation], timeout: 0.2)
+//    }
 
     static var allTests = [
         ("testPermissionAuthorizedStatus", testPermissionAuthorizedStatus)
