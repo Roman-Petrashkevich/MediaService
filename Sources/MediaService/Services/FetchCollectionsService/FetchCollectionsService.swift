@@ -12,6 +12,7 @@ public protocol FetchCollectionsService {
                           subtype: PHAssetCollectionSubtype,
                           options: PHFetchOptions?) -> [MediaItemCollection]
     func fetchAssetCollections(localIdentifiers: [String], options: PHFetchOptions?) -> PHAssetCollection?
+    func fetchMediaItems(in collection: PHAssetCollection, mediaType: PHAssetMediaType?) -> PHFetchResult<PHAsset>?
 }
 
 public class FetchCollectionsServiceImp: FetchCollectionsService {
@@ -35,6 +36,17 @@ public class FetchCollectionsServiceImp: FetchCollectionsService {
             return nil
         }
         return assetCollection
+    }
+
+    public func fetchMediaItems(in collection: PHAssetCollection,
+                                mediaType: PHAssetMediaType?) -> PHFetchResult<PHAsset>? {
+        let options = PHFetchOptions()
+
+        if let mediaType = mediaType {
+            options.predicate = NSPredicate(format: "mediaType = %d", mediaType.rawValue)
+        }
+
+        return PHAsset.fetchAssets(in: collection, options: options)
     }
 
     public init() {}
