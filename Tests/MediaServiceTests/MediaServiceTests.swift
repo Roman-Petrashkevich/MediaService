@@ -322,6 +322,24 @@ final class MediaServiceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.1)
     }
+
+    func testFetchImageNil() {
+        // Given
+        let mediaItem: MediaItem = .init(asset: .init())
+        let expectation = self.expectation(description: "error")
+
+        //When
+        cachingImageManagerMock.pencilData = nil
+
+        //Then
+        service.fetchImage(for: mediaItem) { image in
+            XCTAssertNil(image, "is not nil")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+    func testFetchAVAssetVideo() {
         // Given
         let mediaItem: MediaItem = .init(asset: .init())
         let url: URL = .init(fileURLWithPath: bundle.path(forResource: "VideoTest", ofType: "mov") ?? "")
