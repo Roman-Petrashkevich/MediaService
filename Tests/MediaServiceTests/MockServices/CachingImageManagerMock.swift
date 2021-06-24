@@ -12,8 +12,15 @@ import MediaService
 final class CachingImageManagerMock: CachingImageManager {
     var pencilData: Data?
     var initialAVAsset: AVAsset?
-    private let videoURL: URL = .init(fileURLWithPath: "/Users/evgenijsvarckopf/MediaService/Sources/MediaService/Resource/VideoTest.mov")
-    private let imageURL: URL = .init(fileURLWithPath: "/Users/evgenijsvarckopf/MediaService/Sources/MediaService/Resource/ImageTest.png")
+    var bundle: Bundle {
+        Bundle(for: Self.self)
+    }
+    var videoURL: URL {
+        URL(fileURLWithPath: bundle.path(forResource: "VideoTest", ofType: "mov") ?? "")
+    }
+    var imageURL: URL {
+        URL(fileURLWithPath: bundle.path(forResource: "ImageTest", ofType: "png") ?? "")
+    }
 
     func requestImageData(for asset: PHAsset,
                           options: PHImageRequestOptions?,

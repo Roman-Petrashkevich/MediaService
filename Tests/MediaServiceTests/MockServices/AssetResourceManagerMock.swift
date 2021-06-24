@@ -14,7 +14,9 @@ final class AssetResourceManagerMock: AssetResourceManager {
                    toFile url: URL,
                    options: PHAssetResourceRequestOptions?,
                    completion: @escaping (AVURLAsset) -> Void) {
-        let videoURL: URL = .init(fileURLWithPath: "/Users/evgenijsvarckopf/MediaService/Sources/MediaService/Resource/VideoTest.mov")
+        var videoURL: URL {
+            URL(fileURLWithPath: Bundle(for: Self.self).path(forResource: "VideoTest", ofType: "mov") ?? "")
+        }
         let asset = AVURLAsset(url: videoURL, options: [AVURLAssetPreferPreciseDurationAndTimingKey: true])
         completion(asset)
     }
