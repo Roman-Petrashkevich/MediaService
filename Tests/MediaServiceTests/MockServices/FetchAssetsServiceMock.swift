@@ -10,8 +10,8 @@ import Photos
 
 final class FetchAssetsServiceMock: FetchAssetsService {
 
-    var fetchAsset: PHAsset = .init()
-    var makeAsset: PHAsset = .init()
+    var fetchAsset: PHAsset? = .init()
+    var makeAsset: PHAsset? = .init()
 
     func fetchAssets(assetCollection: PHAssetCollection) -> PHAsset? {
         fetchAsset
