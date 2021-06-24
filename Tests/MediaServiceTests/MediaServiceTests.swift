@@ -307,30 +307,6 @@ final class MediaServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 
-//    func testFetchAVAssetIsLivePhoto() {
-//        let mediaItem: MediaItem = .init(asset: .init())
-//        var livePhotoMock: PHLivePhoto?
-//        let expectation = self.expectation(description: "error")
-//
-//        let videoURL: URL = .init(fileURLWithPath: "/Users/evgenijsvarckopf/MediaService/Sources/MediaService/Resource/VideoTest.mov")
-//        let imageURL: URL = .init(fileURLWithPath: "/Users/evgenijsvarckopf/MediaService/Sources/MediaService/Resource/ImageTest.png")
-//
-//        PHLivePhoto.request(withResourceFileURLs: [videoURL, imageURL],
-//                            placeholderImage: nil,
-//                            targetSize: .zero,
-//                            contentMode: .default) { livePhoto, _ in
-//            livePhotoMock = livePhoto
-//        }
-//        //When
-//        mediaItem.type = .livePhoto
-//
-//        //Then
-//        service.fetchVideoAsset(for: mediaItem) { livePhoto in
-//            XCTAssertEqual(livePhoto, livePhoto, "is not equal avAsset")
-//            expectation.fulfill()
-//        }
-//        wait(for: [expectation], timeout: 0.2)
-//    }
     func testFetchAVAssetLivePhoto() {
         // Given
         let mediaItem: MediaItem = .init(asset: .init())
@@ -345,6 +321,25 @@ final class MediaServiceTests: XCTestCase {
         //Then
         service.fetchVideoAsset(for: mediaItem) { avAsset in
             XCTAssertEqual(avAssetMock.commonMetadata, avAsset?.commonMetadata, "is not equal metadata")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.2)
+    }
+
+    func testFetchAVAssetLivePhotoIsNotEqual() {
+        // Given
+        let mediaItem: MediaItem = .init(asset: .init())
+        let expectation = self.expectation(description: "error")
+        let videoURL: URL = .init(fileURLWithPath: bundle.path(forResource: "VideoTest2", ofType: "mov") ?? "")
+        let assetMock = AVURLAsset(url: videoURL, options: [AVURLAssetPreferPreciseDurationAndTimingKey: true])
+        let avAssetMock = AVAsset(url: assetMock.url)
+
+        //When
+        mediaItem.type = .livePhoto
+
+        //Then
+        service.fetchVideoAsset(for: mediaItem) { avAsset in
+            XCTAssertNotEqual(avAssetMock.commonMetadata, avAsset?.commonMetadata, "is equal metadata")
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.2)
