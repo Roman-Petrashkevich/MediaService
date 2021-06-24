@@ -331,6 +331,24 @@ final class MediaServiceTests: XCTestCase {
 //        }
 //        wait(for: [expectation], timeout: 0.2)
 //    }
+    func testFetchAVAssetLivePhoto() {
+        // Given
+        let mediaItem: MediaItem = .init(asset: .init())
+        let expectation = self.expectation(description: "error")
+        let videoURL: URL = .init(fileURLWithPath: bundle.path(forResource: "VideoTest", ofType: "mov") ?? "")
+        let assetMock = AVURLAsset(url: videoURL, options: [AVURLAssetPreferPreciseDurationAndTimingKey: true])
+        let avAssetMock = AVAsset(url: assetMock.url)
+
+        //When
+        mediaItem.type = .livePhoto
+
+        //Then
+        service.fetchVideoAsset(for: mediaItem) { avAsset in
+            XCTAssertEqual(avAssetMock.commonMetadata, avAsset?.commonMetadata, "is not equal metadata")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.2)
+    }
 
     static var allTests = [
         ("testPermissionAuthorizedStatus", testPermissionAuthorizedStatus)
