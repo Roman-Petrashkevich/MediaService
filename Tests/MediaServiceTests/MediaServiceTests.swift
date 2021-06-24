@@ -308,7 +308,7 @@ final class MediaServiceTests: XCTestCase {
     func testFetchAVAssetIsVideo() {
         // Given
         let mediaItem: MediaItem = .init(asset: .init())
-        let url: URL = Bundle.main.url(forResource: "VideoTest", withExtension: ".mov") ?? .init(fileURLWithPath: "")
+        let url: URL = .init(fileURLWithPath: bundle.path(forResource: "VideoTest", ofType: "mov") ?? "")
         let avAssetMock: AVAsset = .init(url: url)
         let expectation = self.expectation(description: "error")
 
