@@ -305,7 +305,6 @@ final class MediaServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 
-    func testFetchAVAssetIsVideo() {
     func testFetchImageIsNotEqual() {
         // Given
         let mediaItem: MediaItem = .init(asset: .init())
