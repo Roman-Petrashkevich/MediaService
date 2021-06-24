@@ -72,7 +72,7 @@ final class GalleryCellItem: CollectionViewDiffCellItem {
         return .init(width: width, height: height)
     }
 
-    func fetchTimeDescription(_ timeInterval: TimeInterval) -> String {
+    private func fetchTimeDescription(_ timeInterval: TimeInterval) -> String {
         let second = Int(timeInterval)
         let timeDescription = NSString(format: "%02d:%02d", second / 60, second % 60) as String
         return timeDescription

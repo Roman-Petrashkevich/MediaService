@@ -21,7 +21,6 @@ final class GalleryViewController: UIViewController {
     }()
 
     private lazy var collectionViewManager: CollectionViewManager = .init(collectionView: collectionView)
-
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -30,7 +29,6 @@ final class GalleryViewController: UIViewController {
         collectionView.contentInsetAdjustmentBehavior = .never
         return collectionView
     }()
-
     private lazy var galleryFactory: GalleryFactory = .init(output: self, mediaService: mediaService)
 
     init(mediaService: MediaLibraryServiceImp, mediaItemCollection: MediaItemCollection) {
@@ -51,7 +49,7 @@ final class GalleryViewController: UIViewController {
         view.addSubview(collectionView)
         view.backgroundColor = .black
         mediaService.fetchMediaItems(in: mediaItemCollection)
-        mediaItemResultCollectorEventTriggered()
+        resultCollectorEventTriggered()
     }
 
     override func viewDidLayoutSubviews() {
@@ -61,17 +59,14 @@ final class GalleryViewController: UIViewController {
         }
     }
 
-    private func mediaItemResultCollectorEventTriggered() {
+    private func resultCollectorEventTriggered() {
         mediaItemResultCollector.subscribe { [weak self] mediaItemFetchResult in
-            guard let self = self else {
-                return
-            }
-            self.updateCollectionManager(with: mediaItemFetchResult.fetchResult)
+            self?.updateCollectionManager(with: mediaItemFetchResult.fetchResult)
         }
     }
 
-    private func updateCollectionManager(with results: PHFetchResult<PHAsset>) {
-        let sectionItem = galleryFactory.makeSectionItem(results: results)
+    private func updateCollectionManager(with result: PHFetchResult<PHAsset>) {
+        let sectionItem = galleryFactory.makeSectionItem(result: result)
         collectionViewManager.update(with: sectionItem, animated: true)
     }
 }

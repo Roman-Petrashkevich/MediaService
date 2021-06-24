@@ -12,7 +12,7 @@ final class MainViewController: UIViewController {
 
     let mediaService = MediaLibraryServiceImp()
 
-    private var mediaItemsCollection: [MediaItemCollection] = []
+    private var mediaItemsCollections: [MediaItemCollection] = []
 
     private lazy var collectionsCollector: Collector<[MediaItemCollection]> = {
         return .init(source: mediaService.collectionsEventSource)
@@ -23,7 +23,6 @@ final class MainViewController: UIViewController {
     }()
 
     private lazy var collectionViewManager: CollectionViewManager = .init(collectionView: collectionView)
-
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -31,14 +30,14 @@ final class MainViewController: UIViewController {
         collectionView.backgroundColor = .clear
         return collectionView
     }()
-
     private lazy var mainFactory: MainFactory = .init(output: self, mediaService: mediaService)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Album"
+        navigationController?.navigationBar.backgroundColor = .white
         view.addSubview(collectionView)
-        view.backgroundColor = .gray
+        view.backgroundColor = .black
         mediaService.requestMediaLibraryPermissions()
         permissionStatusEventTriggered()
     }
@@ -50,7 +49,7 @@ final class MainViewController: UIViewController {
         }
     }
 
-    func displayGalleryEventTriggered(with mediaItemCollection: MediaItemCollection) {
+    func selectAlbumEventTriggered(with mediaItemCollection: MediaItemCollection) {
         let galleryViewController = GalleryViewController(mediaService: mediaService, mediaItemCollection: mediaItemCollection)
         navigationController?.pushViewController(galleryViewController, animated: true)
     }
@@ -58,24 +57,26 @@ final class MainViewController: UIViewController {
     private func permissionStatusEventTriggered() {
         permissionStatusCollector.subscribe { [weak self] status in
             switch status {
-            case .authorized:
+            case .authorized, .limited:
                 self?.mediaService.fetchMediaItemCollections()
-                self?.collectionCollectorEventTriggered()
+                self?.collectionsCollectorEventTriggered()
+            case .notDetermined, .denied, .restricted:
+                self?.mediaService.requestMediaLibraryPermissions()
             default:
                  break
             }
         }
     }
 
-    private func collectionCollectorEventTriggered() {
-        collectionsCollector.subscribe { [weak self] (mediaItemsCollection: [MediaItemCollection]) in
-            self?.mediaItemsCollection = mediaItemsCollection
+    private func collectionsCollectorEventTriggered() {
+        collectionsCollector.subscribe { [weak self] (mediaItemsCollections: [MediaItemCollection]) in
+            self?.mediaItemsCollections = mediaItemsCollections
             self?.updateCollectionManager()
         }
     }
 
     private func updateCollectionManager() {
-        let sectionItem = mainFactory.makeSectionItem(mediaItemsCollection: mediaItemsCollection)
+        let sectionItem = mainFactory.makeSectionItem(mediaItemsCollections: mediaItemsCollections)
         collectionViewManager.update(with: sectionItem, animated: true)
     }
 }

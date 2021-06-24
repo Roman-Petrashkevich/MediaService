@@ -19,9 +19,9 @@ final class GalleryFactory {
         self.mediaService = mediaService
     }
 
-    func makeSectionItem(results: PHFetchResult<PHAsset>) -> [GeneralCollectionViewDiffSectionItem] {
+    func makeSectionItem(result: PHFetchResult<PHAsset>) -> [GeneralCollectionViewDiffSectionItem] {
         var cellItems: [GalleryCellItem] = []
-        results.enumerateObjects { [weak self] asset, _, _ in
+        result.enumerateObjects { [weak self] asset, _, _ in
             guard let self = self else {
                 return
             }

@@ -210,6 +210,14 @@
 			path = MockServices;
 			sourceTree = "<group>";
 		};
+		A92E3F8E2684943B00B98587 /* CachingImageManager */ = {
+			isa = PBXGroup;
+			children = (
+				A9629B67265780C100A1F85E /* CachingImageManager.swift */,
+			);
+			path = CachingImageManager;
+			sourceTree = "<group>";
+		};
 		A96834B2265F96A100EC28CC /* AssetResourceManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +362,7 @@
 		A9FC82302622D37C00074494 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A92E3F8E2684943B00B98587 /* CachingImageManager */,
 				A96834B2265F96A100EC28CC /* AssetResourceManager */,
 				A9E76091263ACFFF00929668 /* ThumbnailCacheService */,
 				A9E7608D263ACD0100929668 /* FetchAssetsService */,
@@ -370,7 +379,6 @@
 			children = (
 				A9FC82332622D37C00074494 /* MediaLibraryServiceImp.swift */,
 				A9FC82342622D37C00074494 /* MediaLibraryService.swift */,
-				A9629B67265780C100A1F85E /* CachingImageManager.swift */,
 			);
 			path = MediaLibraryService;
 			sourceTree = "<group>";

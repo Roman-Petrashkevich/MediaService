@@ -18,13 +18,13 @@ final class MainFactory {
         self.mediaService = mediaService
     }
 
-    func makeSectionItem(mediaItemsCollection: [MediaItemCollection]) -> [GeneralCollectionViewDiffSectionItem] {
-        let cellItem = mediaItemsCollection.map { mediaItemsCollection in
+    func makeSectionItem(mediaItemsCollections: [MediaItemCollection]) -> [GeneralCollectionViewDiffSectionItem] {
+        let cellItems = mediaItemsCollections.map { mediaItemsCollection in
             makeCellItem(mediaItemsCollection: mediaItemsCollection)
         }
 
         let sectionItem = GeneralCollectionViewDiffSectionItem()
-        sectionItem.cellItems = cellItem
+        sectionItem.cellItems = cellItems
         sectionItem.minimumLineSpacing = 10
         sectionItem.minimumInteritemSpacing = 10
         return [sectionItem]
@@ -34,7 +34,7 @@ final class MainFactory {
         let cellItem = MainCellItem(mediaItemCollection: mediaItemsCollection, mediaService: mediaService)
 
         cellItem.itemDidSelectHandler = { [weak self] _ in
-            self?.output?.displayGalleryEventTriggered(with: mediaItemsCollection)
+            self?.output?.selectAlbumEventTriggered(with: mediaItemsCollection)
         }
 
         return cellItem
