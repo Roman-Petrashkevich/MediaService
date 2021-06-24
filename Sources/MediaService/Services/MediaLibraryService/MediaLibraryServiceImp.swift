@@ -30,17 +30,20 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
     private let fetchAssetsService: FetchAssetsService
     private let thumbnailCacheService: ThumbnailCacheService
     private let cachingImageManager: CachingImageManager
+    private let assetResourceManager: AssetResourceManager
 
     public init(fetchCollectionsService: FetchCollectionsService = FetchCollectionsServiceImp(),
                 permissionsService: PermissionsService = PermissionsServiceImp(),
                 fetchAssetsService: FetchAssetsService = FetchAssetsServiceImp(),
                 thumbnailCacheService: ThumbnailCacheService = ThumbnailCacheServiceImp(),
-                cachingImageManager: CachingImageManager = CachingImageManagerImp()) {
+                cachingImageManager: CachingImageManager = CachingImageManagerImp(),
+                assetResourceManager: AssetResourceManager = AssetResourceManagerImp()) {
         self.fetchCollectionsService = fetchCollectionsService
         self.permissionsService = permissionsService
         self.fetchAssetsService = fetchAssetsService
         self.thumbnailCacheService = thumbnailCacheService
         self.cachingImageManager = cachingImageManager
+        self.assetResourceManager = assetResourceManager
     }
 
     // MARK: - Permissions
@@ -257,14 +260,12 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                 let url = self.prepareOutputURL(forAssetIdentifier: videoResource.assetLocalIdentifier)
                 let requestOptions = PHAssetResourceRequestOptions()
                 requestOptions.isNetworkAccessAllowed = true
-
-                PHAssetResourceManager.default().writeData(for: videoResource,
-                                                           toFile: url,
-                                                           options: requestOptions,
-                                                           completionHandler: { _ in
+                self.assetResourceManager.writeData(for: videoResource,
+                                                    toFile: url,
+                                                    options: requestOptions,
+                                                    completion: { asset in
                     DispatchQueue.main.async {
                         self.mediaItemFetchProgressEmitter.discard()
-                        let asset = AVURLAsset(url: url, options: [AVURLAssetPreferPreciseDurationAndTimingKey: true])
                         completion(asset)
                     }
                 })
