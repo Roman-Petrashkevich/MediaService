@@ -10,13 +10,15 @@ final class MediaServiceTests: XCTestCase {
     private lazy var thumbnailCacheServiceMock = ThumbnailCacheServiceMock()
     private lazy var fetchAssetServiceMock = FetchAssetsServiceMock()
     private lazy var cachingImageManagerMock = CachingImageManagerMock()
+    private lazy var assetResourceManagerMock = AssetResourceManagerMock()
 
     lazy var service: MediaLibraryService = {
         let service = MediaLibraryServiceImp(fetchCollectionsService: fetchCollectionsServiceMock,
                                              permissionsService: permissionsServiceMock,
                                              fetchAssetsService: fetchAssetServiceMock,
                                              thumbnailCacheService: thumbnailCacheServiceMock,
-                                             cachingImageManager: cachingImageManagerMock)
+                                             cachingImageManager: cachingImageManagerMock,
+                                             assetResourceManager: assetResourceManagerMock)
         return service
     }()
 
