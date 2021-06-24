@@ -210,6 +210,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         }
     }
 
+    // swiftlint:disable:next function_body_length
     public func fetchVideoAsset(for item: MediaItem, completion: @escaping Completion<AVAsset?>) {
         guard let asset = fetchAssetsService.makeAsset(item: item) else {
             completion(nil)
