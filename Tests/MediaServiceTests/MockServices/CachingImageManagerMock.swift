@@ -9,7 +9,7 @@ import UIKit
 import Photos
 import MediaService
 
-final class CachingImageManagerMock: PHCachingImageManager, CachingImageManager {
+final class CachingImageManagerMock: CachingImageManager {
     var pencilData: Data?
     var initialAVAsset: AVAsset?
     private let videoURL: URL = .init(fileURLWithPath: "/Users/evgenijsvarckopf/MediaService/Sources/MediaService/Resource/VideoTest.mov")
@@ -30,6 +30,9 @@ final class CachingImageManagerMock: PHCachingImageManager, CachingImageManager 
                             placeholderImage: nil,
                             targetSize: .zero,
                             contentMode: .default) { livePhoto, _ in
+            guard livePhoto != nil else {
+                return
+            }
             resultHandler(livePhoto)
         }
     }
@@ -45,8 +48,6 @@ final class CachingImageManagerMock: PHCachingImageManager, CachingImageManager 
                       contentMode: PHImageContentMode,
                       options: PHImageRequestOptions?,
                       resultHandler: @escaping (UIImage?) -> Void) {
-        requestImage(for: asset, targetSize: targetSize, contentMode: contentMode, options: options) { image, _ in
-            resultHandler(image)
-        }
+        resultHandler(UIImage.init(systemName: "pencil"))
     }
 }
