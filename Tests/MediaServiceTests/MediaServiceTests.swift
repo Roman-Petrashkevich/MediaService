@@ -232,6 +232,23 @@ final class MediaServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 
+    func testFetchMediaItemThumbnailIsNil() {
+        // Given
+        let mediaItem: MediaItem = .dummy
+        let expectation = self.expectation(description: "error")
+
+        //When
+        fetchAssetServiceMock.makeAsset = nil
+        thumbnailCacheServiceMock.thumbnailCache.removeAllObjects()
+
+        //Then
+        service.fetchThumbnail(for: mediaItem, size: .zero, contentMode: .aspectFill) { image in
+            XCTAssertNil(image, "is not nil")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5)
+    }
+
     func testFetchMediaItemThumbnailFromCache() {
         //Given
         let mediaItem: MediaItem = .dummy
