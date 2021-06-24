@@ -306,6 +306,23 @@ final class MediaServiceTests: XCTestCase {
     }
 
     func testFetchAVAssetIsVideo() {
+    func testFetchImageIsNotEqual() {
+        // Given
+        let mediaItem: MediaItem = .init(asset: .init())
+        let pencilData = UIImage(systemName: "pencil")?.pngData() ?? .init()
+        let pencilImage = UIImage(systemName: "pencil")
+        let expectation = self.expectation(description: "error")
+
+        //When
+        cachingImageManagerMock.pencilData = pencilData
+
+        //Then
+        service.fetchImage(for: mediaItem) { image in
+            XCTAssertNotEqual(pencilImage?.pngData(), image?.pngData(), "is equal image")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
         // Given
         let mediaItem: MediaItem = .init(asset: .init())
         let url: URL = .init(fileURLWithPath: bundle.path(forResource: "VideoTest", ofType: "mov") ?? "")
