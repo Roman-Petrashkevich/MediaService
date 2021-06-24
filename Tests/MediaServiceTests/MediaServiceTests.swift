@@ -376,6 +376,33 @@ final class MediaServiceTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 0.1)
     }
+
+    func testFetchAVAssetIsNotEqual() {
+        // Given
+        let mediaItem: MediaItem = .init(asset: .init())
+        let url: URL = .init(fileURLWithPath: bundle.path(forResource: "VideoTest2", ofType: "mov") ?? "")
+        let avAssetMock: AVAsset = .init(url: url)
+        let expectation = self.expectation(description: "error")
+
+        //When
+        mediaItem.type = .video(avAssetMock.duration.seconds)
+
+        //Then
+        service.fetchVideoAsset(for: mediaItem) { avAsset in
+            XCTAssertNotEqual(avAssetMock.metadata, avAsset?.metadata, "is equal metadata")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.1)
+    }
+
+    func testFetchAVAssetIsNil() {
+        // Given
+        let mediaItem: MediaItem = .init(asset: .init())
+        let expectation = self.expectation(description: "error")
+
+        //Then
+        service.fetchVideoAsset(for: mediaItem) { avAsset in
+            XCTAssertNil(avAsset, "is not nil")
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.1)
@@ -414,6 +441,19 @@ final class MediaServiceTests: XCTestCase {
         //Then
         service.fetchVideoAsset(for: mediaItem) { avAsset in
             XCTAssertNotEqual(avAssetMock.commonMetadata, avAsset?.commonMetadata, "is equal metadata")
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 0.2)
+    }
+
+    func testFetchAVAssetLivePhotoIsNil() {
+        // Given
+        let mediaItem: MediaItem = .init(asset: .init())
+        let expectation = self.expectation(description: "error")
+
+        //Then
+        service.fetchVideoAsset(for: mediaItem) { avAsset in
+            XCTAssertNil(avAsset?.commonMetadata, "is not nil")
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.2)
