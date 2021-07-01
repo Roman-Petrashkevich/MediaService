@@ -7,11 +7,9 @@ import Photos
 
 typealias ServicesAlias = HasMediaLibraryService
 
-var Services: MainServicesFactory = { // swiftlint:disable:this variable_name
-    return MainServicesFactory()
-}()
+// swiftlint:disable:this variable_name
+var Services: MainServicesFactory = .init()
 
 final class MainServicesFactory: ServicesAlias {
-
     lazy var mediaLibraryService: MediaLibraryService = MediaLibraryServiceImp()
 }

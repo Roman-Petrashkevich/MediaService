@@ -16,10 +16,10 @@ final class MainCellItem: CollectionViewDiffCellItem {
         mediaItemCollection.identifier
     }
 
-    private let mediaItemCollection: MediaItemCollection
+    private let mediaItemCollection: MediaItemsCollection
     private let mediaService: MediaLibraryServiceImp
 
-    init(mediaItemCollection: MediaItemCollection, mediaService: MediaLibraryServiceImp) {
+    init(mediaItemCollection: MediaItemsCollection, mediaService: MediaLibraryServiceImp) {
         self.mediaItemCollection = mediaItemCollection
         self.mediaService = mediaService
     }

@@ -11,11 +11,11 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
     private lazy var permissionStatusEmitter: Emitter<PHAuthorizationStatus> = .init()
     public lazy var permissionStatusEventSource: AnyEventSource<PHAuthorizationStatus> = .init(permissionStatusEmitter)
 
-    private lazy var mediaItemsEmitter: Emitter<MediaItemFetchResult> = .init()
-    public lazy var mediaItemsEventSource: AnyEventSource<MediaItemFetchResult> = .init(mediaItemsEmitter)
+    private lazy var mediaItemsEmitter: Emitter<MediaItemsFetchResult> = .init()
+    public lazy var mediaItemsEventSource: AnyEventSource<MediaItemsFetchResult> = .init(mediaItemsEmitter)
 
-    private lazy var collectionsEmitter: Emitter<[MediaItemCollection]> = .init()
-    public lazy var collectionsEventSource: AnyEventSource<[MediaItemCollection]> = .init(collectionsEmitter)
+    private lazy var collectionsEmitter: Emitter<[MediaItemsCollection]> = .init()
+    public lazy var collectionsEventSource: AnyEventSource<[MediaItemsCollection]> = .init(collectionsEmitter)
 
     private lazy var mediaLibraryUpdateEmitter: Emitter<PHChange> = .init()
     public lazy var mediaLibraryUpdateEventSource: AnyEventSource<PHChange> = .init(mediaLibraryUpdateEmitter)
@@ -60,7 +60,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
 
     public func fetchMediaItemCollections() {
         DispatchQueue.global(qos: .background).async {
-            var collections = [MediaItemCollection]()
+            var collections = [MediaItemsCollection]()
 
             if let userLibraryCollection = self.fetchCollectionsService.fetchCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil).first {
                 collections.append(userLibraryCollection)
@@ -84,7 +84,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         }
     }
 
-    public func fetchMediaItems(in collection: MediaItemCollection?, filter: MediaItemFilter = .all) {
+    public func fetchMediaItems(in collection: MediaItemsCollection?, filter: MediaItemFilter = .all) {
         guard let collection = collection else {
             let collection = fetchCollectionsService.fetchCollections(with: .smartAlbum,
                                                                       subtype: .smartAlbumUserLibrary,
@@ -106,7 +106,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
 
             DispatchQueue.main.async {
                 self.registerForMediaLibraryUpdatesIfNeeded()
-                let result = MediaItemFetchResult(collection: collection, filter: filter, fetchResult: fetchResult)
+                let result = MediaItemsFetchResult(collection: collection, filter: filter, fetchResult: fetchResult)
                 self.mediaItemsEmitter.replace(result)
             }
         }
@@ -140,7 +140,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         }
     }
 
-    public func fetchThumbnail(for collection: MediaItemCollection,
+    public func fetchThumbnail(for collection: MediaItemsCollection,
                                size: CGSize,
                                contentMode: PHImageContentMode,
                                completion: @escaping Completion<UIImage?>) {

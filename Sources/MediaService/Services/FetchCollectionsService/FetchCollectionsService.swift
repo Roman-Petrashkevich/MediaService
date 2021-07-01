@@ -10,7 +10,7 @@ import Photos
 public protocol FetchCollectionsService {
     func fetchCollections(with type: PHAssetCollectionType,
                           subtype: PHAssetCollectionSubtype,
-                          options: PHFetchOptions?) -> [MediaItemCollection]
+                          options: PHFetchOptions?) -> [MediaItemsCollection]
     func fetchAssetCollections(localIdentifiers: [String], options: PHFetchOptions?) -> PHAssetCollection?
     func fetchMediaItems(in collection: PHAssetCollection, mediaType: PHAssetMediaType?) -> PHFetchResult<PHAsset>?
 }
@@ -18,13 +18,13 @@ public protocol FetchCollectionsService {
 public class FetchCollectionsServiceImp: FetchCollectionsService {
     public func fetchCollections(with type: PHAssetCollectionType,
                                  subtype: PHAssetCollectionSubtype,
-                                 options: PHFetchOptions? = nil) -> [MediaItemCollection] {
+                                 options: PHFetchOptions? = nil) -> [MediaItemsCollection] {
         let result = PHAssetCollection.fetchAssetCollections(with: type,
                                                              subtype: subtype,
                                                              options: options)
-        var collections = [MediaItemCollection]()
+        var collections = [MediaItemsCollection]()
         result.enumerateObjects { collection, _, _ in
-            let collection = MediaItemCollection(collection: collection)
+            let collection = MediaItemsCollection(collection: collection)
             collections.append(collection)
         }
         return collections

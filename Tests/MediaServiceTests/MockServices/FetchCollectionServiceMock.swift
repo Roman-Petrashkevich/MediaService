@@ -9,12 +9,12 @@ import Photos
 import MediaService
 
 final class FetchCollectionServiceMock: FetchCollectionsService {
-    private let mediaCollection: MediaItemCollection = .init(identifier: "12", title: "Recents")
+    private let mediaCollection: MediaItemsCollection = .init(identifier: "12", title: "Recents")
     var assets: [PHAsset] = []
 
     func fetchCollections(with type: PHAssetCollectionType,
                           subtype: PHAssetCollectionSubtype,
-                          options: PHFetchOptions?) -> [MediaItemCollection] {
+                          options: PHFetchOptions?) -> [MediaItemsCollection] {
         [mediaCollection]
     }
 

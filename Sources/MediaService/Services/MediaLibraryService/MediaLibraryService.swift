@@ -17,8 +17,8 @@ public protocol MediaLibraryService: AnyObject {
     // MARK: - Sources
 
     var permissionStatusEventSource: AnyEventSource<PHAuthorizationStatus> { get }
-    var mediaItemsEventSource: AnyEventSource<MediaItemFetchResult> { get }
-    var collectionsEventSource: AnyEventSource<[MediaItemCollection]> { get }
+    var mediaItemsEventSource: AnyEventSource<MediaItemsFetchResult> { get }
+    var collectionsEventSource: AnyEventSource<[MediaItemsCollection]> { get }
     var mediaLibraryUpdateEventSource: AnyEventSource<PHChange> { get }
     var mediaItemFetchProgressEventSource: AnyEventSource<Float> { get }
 
@@ -29,12 +29,12 @@ public protocol MediaLibraryService: AnyObject {
     // MARK: - Lists
 
     func fetchMediaItemCollections()
-    func fetchMediaItems(in collection: MediaItemCollection?, filter: MediaItemFilter)
+    func fetchMediaItems(in collection: MediaItemsCollection?, filter: MediaItemFilter)
 
     // MARK: - Thumbnails
 
     func fetchThumbnail(for item: MediaItem, size: CGSize, contentMode: PHImageContentMode, completion: @escaping Completion<UIImage?>)
-    func fetchThumbnail(for collection: MediaItemCollection,
+    func fetchThumbnail(for collection: MediaItemsCollection,
                         size: CGSize,
                         contentMode: PHImageContentMode,
                         completion: @escaping Completion<UIImage?>)

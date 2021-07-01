@@ -4,12 +4,12 @@
 
 import Photos
 
-public final class MediaItemFetchResult {
-    public let collection: MediaItemCollection
+public final class MediaItemsFetchResult {
+    public let collection: MediaItemsCollection
     public let filter: MediaItemFilter
     public let fetchResult: PHFetchResult<PHAsset>
 
-    public init(collection: MediaItemCollection, filter: MediaItemFilter, fetchResult: PHFetchResult<PHAsset>) {
+    public init(collection: MediaItemsCollection, filter: MediaItemFilter, fetchResult: PHFetchResult<PHAsset>) {
         self.collection = collection
         self.filter = filter
         self.fetchResult = fetchResult

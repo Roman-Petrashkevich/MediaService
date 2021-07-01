@@ -14,9 +14,9 @@ import CollectionViewTools
 final class GalleryViewController: UIViewController {
 
     private let mediaService: MediaLibraryServiceImp
-    private let mediaItemCollection: MediaItemCollection
+    private let mediaItemCollection: MediaItemsCollection
 
-    private lazy var mediaItemResultCollector: Collector<MediaItemFetchResult> = {
+    private lazy var mediaItemResultCollector: Collector<MediaItemsFetchResult> = {
         return .init(source: mediaService.mediaItemsEventSource)
     }()
 
@@ -31,7 +31,7 @@ final class GalleryViewController: UIViewController {
     }()
     private lazy var galleryFactory: GalleryFactory = .init(output: self, mediaService: mediaService)
 
-    init(mediaService: MediaLibraryServiceImp, mediaItemCollection: MediaItemCollection) {
+    init(mediaService: MediaLibraryServiceImp, mediaItemCollection: MediaItemsCollection) {
         self.mediaService = mediaService
         self.mediaItemCollection = mediaItemCollection
         super.init(nibName: nil, bundle: nil)

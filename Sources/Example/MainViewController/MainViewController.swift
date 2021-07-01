@@ -12,9 +12,9 @@ final class MainViewController: UIViewController {
 
     let mediaService = MediaLibraryServiceImp()
 
-    private var mediaItemsCollections: [MediaItemCollection] = []
+    private var mediaItemsCollections: [MediaItemsCollection] = []
 
-    private lazy var collectionsCollector: Collector<[MediaItemCollection]> = {
+    private lazy var collectionsCollector: Collector<[MediaItemsCollection]> = {
         return .init(source: mediaService.collectionsEventSource)
     }()
 
@@ -49,7 +49,7 @@ final class MainViewController: UIViewController {
         }
     }
 
-    func selectAlbumEventTriggered(with mediaItemCollection: MediaItemCollection) {
+    func selectAlbumEventTriggered(with mediaItemCollection: MediaItemsCollection) {
         let galleryViewController = GalleryViewController(mediaService: mediaService, mediaItemCollection: mediaItemCollection)
         navigationController?.pushViewController(galleryViewController, animated: true)
     }
@@ -69,7 +69,7 @@ final class MainViewController: UIViewController {
     }
 
     private func collectionsCollectorEventTriggered() {
-        collectionsCollector.subscribe { [weak self] (mediaItemsCollections: [MediaItemCollection]) in
+        collectionsCollector.subscribe { [weak self] (mediaItemsCollections: [MediaItemsCollection]) in
             self?.mediaItemsCollections = mediaItemsCollections
             self?.updateCollectionManager()
         }

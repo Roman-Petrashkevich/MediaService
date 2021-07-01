@@ -5,7 +5,7 @@
 import UIKit
 import Photos
 
-public final class MediaItemCollection {
+public final class MediaItemsCollection {
 
     public var identifier: String
     public var title: String?
@@ -25,7 +25,7 @@ public final class MediaItemCollection {
     }
 }
 
-public extension MediaItemCollection {
+public extension MediaItemsCollection {
 
     convenience init(collection: PHAssetCollection) {
         self.init(identifier: collection.localIdentifier, title: collection.localizedTitle)
@@ -33,7 +33,7 @@ public extension MediaItemCollection {
     }
 }
 
-extension MediaItemCollection: CustomStringConvertible {
+extension MediaItemsCollection: CustomStringConvertible {
 
     public var description: String {
         return title ?? identifier

@@ -5,6 +5,17 @@ import Photos
 
 final class MediaServiceTests: XCTestCase {
 
+//    public typealias Dependencies = HasFetchCollectionsService &
+//                                    HasPermissionsService &
+//                                    HasFetchAssetsService &
+//                                    HasThumbnailCacheService &
+//                                    HasCachingImageManager &
+//                                    HasAssetResourceManager
+//        private let dependencies: Dependencies
+//        public init(dependencies: Dependencies = Services) {
+//            self.dependencies = dependencies
+//        }
+
     private lazy var fetchCollectionsServiceMock = FetchCollectionServiceMock()
     private lazy var permissionsServiceMock = PermissionsServiceMock()
     private lazy var thumbnailCacheServiceMock = ThumbnailCacheServiceMock()
@@ -30,11 +41,11 @@ final class MediaServiceTests: XCTestCase {
         return .init(source: service.permissionStatusEventSource)
     }()
 
-    private lazy var mediaItemCollectionsCollector: Collector<[MediaItemCollection]> = {
+    private lazy var mediaItemCollectionsCollector: Collector<[MediaItemsCollection]> = {
         return .init(source: service.collectionsEventSource)
     }()
 
-    private lazy var mediaItemResultCollector: Collector<MediaItemFetchResult> = {
+    private lazy var mediaItemResultCollector: Collector<MediaItemsFetchResult> = {
         return .init(source: service.mediaItemsEventSource)
     }()
 
@@ -156,7 +167,7 @@ final class MediaServiceTests: XCTestCase {
 
     func testFetchMediaItemCollectionsCollector() {
         //Given
-        let mediaItemCollectionsMock: [MediaItemCollection] = [
+        let mediaItemCollectionsMock: [MediaItemsCollection] = [
             .init(identifier: "12", title: "Recents")]
         let expectation = self.expectation(description: "error")
 
@@ -175,7 +186,7 @@ final class MediaServiceTests: XCTestCase {
 
     func testFetchMediaItemsResultWithFilterAll() {
         //Given
-        let mediaItemCollectionsMock: MediaItemCollection = .init(identifier: "12", title: "Recents")
+        let mediaItemCollectionsMock: MediaItemsCollection = .init(identifier: "12", title: "Recents")
         let mediaTypes: [PHAssetMediaType] = [.video, .image, .image]
         let expectation = self.expectation(description: "error")
 
@@ -196,7 +207,7 @@ final class MediaServiceTests: XCTestCase {
 
     func testFetchMediaItemsResultWithFilterVideo() {
         //Given
-        let mediaItemCollectionsMock: MediaItemCollection = .init(identifier: "12", title: "Recents")
+        let mediaItemCollectionsMock: MediaItemsCollection = .init(identifier: "12", title: "Recents")
         let mediaTypes: [PHAssetMediaType] = [.video]
         let expectation = self.expectation(description: "error")
 
@@ -273,7 +284,7 @@ final class MediaServiceTests: XCTestCase {
 
     func testFetchMediaCollectionThumbnail() {
         // Given
-        let mediaItemCollections: MediaItemCollection = .init(identifier: "12", title: "Recents")
+        let mediaItemCollections: MediaItemsCollection = .init(identifier: "12", title: "Recents")
         let pencilImage = UIImage(systemName: "pencil")
         mediaItemCollections.thumbnail = pencilImage
         let expectation = self.expectation(description: "error")
@@ -289,7 +300,7 @@ final class MediaServiceTests: XCTestCase {
 
     func testFetchMediaCollectionThumbnailFromCache() {
         // Given
-        let mediaItemCollection: MediaItemCollection = .init(identifier: "12", title: "Recents")
+        let mediaItemCollection: MediaItemsCollection = .init(identifier: "12", title: "Recents")
         let pencilImage = UIImage(systemName: "pencil")
         let expectation = self.expectation(description: "error")
 

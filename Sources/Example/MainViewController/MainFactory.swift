@@ -18,7 +18,7 @@ final class MainFactory {
         self.mediaService = mediaService
     }
 
-    func makeSectionItem(mediaItemsCollections: [MediaItemCollection]) -> [GeneralCollectionViewDiffSectionItem] {
+    func makeSectionItem(mediaItemsCollections: [MediaItemsCollection]) -> [GeneralCollectionViewDiffSectionItem] {
         let cellItems = mediaItemsCollections.map { mediaItemsCollection in
             makeCellItem(mediaItemsCollection: mediaItemsCollection)
         }
@@ -30,7 +30,7 @@ final class MainFactory {
         return [sectionItem]
     }
 
-    private func makeCellItem(mediaItemsCollection: MediaItemCollection) -> MainCellItem {
+    private func makeCellItem(mediaItemsCollection: MediaItemsCollection) -> MainCellItem {
         let cellItem = MainCellItem(mediaItemCollection: mediaItemsCollection, mediaService: mediaService)
 
         cellItem.itemDidSelectHandler = { [weak self] _ in
