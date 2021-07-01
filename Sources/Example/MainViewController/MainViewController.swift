@@ -39,7 +39,7 @@ final class MainViewController: UIViewController {
         view.addSubview(collectionView)
         view.backgroundColor = .black
         mediaService.requestMediaLibraryPermissions()
-        permissionStatusEventTriggered()
+        subscribeForPermissionStatus()
     }
 
     override func viewDidLayoutSubviews() {
@@ -54,12 +54,20 @@ final class MainViewController: UIViewController {
         navigationController?.pushViewController(galleryViewController, animated: true)
     }
 
-    private func permissionStatusEventTriggered() {
+    func loadThumbnailCollection(_ mediaItemCollection: MediaItemsCollection,
+                                      completion: @escaping (UIImage?) -> Void) {
+        mediaService.fetchThumbnail(for: mediaItemCollection,
+                                    size: .zero,
+                                    contentMode: .aspectFill,
+                                    completion: completion)
+    }
+
+    private func subscribeForPermissionStatus() {
         permissionStatusCollector.subscribe { [weak self] status in
             switch status {
             case .authorized, .limited:
                 self?.mediaService.fetchMediaItemCollections()
-                self?.collectionsCollectorEventTriggered()
+                self?.subscribeForCollections()
             case .notDetermined, .denied, .restricted:
                 self?.mediaService.requestMediaLibraryPermissions()
             default:
@@ -68,7 +76,7 @@ final class MainViewController: UIViewController {
         }
     }
 
-    private func collectionsCollectorEventTriggered() {
+    private func subscribeForCollections() {
         collectionsCollector.subscribe { [weak self] (mediaItemsCollections: [MediaItemsCollection]) in
             self?.mediaItemsCollections = mediaItemsCollections
             self?.updateCollectionManager()

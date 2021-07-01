@@ -29,7 +29,7 @@ final class GalleryViewController: UIViewController {
         collectionView.contentInsetAdjustmentBehavior = .never
         return collectionView
     }()
-    private lazy var galleryFactory: GalleryFactory = .init(output: self, mediaService: mediaService)
+    private lazy var galleryFactory: GalleryFactory = .init(output: self)
 
     init(mediaService: MediaLibraryServiceImp, mediaItemCollection: MediaItemsCollection) {
         self.mediaService = mediaService
@@ -49,7 +49,7 @@ final class GalleryViewController: UIViewController {
         view.addSubview(collectionView)
         view.backgroundColor = .black
         mediaService.fetchMediaItems(in: mediaItemCollection)
-        resultCollectorEventTriggered()
+        subscribeForMediaItemsResult()
     }
 
     override func viewDidLayoutSubviews() {
@@ -59,7 +59,15 @@ final class GalleryViewController: UIViewController {
         }
     }
 
-    private func resultCollectorEventTriggered() {
+    func loadThumbnailMediaItem(_ mediaItem: MediaItem,
+                                completion: @escaping (UIImage?) -> Void) {
+        mediaService.fetchThumbnail(for: mediaItem,
+                                    size: .zero,
+                                    contentMode: .aspectFill,
+                                    completion: completion)
+    }
+
+    private func subscribeForMediaItemsResult() {
         mediaItemResultCollector.subscribe { [weak self] mediaItemFetchResult in
             self?.updateCollectionManager(with: mediaItemFetchResult.fetchResult)
         }

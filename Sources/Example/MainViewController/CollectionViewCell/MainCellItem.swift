@@ -16,12 +16,11 @@ final class MainCellItem: CollectionViewDiffCellItem {
         mediaItemCollection.identifier
     }
 
+    var loadThumbnailEventHandler: ((UIImage?) -> Void)?
     private let mediaItemCollection: MediaItemsCollection
-    private let mediaService: MediaLibraryServiceImp
 
-    init(mediaItemCollection: MediaItemsCollection, mediaService: MediaLibraryServiceImp) {
+    init(mediaItemCollection: MediaItemsCollection) {
         self.mediaItemCollection = mediaItemCollection
-        self.mediaService = mediaService
     }
 
     func isEqual(to item: DiffItem) -> Bool {
@@ -37,8 +36,7 @@ final class MainCellItem: CollectionViewDiffCellItem {
         }
 
         cell.titleLabel.text = mediaItemCollection.title
-
-        mediaService.fetchThumbnail(for: mediaItemCollection, size: .zero, contentMode: .aspectFill) { image in
+        loadThumbnailEventHandler = { image in
             if image != nil {
                 cell.imageView.image = image
             }

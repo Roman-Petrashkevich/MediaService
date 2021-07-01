@@ -17,14 +17,13 @@ final class GalleryCellItem: CollectionViewDiffCellItem {
         ""
     }
 
-    private let mediaService: MediaLibraryServiceImp
+    var loadThumbnailEventHandler: ((UIImage?) -> Void)?
     private let mediaItem: MediaItem
     private let internalInset: CGFloat = 1.5
     private let numberOfRows: Int = 3
 
-    init(mediaService: MediaLibraryServiceImp, asset: PHAsset) {
-        self.mediaService = mediaService
-        self.mediaItem = .init(asset: asset)
+    init(mediaItem: MediaItem) {
+        self.mediaItem = mediaItem
     }
 
     func isEqual(to item: DiffItem) -> Bool {
@@ -39,7 +38,7 @@ final class GalleryCellItem: CollectionViewDiffCellItem {
             return
         }
 
-        mediaService.fetchThumbnail(for: mediaItem, size: .zero, contentMode: .aspectFill) { image in
+        loadThumbnailEventHandler = { image in
             cell.imageView.image = image
         }
 
