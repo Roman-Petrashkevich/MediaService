@@ -12,7 +12,7 @@ final class MainFactory {
 
     private weak var output: MainViewController?
 
-    init(output: MainViewController?, mediaService: MediaLibraryServiceImp) {
+    init(output: MainViewController?) {
         self.output = output
     }
 

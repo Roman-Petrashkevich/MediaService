@@ -5,11 +5,21 @@
 import Foundation
 import Photos
 
-typealias ServicesAlias = HasMediaLibraryService
+typealias ServicesAlias = HasFetchCollectionsService &
+                          HasPermissionsService &
+                          HasFetchAssetsService &
+                          HasThumbnailCacheService &
+                          HasCachingImageManager &
+                          HasAssetResourceManager
 
 // swiftlint:disable:this variable_name
-var Services: MainServicesFactory = .init()
+public var Services: MainServicesFactory = .init()
 
-final class MainServicesFactory: ServicesAlias {
-    lazy var mediaLibraryService: MediaLibraryService = MediaLibraryServiceImp()
+public final class MainServicesFactory: ServicesAlias {
+    lazy public var fetchCollectionsService: FetchCollectionsService = FetchCollectionsServiceImp()
+    lazy public var permissionsService: PermissionsService = PermissionsServiceImp()
+    lazy public var fetchAssetsService: FetchAssetsService = FetchAssetsServiceImp()
+    lazy public var thumbnailCacheService: ThumbnailCacheService = ThumbnailCacheServiceImp()
+    lazy public var cachingImageManager: CachingImageManager = CachingImageManagerImp()
+    lazy public var assetResourceManager: AssetResourceManager = AssetResourceManagerImp()
 }

@@ -1,18 +1,17 @@
 //
-//  FetchThumbnailService.swift
-//  Example
+//  ThumbnailCacheService.swift
+//  MediaService
 //
-//  Created by Evgeny Schwarzkopf on 29.04.2021.
+//  Created by Evgeny Schwarzkopf on 01.07.2021.
 //
 
 import Photos
 import UIKit
 
-public protocol ThumbnailCacheService {
-    var thumbnailCache: NSCache<NSString, UIImage> { get }
+public protocol HasThumbnailCacheService {
+    var thumbnailCacheService: ThumbnailCacheService { get }
 }
 
-public class ThumbnailCacheServiceImp: ThumbnailCacheService {
-    lazy public var thumbnailCache: NSCache<NSString, UIImage> = .init()
-    public init() {}
+public protocol ThumbnailCacheService {
+    var thumbnailCache: NSCache<NSString, UIImage> { get }
 }

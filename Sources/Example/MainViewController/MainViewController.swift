@@ -10,16 +10,18 @@ import Photos
 
 final class MainViewController: UIViewController {
 
-    let mediaService = MediaLibraryServiceImp()
+    typealias Dependencies = HasMediaLibraryService
+
+    let dependencies: Dependencies
 
     private var mediaItemsCollections: [MediaItemsCollection] = []
 
     private lazy var collectionsCollector: Collector<[MediaItemsCollection]> = {
-        return .init(source: mediaService.collectionsEventSource)
+        return .init(source: dependencies.mediaLibraryService.collectionsEventSource)
     }()
 
     private lazy var permissionStatusCollector: Collector<PHAuthorizationStatus> = {
-        return .init(source: mediaService.permissionStatusEventSource)
+        return .init(source: dependencies.mediaLibraryService.permissionStatusEventSource)
     }()
 
     private lazy var collectionViewManager: CollectionViewManager = .init(collectionView: collectionView)
@@ -30,7 +32,7 @@ final class MainViewController: UIViewController {
         collectionView.backgroundColor = .clear
         return collectionView
     }()
-    private lazy var mainFactory: MainFactory = .init(output: self, mediaService: mediaService)
+    private lazy var mainFactory: MainFactory = .init(output: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +40,7 @@ final class MainViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = .white
         view.addSubview(collectionView)
         view.backgroundColor = .black
-        mediaService.requestMediaLibraryPermissions()
+        dependencies.mediaLibraryService.requestMediaLibraryPermissions()
         subscribeForPermissionStatus()
     }
 
@@ -49,27 +51,36 @@ final class MainViewController: UIViewController {
         }
     }
 
+    init(dependencies: Dependencies) {
+        self.dependencies = dependencies
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     func selectAlbumEventTriggered(with mediaItemCollection: MediaItemsCollection) {
-        let galleryViewController = GalleryViewController(mediaService: mediaService, mediaItemCollection: mediaItemCollection)
+        let galleryViewController = GalleryViewController(dependencies: dependencies, mediaItemCollection: mediaItemCollection)
         navigationController?.pushViewController(galleryViewController, animated: true)
     }
 
     func loadThumbnailCollection(_ mediaItemCollection: MediaItemsCollection,
-                                      completion: @escaping (UIImage?) -> Void) {
-        mediaService.fetchThumbnail(for: mediaItemCollection,
-                                    size: .zero,
-                                    contentMode: .aspectFill,
-                                    completion: completion)
+                                 completion: @escaping (UIImage?) -> Void) {
+        dependencies.mediaLibraryService.fetchThumbnail(for: mediaItemCollection,
+                                                        size: .zero,
+                                                        contentMode: .aspectFill,
+                                                        completion: completion)
     }
 
     private func subscribeForPermissionStatus() {
         permissionStatusCollector.subscribe { [weak self] status in
             switch status {
             case .authorized, .limited:
-                self?.mediaService.fetchMediaItemCollections()
+                self?.dependencies.mediaLibraryService.fetchMediaItemCollections()
                 self?.subscribeForCollections()
             case .notDetermined, .denied, .restricted:
-                self?.mediaService.requestMediaLibraryPermissions()
+                self?.dependencies.mediaLibraryService.requestMediaLibraryPermissions()
             default:
                  break
             }

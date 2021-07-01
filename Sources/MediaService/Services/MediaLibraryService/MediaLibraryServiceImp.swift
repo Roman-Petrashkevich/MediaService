@@ -25,31 +25,22 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
 
     private var didRegisterForMediaLibraryUpdates: Bool = false
 
-    private let fetchCollectionsService: FetchCollectionsService
-    private let permissionsService: PermissionsService
-    private let fetchAssetsService: FetchAssetsService
-    private let thumbnailCacheService: ThumbnailCacheService
-    private let cachingImageManager: CachingImageManager
-    private let assetResourceManager: AssetResourceManager
+    public typealias Dependencies = HasFetchCollectionsService &
+                                    HasPermissionsService &
+                                    HasFetchAssetsService &
+                                    HasThumbnailCacheService &
+                                    HasCachingImageManager &
+                                    HasAssetResourceManager
+     private let dependencies: Dependencies
 
-    public init(fetchCollectionsService: FetchCollectionsService = FetchCollectionsServiceImp(),
-                permissionsService: PermissionsService = PermissionsServiceImp(),
-                fetchAssetsService: FetchAssetsService = FetchAssetsServiceImp(),
-                thumbnailCacheService: ThumbnailCacheService = ThumbnailCacheServiceImp(),
-                cachingImageManager: CachingImageManager = CachingImageManagerImp(),
-                assetResourceManager: AssetResourceManager = AssetResourceManagerImp()) {
-        self.fetchCollectionsService = fetchCollectionsService
-        self.permissionsService = permissionsService
-        self.fetchAssetsService = fetchAssetsService
-        self.thumbnailCacheService = thumbnailCacheService
-        self.cachingImageManager = cachingImageManager
-        self.assetResourceManager = assetResourceManager
-    }
+     public init(dependencies: Dependencies = Services) {
+         self.dependencies = dependencies
+     }
 
     // MARK: - Permissions
 
     public func requestMediaLibraryPermissions() {
-        permissionsService.requestMediaLibraryPermissions { (status: PHAuthorizationStatus) in
+        dependencies.permissionsService.requestMediaLibraryPermissions { (status: PHAuthorizationStatus) in
             DispatchQueue.main.async {
                 self.permissionStatusEmitter.replace(status)
             }
@@ -62,17 +53,23 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         DispatchQueue.global(qos: .background).async {
             var collections = [MediaItemsCollection]()
 
-            if let userLibraryCollection = self.fetchCollectionsService.fetchCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil).first {
+            if let userLibraryCollection = self.dependencies.fetchCollectionsService.fetchCollections(with: .smartAlbum,
+                                                                                                      subtype: .smartAlbumUserLibrary,
+                                                                                                      options: nil).first {
                 collections.append(userLibraryCollection)
             }
 
-            if let favoritesCollection = self.fetchCollectionsService.fetchCollections(with: .smartAlbum, subtype: .smartAlbumFavorites, options: nil).first,
+            if let favoritesCollection = self.dependencies.fetchCollectionsService.fetchCollections(with: .smartAlbum,
+                                                                                                    subtype: .smartAlbumFavorites,
+                                                                                                    options: nil).first,
                 favoritesCollection.estimatedMediaItemsCount != 0 {
                 favoritesCollection.isFavorite = true
                 collections.append(favoritesCollection)
             }
 
-            let allCollections = self.fetchCollectionsService.fetchCollections(with: .album, subtype: .any, options: nil).filter { collection in
+            let allCollections = self.dependencies.fetchCollectionsService.fetchCollections(with: .album,
+                                                                                            subtype: .any,
+                                                                                            options: nil).filter { collection in
                 collection.estimatedMediaItemsCount != 0
             }
             collections.append(contentsOf: allCollections)
@@ -86,21 +83,21 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
 
     public func fetchMediaItems(in collection: MediaItemsCollection?, filter: MediaItemFilter = .all) {
         guard let collection = collection else {
-            let collection = fetchCollectionsService.fetchCollections(with: .smartAlbum,
-                                                                      subtype: .smartAlbumUserLibrary,
-                                                                      options: nil).first
+            let collection = dependencies.fetchCollectionsService.fetchCollections(with: .smartAlbum,
+                                                                                   subtype: .smartAlbumUserLibrary,
+                                                                                   options: nil).first
             fetchMediaItems(in: collection, filter: filter)
             return
         }
         DispatchQueue.global(qos: .background).async {
-            guard let assetCollection = self.fetchCollectionsService.fetchAssetCollections(localIdentifiers: [collection.identifier],
-                                                                                           options: nil) else {
+            guard let assetCollection = self.dependencies.fetchCollectionsService.fetchAssetCollections(localIdentifiers: [collection.identifier],
+                                                                                                        options: nil) else {
                 return
             }
 
             let mediaType: PHAssetMediaType? = filter == .all ? nil : .video
-            guard let fetchResult = self.fetchCollectionsService.fetchMediaItems(in: assetCollection,
-                                                                                 mediaType: mediaType) else {
+            guard let fetchResult = self.dependencies.fetchCollectionsService.fetchMediaItems(in: assetCollection,
+                                                                                              mediaType: mediaType) else {
                 return
             }
 
@@ -124,7 +121,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         }
 
         DispatchQueue.global(qos: .background).async {
-            guard let asset = self.fetchAssetsService.makeAsset(item: item) else {
+            guard let asset = self.dependencies.fetchAssetsService.makeAsset(item: item) else {
                 DispatchQueue.main.async {
                     completion(nil)
                 }
@@ -150,7 +147,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         }
 
         DispatchQueue.global(qos: .background).async {
-            guard let assetCollection = self.fetchCollectionsService.fetchAssetCollections(localIdentifiers: [collection.identifier],
+            guard let assetCollection = self.dependencies.fetchCollectionsService.fetchAssetCollections(localIdentifiers: [collection.identifier],
                                                                                            options: nil) else {
                 DispatchQueue.main.async {
                     completion(nil)
@@ -158,7 +155,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                 return
             }
 
-            guard let asset = self.fetchAssetsService.fetchAssets(assetCollection: assetCollection) else {
+            guard let asset = self.dependencies.fetchAssetsService.fetchAssets(assetCollection: assetCollection) else {
                 DispatchQueue.main.async {
                     completion(nil)
                 }
@@ -191,12 +188,12 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
     public func fetchImage(for item: MediaItem,
                            options: PHImageRequestOptions,
                            completion: @escaping Completion<UIImage?>) {
-        guard let asset = fetchAssetsService.makeAsset(item: item) else {
+        guard let asset = dependencies.fetchAssetsService.makeAsset(item: item) else {
             completion(nil)
             return
         }
 
-        cachingImageManager.requestImageData(for: asset, options: options) { (imageData: Data?) in
+        dependencies.cachingImageManager.requestImageData(for: asset, options: options) { (imageData: Data?) in
             guard let data = imageData else {
                 completion(nil)
                 return
@@ -212,7 +209,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
 
     // swiftlint:disable:next function_body_length
     public func fetchVideoAsset(for item: MediaItem, completion: @escaping Completion<AVAsset?>) {
-        guard let asset = fetchAssetsService.makeAsset(item: item) else {
+        guard let asset = dependencies.fetchAssetsService.makeAsset(item: item) else {
             completion(nil)
             return
         }
@@ -226,7 +223,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                 }
             }
 
-            cachingImageManager.requestAVAsset(forVideo: asset, options: requestOptions) { (asset: AVAsset?) in
+            dependencies.cachingImageManager.requestAVAsset(forVideo: asset, options: requestOptions) { (asset: AVAsset?) in
                 DispatchQueue.main.async {
                     self.mediaItemFetchProgressEmitter.discard()
                     completion(asset)
@@ -243,10 +240,10 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                 }
             }
 
-            cachingImageManager.requestLivePhoto(for: asset,
-                                     targetSize: .zero,
-                                     contentMode: .default,
-                                     options: requestOptions) { (photo: PHLivePhoto?) in
+            dependencies.cachingImageManager.requestLivePhoto(for: asset,
+                                                              targetSize: .zero,
+                                                              contentMode: .default,
+                                                              options: requestOptions) { (photo: PHLivePhoto?) in
                 guard let photo = photo else {
                     return completion(nil)
                 }
@@ -261,10 +258,10 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                 let url = self.prepareOutputURL(forAssetIdentifier: videoResource.assetLocalIdentifier)
                 let requestOptions = PHAssetResourceRequestOptions()
                 requestOptions.isNetworkAccessAllowed = true
-                self.assetResourceManager.writeData(for: videoResource,
-                                                    toFile: url,
-                                                    options: requestOptions,
-                                                    completion: { asset in
+                self.dependencies.assetResourceManager.writeData(for: videoResource,
+                                                                 toFile: url,
+                                                                 options: requestOptions,
+                                                                 completion: { asset in
                     DispatchQueue.main.async {
                         self.mediaItemFetchProgressEmitter.discard()
                         completion(asset)
@@ -299,7 +296,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                                 size: CGSize,
                                 contentMode: PHImageContentMode,
                                 completion: @escaping Completion<UIImage?>) {
-        if let thumbnail = thumbnailCacheService.thumbnailCache.object(forKey: asset.localIdentifier as NSString) {
+        if let thumbnail = dependencies.thumbnailCacheService.thumbnailCache.object(forKey: asset.localIdentifier as NSString) {
             completion(thumbnail)
             return
         }
@@ -308,12 +305,12 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         options.deliveryMode = .opportunistic
         options.isNetworkAccessAllowed = true
 
-        cachingImageManager.requestImage(for: asset,
-                                         targetSize: size,
-                                         contentMode: contentMode,
-                                         options: options) { [weak self] (image: UIImage?) in
+        dependencies.cachingImageManager.requestImage(for: asset,
+                                                      targetSize: size,
+                                                      contentMode: contentMode,
+                                                      options: options) { [weak self] (image: UIImage?) in
             if let image = image {
-                self?.thumbnailCacheService.thumbnailCache.setObject(image, forKey: asset.localIdentifier as NSString)
+                self?.dependencies.thumbnailCacheService.thumbnailCache.setObject(image, forKey: asset.localIdentifier as NSString)
             }
 
             completion(image)

@@ -13,11 +13,14 @@ import CollectionViewTools
 
 final class GalleryViewController: UIViewController {
 
-    private let mediaService: MediaLibraryServiceImp
+    typealias Dependencies = HasMediaLibraryService
+
+    let dependencies: Dependencies
+
     private let mediaItemCollection: MediaItemsCollection
 
     private lazy var mediaItemResultCollector: Collector<MediaItemsFetchResult> = {
-        return .init(source: mediaService.mediaItemsEventSource)
+        return .init(source: dependencies.mediaLibraryService.mediaItemsEventSource)
     }()
 
     private lazy var collectionViewManager: CollectionViewManager = .init(collectionView: collectionView)
@@ -31,16 +34,14 @@ final class GalleryViewController: UIViewController {
     }()
     private lazy var galleryFactory: GalleryFactory = .init(output: self)
 
-    init(mediaService: MediaLibraryServiceImp, mediaItemCollection: MediaItemsCollection) {
-        self.mediaService = mediaService
+    init(dependencies: Dependencies, mediaItemCollection: MediaItemsCollection) {
+        self.dependencies = dependencies
         self.mediaItemCollection = mediaItemCollection
         super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder: NSCoder) {
-        self.mediaService = MediaLibraryServiceImp()
-        self.mediaItemCollection = .init(collection: .init())
-        super.init(nibName: nil, bundle: nil)
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -48,7 +49,7 @@ final class GalleryViewController: UIViewController {
         navigationItem.title = mediaItemCollection.title
         view.addSubview(collectionView)
         view.backgroundColor = .black
-        mediaService.fetchMediaItems(in: mediaItemCollection)
+        dependencies.mediaLibraryService.fetchMediaItems(in: mediaItemCollection, filter: .all)
         subscribeForMediaItemsResult()
     }
 
@@ -61,10 +62,10 @@ final class GalleryViewController: UIViewController {
 
     func loadThumbnailMediaItem(_ mediaItem: MediaItem,
                                 completion: @escaping (UIImage?) -> Void) {
-        mediaService.fetchThumbnail(for: mediaItem,
-                                    size: .zero,
-                                    contentMode: .aspectFill,
-                                    completion: completion)
+        dependencies.mediaLibraryService.fetchThumbnail(for: mediaItem,
+                                                        size: .zero,
+                                                        contentMode: .aspectFill,
+                                                        completion: completion)
     }
 
     private func subscribeForMediaItemsResult() {

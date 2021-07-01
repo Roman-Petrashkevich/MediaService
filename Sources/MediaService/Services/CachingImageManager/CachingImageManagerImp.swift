@@ -9,25 +9,6 @@ import Foundation
 import Photos
 import UIKit
 
-public protocol CachingImageManager {
-    func requestImageData(for asset: PHAsset,
-                          options: PHImageRequestOptions?,
-                          resultHandler: @escaping (Data?) -> Void)
-    func requestAVAsset(forVideo asset: PHAsset,
-                        options: PHVideoRequestOptions?,
-                        resultHandler: @escaping (AVAsset?) -> Void)
-    func requestLivePhoto(for asset: PHAsset,
-                          targetSize: CGSize,
-                          contentMode: PHImageContentMode,
-                          options: PHLivePhotoRequestOptions?,
-                          resultHandler: @escaping (PHLivePhoto?) -> Void)
-    func requestImage(for asset: PHAsset,
-                      targetSize: CGSize,
-                      contentMode: PHImageContentMode,
-                      options: PHImageRequestOptions?,
-                      resultHandler: @escaping (UIImage?) -> Void)
-}
-
 public class CachingImageManagerImp: PHCachingImageManager, CachingImageManager {
     public func requestImageData(for asset: PHAsset,
                                  options: PHImageRequestOptions?,

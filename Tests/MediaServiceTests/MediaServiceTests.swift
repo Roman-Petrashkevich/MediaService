@@ -5,35 +5,46 @@ import Photos
 
 final class MediaServiceTests: XCTestCase {
 
-//    public typealias Dependencies = HasFetchCollectionsService &
-//                                    HasPermissionsService &
-//                                    HasFetchAssetsService &
-//                                    HasThumbnailCacheService &
-//                                    HasCachingImageManager &
-//                                    HasAssetResourceManager
-//        private let dependencies: Dependencies
-//        public init(dependencies: Dependencies = Services) {
-//            self.dependencies = dependencies
-//        }
+    typealias Dependencies = HasFetchCollectionsService &
+                             HasPermissionsService &
+                             HasFetchAssetsService &
+                             HasThumbnailCacheService &
+                             HasCachingImageManager &
+                             HasAssetResourceManager
 
-    private lazy var fetchCollectionsServiceMock = FetchCollectionServiceMock()
-    private lazy var permissionsServiceMock = PermissionsServiceMock()
-    private lazy var thumbnailCacheServiceMock = ThumbnailCacheServiceMock()
-    private lazy var fetchAssetServiceMock = FetchAssetsServiceMock()
-    private lazy var cachingImageManagerMock = CachingImageManagerMock()
-    private lazy var assetResourceManagerMock = AssetResourceManagerMock()
+    let dependencies: Dependencies = TestServices
+
+    private lazy var fetchCollectionsServiceMock: FetchCollectionServiceMock = {
+        let service = dependencies.fetchCollectionsService as? FetchCollectionServiceMock
+        return service ?? FetchCollectionServiceMock()
+    }()
+    private lazy var permissionsServiceMock: PermissionsServiceMock = {
+        let service = dependencies.permissionsService as? PermissionsServiceMock
+        return service ?? PermissionsServiceMock()
+    }()
+    private lazy var thumbnailCacheServiceMock: ThumbnailCacheServiceMock = {
+        let service = dependencies.thumbnailCacheService as? ThumbnailCacheServiceMock
+        return service ?? ThumbnailCacheServiceMock()
+    }()
+    private lazy var fetchAssetServiceMock: FetchAssetsServiceMock = {
+        let service = dependencies.fetchAssetsService as? FetchAssetsServiceMock
+        return service ?? FetchAssetsServiceMock()
+    }()
+    private lazy var cachingImageManagerMock: CachingImageManagerMock = {
+        let service = dependencies.cachingImageManager as? CachingImageManagerMock
+        return service ?? CachingImageManagerMock()
+    }()
+    private lazy var assetResourceManagerMock: AssetResourceManagerMock = {
+        let service = dependencies.assetResourceManager as? AssetResourceManagerMock
+        return service ?? AssetResourceManagerMock()
+    }()
 
     private var bundle: Bundle {
         Bundle(for: Self.self)
     }
 
     lazy var service: MediaLibraryService = {
-        let service = MediaLibraryServiceImp(fetchCollectionsService: fetchCollectionsServiceMock,
-                                             permissionsService: permissionsServiceMock,
-                                             fetchAssetsService: fetchAssetServiceMock,
-                                             thumbnailCacheService: thumbnailCacheServiceMock,
-                                             cachingImageManager: cachingImageManagerMock,
-                                             assetResourceManager: assetResourceManagerMock)
+        let service = MediaLibraryServiceImp(dependencies: dependencies)
         return service
     }()
 
