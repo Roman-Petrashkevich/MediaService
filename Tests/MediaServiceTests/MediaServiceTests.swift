@@ -264,7 +264,7 @@ final class MediaServiceTests: XCTestCase {
         let expectation = self.expectation(description: "error")
 
         //When
-        fetchAssetServiceMock.makeAsset = nil
+        fetchAssetServiceMock.makeAssetMock = nil
         thumbnailCacheServiceMock.thumbnailCache.removeAllObjects()
 
         //Then
@@ -282,7 +282,7 @@ final class MediaServiceTests: XCTestCase {
         let expectation = self.expectation(description: "error")
 
         //When
-        let key = fetchAssetServiceMock.fetchAsset?.localIdentifier ?? ""
+        let key = fetchAssetServiceMock.fetchAssetMock?.localIdentifier ?? ""
         thumbnailCacheServiceMock.thumbnailCache.removeAllObjects()
         thumbnailCacheServiceMock.thumbnailCache.setObject(pencilImage ?? UIImage(),
                                                            forKey: key as NSString)
@@ -320,7 +320,7 @@ final class MediaServiceTests: XCTestCase {
         let expectation = self.expectation(description: "error")
 
         //When
-        let key = fetchAssetServiceMock.fetchAsset?.localIdentifier ?? ""
+        let key = fetchAssetServiceMock.fetchAssetMock?.localIdentifier ?? ""
         thumbnailCacheServiceMock.thumbnailCache.removeAllObjects()
         thumbnailCacheServiceMock.thumbnailCache.setObject(pencilImage ?? UIImage(),
                                                            forKey: key as NSString)

@@ -7,14 +7,14 @@ import Photos
 
 final class FetchAssetsServiceMock: FetchAssetsService {
 
-    var fetchAsset: PHAsset? = .init()
-    var makeAsset: PHAsset? = .init()
+    var fetchAssetMock: PHAsset? = .init()
+    var makeAssetMock: PHAsset? = .init()
 
     func fetchAssets(assetCollection: PHAssetCollection) -> PHAsset? {
-        fetchAsset
+        fetchAssetMock
     }
 
     func makeAsset(item: MediaItem) -> PHAsset? {
-        makeAsset
+        makeAssetMock
     }
 }
