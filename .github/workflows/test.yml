@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@master
       - name: Build and test
         run: |
-          carthage bootstrap --platform iOS
+          carthage bootstrap --platform iOS --use-xcframeworks
           xcodebuild clean test -project MediaService.xcodeproj -scheme MediaService -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}
