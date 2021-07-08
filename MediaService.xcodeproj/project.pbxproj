@@ -68,13 +68,6 @@
 			remoteGlobalIDString = E0D54EB6E6F18287CD59355D;
 			remoteInfo = MediaService;
 		};
-		A95B238626847C4300BEA3D3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2479B7CB4F77A50E8A66BD45 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C8C1CA4D3CB89699BAF7A343;
-			remoteInfo = Example;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -451,7 +444,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				A95B238726847C4300BEA3D3 /* PBXTargetDependency */,
 			);
 			name = MediaServiceTests;
 			productName = MediaServiceTests;
@@ -666,11 +658,6 @@
 			isa = PBXTargetDependency;
 			target = E0D54EB6E6F18287CD59355D /* MediaService */;
 			targetProxy = 41476AA120E3CA4B3ED0B15C /* PBXContainerItemProxy */;
-		};
-		A95B238726847C4300BEA3D3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C8C1CA4D3CB89699BAF7A343 /* Example */;
-			targetProxy = A95B238626847C4300BEA3D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
