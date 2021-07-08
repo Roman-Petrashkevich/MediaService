@@ -10,9 +10,7 @@ final class GalleryCellItem: CollectionViewDiffCellItem {
     typealias Cell = GalleryCollectionViewCell
 
     private(set) var reuseType: ReuseType = .class(Cell.self)
-    var diffIdentifier: String {
-        ""
-    }
+    var diffIdentifier: String = ""
 
     var loadThumbnailEventHandler: ((UIImage?) -> Void)?
     private let mediaItem: MediaItem
