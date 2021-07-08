@@ -9,9 +9,9 @@ jobs:
           destination: ['platform=iOS Simulator,OS=14.5,name=iPhone 11']
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@create-media-service
       - name: Build and test
         run: |
-          xcodebuild clean test -project MediaService.xcodeproj -scheme MediaService -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          xcodebuild clean test -project MediaService.xcodeproj -scheme MediaServiceTests -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}
