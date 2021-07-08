@@ -44,12 +44,8 @@ final class GalleryCellItem: CollectionViewDiffCellItem {
         case .photo:
             cell.livePhotoIconView.isHidden = true
             cell.timeDescriptionLabel.isHidden = true
-        case let .sloMoVideo(duration):
-            cell.timeDescriptionLabel.text = fetchTimeDescription(duration)
-            cell.timeDescriptionLabel.isHidden = false
-            cell.livePhotoIconView.isHidden = true
-        case let .video(duration):
-            cell.timeDescriptionLabel.text = fetchTimeDescription(duration)
+        case let .sloMoVideo(duration), let .video(duration):
+            cell.timeDescriptionLabel.text = formatTimeDescription(fromTimeInterval: duration)
             cell.timeDescriptionLabel.isHidden = false
             cell.livePhotoIconView.isHidden = true
         case .unknown:
@@ -66,7 +62,7 @@ final class GalleryCellItem: CollectionViewDiffCellItem {
         return .init(width: width, height: height)
     }
 
-    private func fetchTimeDescription(_ timeInterval: TimeInterval) -> String {
+    private func formatTimeDescription(fromTimeInterval timeInterval: TimeInterval) -> String {
         let second = Int(timeInterval)
         let timeDescription = NSString(format: "%02d:%02d", second / 60, second % 60) as String
         return timeDescription
