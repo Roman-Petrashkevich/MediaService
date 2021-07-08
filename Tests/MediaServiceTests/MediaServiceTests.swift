@@ -190,7 +190,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(mediaItemCollectionsMock.first?.identifier, mediaItemCollections.first?.identifier, "is not equal identifier")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 0.3)
     }
 
     // MARK: - FetchMediaItemsResultTest
@@ -213,7 +213,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(mediaTypes.count, mediaResult.fetchResult.count, "is not equal count")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.2)
+        wait(for: [expectation], timeout: 0.4)
     }
 
     func testFetchMediaItemsResultWithFilterVideo() {
@@ -288,7 +288,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(pencilImage, image, "is not equal image")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.2)
+        wait(for: [expectation], timeout: 0.6)
     }
 
     // MARK: - FethcMediaCollectionThumbnailTest
