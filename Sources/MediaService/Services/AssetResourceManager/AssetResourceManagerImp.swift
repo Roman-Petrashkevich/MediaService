@@ -1,8 +1,5 @@
 //
-//  AssetResourceManager.swift
-//  MediaService
-//
-//  Created by Evgeny Schwarzkopf on 27.05.2021.
+//  Copyright © 2021 Rosberry. All rights reserved.
 //
 
 import Photos

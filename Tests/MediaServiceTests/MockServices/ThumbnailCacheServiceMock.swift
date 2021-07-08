@@ -1,8 +1,5 @@
 //
-//  FetchThumbnailService.swift
-//  Example
-//
-//  Created by Evgeny Schwarzkopf on 29.04.2021.
+//  Copyright © 2021 Rosberry. All rights reserved.
 //
 
 import MediaService

@@ -1,8 +1,5 @@
 //
-//  FetchResultMock.swift
-//  Example
-//
-//  Created by Evgeny Schwarzkopf on 20.05.2021.
+//  Copyright © 2021 Rosberry. All rights reserved.
 //
 
 import UIKit

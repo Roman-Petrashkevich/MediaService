@@ -1,8 +1,5 @@
 //
-//  GalleryViewController.swift
-//  Example
-//
-//  Created by Evgeny Schwarzkopf on 11.04.2021.
+//  Copyright © 2021 Rosberry. All rights reserved.
 //
 
 import Framezilla

@@ -1,8 +1,5 @@
 //
-//  PermissionsService.swift
-//  Example
-//
-//  Created by Evgeny Schwarzkopf on 28.04.2021.
+//  Copyright © 2021 Rosberry. All rights reserved.
 //
 
 import Photos

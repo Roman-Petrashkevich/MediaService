@@ -1,8 +1,5 @@
 //
-//  CachingImageManager.swift
-//  Example
-//
-//  Created by Evgeny Schwarzkopf on 21.05.2021.
+//  Copyright © 2021 Rosberry. All rights reserved.
 //
 
 import Foundation
