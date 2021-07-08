@@ -8,10 +8,10 @@ import Photos
 
 final class GalleryFactory {
 
-    private weak var output: GalleryViewController?
+    private weak var viewController: GalleryViewController?
 
-    init(output: GalleryViewController?) {
-        self.output = output
+    init(viewController: GalleryViewController?) {
+        self.viewController = viewController
     }
 
     func makeSectionItem(result: PHFetchResult<PHAsset>) -> [GeneralCollectionViewDiffSectionItem] {
@@ -22,7 +22,7 @@ final class GalleryFactory {
             }
             let mediaItem = MediaItem(asset: asset)
             let cellItem = GalleryCellItem(mediaItem: mediaItem)
-            self.output?.loadThumbnailMediaItem(mediaItem) { image in
+            self.viewController?.loadThumbnailMediaItem(mediaItem) { image in
                 cellItem.loadThumbnailEventHandler?(image)
             }
             cellItems.append(cellItem)

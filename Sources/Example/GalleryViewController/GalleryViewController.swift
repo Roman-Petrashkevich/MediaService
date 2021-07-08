@@ -29,7 +29,7 @@ final class GalleryViewController: UIViewController {
         collectionView.contentInsetAdjustmentBehavior = .never
         return collectionView
     }()
-    private lazy var galleryFactory: GalleryFactory = .init(output: self)
+    private lazy var galleryFactory: GalleryFactory = .init(viewController: self)
 
     init(dependencies: Dependencies, mediaItemCollection: MediaItemsCollection) {
         self.dependencies = dependencies

@@ -32,7 +32,7 @@ final class MainViewController: UIViewController {
         collectionView.backgroundColor = .clear
         return collectionView
     }()
-    private lazy var mainFactory: MainFactory = .init(output: self)
+    private lazy var mainFactory: MainFactory = .init(viewController: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
