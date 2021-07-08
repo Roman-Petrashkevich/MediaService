@@ -26,6 +26,7 @@
 		A979900F262F2DDA00AA65E3 /* FetchCollectionsServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799007262F2DB900AA65E3 /* FetchCollectionsServiceImp.swift */; };
 		A98628B72696F48800FB2AC2 /* Ion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8146261F183600074494 /* Ion.framework */; };
 		A98628B92696F8E200FB2AC2 /* Ion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FC8146261F183600074494 /* Ion.framework */; };
+		A98628BA2696FABB00FB2AC2 /* MediaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FFCED00C8054113707C0A /* MediaService.framework */; };
 		A9E76090263ACE8000929668 /* FetchAssetsServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E7608E263ACD4100929668 /* FetchAssetsServiceImp.swift */; };
 		A9E76094263AD02A00929668 /* ThumbnailCacheServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E76092263AD01D00929668 /* ThumbnailCacheServiceImp.swift */; };
 		A9F332A6268DC96E000AC5AA /* HasCachingImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F332A5268DC96E000AC5AA /* HasCachingImageManager.swift */; };
@@ -143,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98628BA2696FABB00FB2AC2 /* MediaService.framework in Frameworks */,
 				A98628B72696F48800FB2AC2 /* Ion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
