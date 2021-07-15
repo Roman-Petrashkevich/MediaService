@@ -35,7 +35,10 @@ final class MainCellItem: CollectionViewDiffCellItem {
         }
 
         cell.titleLabel.text = mediaItemCollection.title
-        dependencies.mediaLibraryService.fetchThumbnail(for: mediaItemCollection, size: .zero, contentMode: .aspectFit) { image in
+        dependencies.mediaLibraryService.fetchThumbnail(for: mediaItemCollection, size: .zero, contentMode: .aspectFit) { [weak self] image in
+            guard self?.mediaItemCollection.thumbnail == image else {
+                return
+            }
             if image != nil {
                 cell.imageView.image = image
             }

@@ -88,7 +88,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(status, authStatus, "Permission status is not equal")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 1)
     }
 
     func testPermissionDeniedStatus() {
@@ -105,7 +105,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(status, authStatus, "Permission status is not equal")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 1)
     }
 
     func testPermissionNotDeterminedStatus() {
@@ -122,7 +122,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(status, authStatus, "Permission status is not equal")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 1)
     }
 
     func testPermissionRestrictedStatus() {
@@ -139,7 +139,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(status, authStatus, "Permission status is not equal")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 1)
     }
 
     func testPermissionLimitedStatus() {
@@ -157,7 +157,7 @@ final class MediaServiceTests: XCTestCase {
                 XCTAssertEqual(status, authStatus, "Permission status is not equal")
                 expectation.fulfill()
             }
-            wait(for: [expectation], timeout: 0.1)
+            wait(for: [expectation], timeout: 1)
         }
     }
 
@@ -175,7 +175,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertNotEqual(status, authStatus, "Permission status is equal")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 1)
     }
 
     // MARK: - FetchMediaItemCollectorTest
@@ -255,7 +255,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(mediaItem.thumbnail, image, "is not equal image")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 4)
     }
 
     func testFetchMediaItemThumbnailIsNil() {
@@ -292,7 +292,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(pencilImage, image, "is not equal image")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.6)
+        wait(for: [expectation], timeout: 4)
     }
 
     // MARK: - FethcMediaCollectionThumbnailTest
@@ -310,7 +310,7 @@ final class MediaServiceTests: XCTestCase {
             expectation.fulfill()
         }
 
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 4)
     }
 
     func testFetchMediaCollectionThumbnailFromCache() {
@@ -330,7 +330,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(pencilImage, image, "is not equal image")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.5)
+        wait(for: [expectation], timeout: 5)
     }
 
     func testFetchImage() {
@@ -348,7 +348,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(pencilImage?.pngData(), image?.pngData(), "is not equal image")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 4)
     }
 
     func testFetchImageIsNotEqual() {
@@ -366,7 +366,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertNotEqual(pencilImage?.pngData(), image?.pngData(), "is equal image")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 4)
     }
 
     func testFetchImageNil() {
@@ -382,7 +382,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertNil(image, "is not nil")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 4)
     }
 
     func testFetchAVAssetWithVideo() {
@@ -400,7 +400,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(avAssetMock.commonMetadata, avAsset?.commonMetadata, "is not equal metadata")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 4)
     }
 
     func testFetchAVAssetIsNotEqual() {
@@ -418,7 +418,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertNotEqual(avAssetMock.metadata, avAsset?.metadata, "is equal metadata")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 4)
     }
 
     func testFetchAVAssetIsNil() {
@@ -431,7 +431,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertNil(avAsset, "is not nil")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 4)
     }
 
     func testFetchAVAssetLivePhoto() {
@@ -450,7 +450,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertEqual(avAssetMock.commonMetadata, avAsset?.commonMetadata, "is not equal metadata")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.2)
+        wait(for: [expectation], timeout: 4)
     }
 
     func testFetchAVAssetLivePhotoIsNotEqual() {
@@ -469,7 +469,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertNotEqual(avAssetMock.commonMetadata, avAsset?.commonMetadata, "is equal metadata")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.2)
+        wait(for: [expectation], timeout: 4)
     }
 
     func testFetchAVAssetLivePhotoIsNil() {
@@ -482,7 +482,7 @@ final class MediaServiceTests: XCTestCase {
             XCTAssertNil(avAsset?.commonMetadata, "is not nil")
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.2)
+        wait(for: [expectation], timeout: 4)
     }
 
     static var allTests = [

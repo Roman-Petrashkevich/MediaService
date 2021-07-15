@@ -35,7 +35,10 @@ final class GalleryCellItem: CollectionViewDiffCellItem {
             return
         }
 
-        dependencies.mediaLibraryService.fetchThumbnail(for: mediaItem, size: .zero, contentMode: .aspectFit) { image in
+        dependencies.mediaLibraryService.fetchThumbnail(for: mediaItem, size: .zero, contentMode: .aspectFit) { [weak self] image in
+            guard self?.mediaItem.thumbnail == image else {
+                return
+            }
             cell.imageView.image = image
         }
 
