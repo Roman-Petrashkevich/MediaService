@@ -14,6 +14,8 @@ public enum MediaItemsFilter: Int, CaseIterable {
 
     public func matches(item: MediaItem) -> Bool {
         switch self {
+        case .unknown:
+            return item.type.isUnknown
         case .video:
             return item.type.isVideo
         case .photo:
@@ -24,8 +26,6 @@ public enum MediaItemsFilter: Int, CaseIterable {
             return item.type.isSloMoVideo
         case .all:
             return true
-        case .unknown:
-            return item.type.unknown
         }
     }
 }
