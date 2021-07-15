@@ -29,7 +29,7 @@ public protocol MediaLibraryService: AnyObject {
     // MARK: - Lists
 
     func fetchMediaItemCollections()
-    func fetchMediaItems(in collection: MediaItemsCollection?, filter: MediaItemFilter)
+    func fetchMediaItems(in collection: MediaItemsCollection?, filter: MediaItemsFilter)
 
     // MARK: - Thumbnails
 

@@ -81,7 +81,7 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
         }
     }
 
-    public func fetchMediaItems(in collection: MediaItemsCollection?, filter: MediaItemFilter = .all) {
+    public func fetchMediaItems(in collection: MediaItemsCollection?, filter: MediaItemsFilter = .all) {
         guard let collection = collection else {
             let collection = dependencies.fetchCollectionsService.fetchCollections(with: .smartAlbum,
                                                                                    subtype: .smartAlbumUserLibrary,
@@ -95,7 +95,17 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                 return
             }
 
-            let mediaType: PHAssetMediaType? = filter == .all ? nil : .video
+            let mediaType: PHAssetMediaType?
+            switch filter {
+            case .all:
+                mediaType = nil
+            case .unknown:
+                mediaType = .unknown
+            case .photo:
+                mediaType = .image
+            case .video, .livePhoto, .sloMoVideo:
+                mediaType = .video
+            }
             guard let fetchResult = self.dependencies.fetchCollectionsService.fetchMediaItems(in: assetCollection,
                                                                                               mediaType: mediaType) else {
                 return

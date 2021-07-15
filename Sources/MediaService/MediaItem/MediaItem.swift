@@ -62,7 +62,16 @@ public final class MediaItem: Codable {
             }
         }
 
-        public var isStatic: Bool {
+        public var isUnknown: Bool {
+            switch self {
+            case .unknown:
+                return true
+            default:
+                return false
+            }
+        }
+
+        public var isPhoto: Bool {
             switch self {
             case .photo:
                 return true
