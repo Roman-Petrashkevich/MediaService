@@ -31,12 +31,6 @@ internal enum L10n {
     internal static let list = L10n.tr("Localizable", "mediaLibrary.list")
     /// Unknown
     internal static let unknown = L10n.tr("Localizable", "mediaLibrary.unknown")
-    internal enum Filter {
-      /// All
-      internal static let all = L10n.tr("Localizable", "mediaLibrary.filter.all")
-      /// Videos
-      internal static let videos = L10n.tr("Localizable", "mediaLibrary.filter.videos")
-    }
     internal enum Item {
       /// LIVE
       internal static let live = L10n.tr("Localizable", "mediaLibrary.item.live")
