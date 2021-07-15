@@ -8,17 +8,19 @@ import MediaService
 
 final class GalleryCellItem: CollectionViewDiffCellItem {
     typealias Cell = GalleryCollectionViewCell
+    typealias Dependencies = HasMediaLibraryService
 
     private(set) var reuseType: ReuseType = .class(Cell.self)
     var diffIdentifier: String = ""
 
-    var loadThumbnailEventHandler: ((UIImage?) -> Void)?
+    private let dependencies: Dependencies
     private let mediaItem: MediaItem
     private let internalInset: CGFloat = 1.5
     private let numberOfRows: Int = 3
 
-    init(mediaItem: MediaItem) {
-        self.mediaItem = mediaItem
+    init(dependencies: Dependencies, asset: PHAsset) {
+        self.mediaItem = .init(asset: asset)
+        self.dependencies = dependencies
     }
 
     func isEqual(to item: DiffItem) -> Bool {
@@ -33,7 +35,7 @@ final class GalleryCellItem: CollectionViewDiffCellItem {
             return
         }
 
-        loadThumbnailEventHandler = { image in
+        dependencies.mediaLibraryService.fetchThumbnail(for: mediaItem, size: .zero, contentMode: .aspectFit) { image in
             cell.imageView.image = image
         }
 

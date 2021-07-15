@@ -7,10 +7,14 @@ import MediaService
 
 final class MainFactory {
 
-    private weak var viewController: MainViewController?
+    typealias Dependencies = HasMediaLibraryService
 
-    init(viewController: MainViewController?) {
-        self.viewController = viewController
+    private let dependencies: Dependencies
+    private weak var output: MainViewOutput?
+
+    init(dependencies: Dependencies, output: MainViewOutput) {
+        self.dependencies = dependencies
+        self.output = output
     }
 
     func makeSectionItem(mediaItemsCollections: [MediaItemsCollection]) -> [GeneralCollectionViewDiffSectionItem] {
@@ -26,14 +30,10 @@ final class MainFactory {
     }
 
     private func makeCellItem(mediaItemsCollection: MediaItemsCollection) -> MainCellItem {
-        let cellItem = MainCellItem(mediaItemCollection: mediaItemsCollection)
-
-        viewController?.loadThumbnailCollection(mediaItemsCollection) { image in
-            cellItem.loadThumbnailEventHandler?(image)
-        }
+        let cellItem = MainCellItem(dependencies: dependencies, mediaItemCollection: mediaItemsCollection)
 
         cellItem.itemDidSelectHandler = { [weak self] _ in
-            self?.viewController?.selectAlbumEventTriggered(with: mediaItemsCollection)
+            self?.output?.selectAlbumEventTriggered(with: mediaItemsCollection)
         }
 
         return cellItem

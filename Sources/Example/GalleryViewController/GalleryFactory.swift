@@ -7,11 +7,11 @@ import MediaService
 import Photos
 
 final class GalleryFactory {
+    typealias Dependencies = HasMediaLibraryService
+    private var dependencies: Dependencies
 
-    private weak var viewController: GalleryViewController?
-
-    init(viewController: GalleryViewController?) {
-        self.viewController = viewController
+    init(dependencies: GalleryViewController.Dependencies) {
+        self.dependencies = dependencies
     }
 
     func makeSectionItem(result: PHFetchResult<PHAsset>) -> [GeneralCollectionViewDiffSectionItem] {
@@ -20,11 +20,7 @@ final class GalleryFactory {
             guard let self = self else {
                 return
             }
-            let mediaItem = MediaItem(asset: asset)
-            let cellItem = GalleryCellItem(mediaItem: mediaItem)
-            self.viewController?.loadThumbnailMediaItem(mediaItem) { image in
-                cellItem.loadThumbnailEventHandler?(image)
-            }
+            let cellItem = GalleryCellItem(dependencies: self.dependencies, asset: asset)
             cellItems.append(cellItem)
         }
 

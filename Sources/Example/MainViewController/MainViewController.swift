@@ -8,6 +8,10 @@ import MediaService
 import Ion
 import Photos
 
+protocol MainViewOutput: AnyObject {
+    func selectAlbumEventTriggered(with mediaItemCollection: MediaItemsCollection)
+}
+
 final class MainViewController: UIViewController {
 
     typealias Dependencies = HasMediaLibraryService
@@ -32,7 +36,7 @@ final class MainViewController: UIViewController {
         collectionView.backgroundColor = .clear
         return collectionView
     }()
-    private lazy var mainFactory: MainFactory = .init(viewController: self)
+    private lazy var mainFactory: MainFactory = .init(dependencies: dependencies, output: self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,19 +64,6 @@ final class MainViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func selectAlbumEventTriggered(with mediaItemCollection: MediaItemsCollection) {
-        let galleryViewController = GalleryViewController(dependencies: dependencies, mediaItemCollection: mediaItemCollection)
-        navigationController?.pushViewController(galleryViewController, animated: true)
-    }
-
-    func loadThumbnailCollection(_ mediaItemCollection: MediaItemsCollection,
-                                 completion: @escaping (UIImage?) -> Void) {
-        dependencies.mediaLibraryService.fetchThumbnail(for: mediaItemCollection,
-                                                        size: .zero,
-                                                        contentMode: .aspectFill,
-                                                        completion: completion)
-    }
-
     private func subscribeForPermissionStatus() {
         permissionStatusCollector.subscribe { [weak self] status in
             switch status {
@@ -97,5 +88,12 @@ final class MainViewController: UIViewController {
     private func updateCollectionManager() {
         let sectionItem = mainFactory.makeSectionItem(mediaItemsCollections: mediaItemsCollections)
         collectionViewManager.update(with: sectionItem, animated: true)
+    }
+}
+
+extension MainViewController: MainViewOutput {
+    func selectAlbumEventTriggered(with mediaItemCollection: MediaItemsCollection) {
+        let galleryViewController = GalleryViewController(dependencies: dependencies, mediaItemCollection: mediaItemCollection)
+        navigationController?.pushViewController(galleryViewController, animated: true)
     }
 }

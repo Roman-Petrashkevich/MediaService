@@ -29,7 +29,7 @@ final class GalleryViewController: UIViewController {
         collectionView.contentInsetAdjustmentBehavior = .never
         return collectionView
     }()
-    private lazy var galleryFactory: GalleryFactory = .init(viewController: self)
+    private lazy var galleryFactory: GalleryFactory = .init(dependencies: dependencies)
 
     init(dependencies: Dependencies, mediaItemCollection: MediaItemsCollection) {
         self.dependencies = dependencies
@@ -55,14 +55,6 @@ final class GalleryViewController: UIViewController {
         collectionView.configureFrame { maker in
             maker.left().right().bottom(to: view.nui_safeArea.bottom).top(to: view.nui_safeArea.top)
         }
-    }
-
-    func loadThumbnailMediaItem(_ mediaItem: MediaItem,
-                                completion: @escaping (UIImage?) -> Void) {
-        dependencies.mediaLibraryService.fetchThumbnail(for: mediaItem,
-                                                        size: .zero,
-                                                        contentMode: .aspectFill,
-                                                        completion: completion)
     }
 
     private func subscribeForMediaItemsResult() {

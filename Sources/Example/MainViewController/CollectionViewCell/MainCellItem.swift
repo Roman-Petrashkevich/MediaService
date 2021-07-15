@@ -6,17 +6,19 @@ import CollectionViewTools
 import MediaService
 
 final class MainCellItem: CollectionViewDiffCellItem {
-
     typealias Cell = MainCollectionViewCell
+    typealias Dependencies = HasMediaLibraryService
+
     private(set) var reuseType: ReuseType = .class(Cell.self)
     var diffIdentifier: String {
         mediaItemCollection.identifier
     }
 
-    var loadThumbnailEventHandler: ((UIImage?) -> Void)?
     private let mediaItemCollection: MediaItemsCollection
+    private let dependencies: Dependencies
 
-    init(mediaItemCollection: MediaItemsCollection) {
+    init(dependencies: Dependencies, mediaItemCollection: MediaItemsCollection) {
+        self.dependencies = dependencies
         self.mediaItemCollection = mediaItemCollection
     }
 
@@ -33,7 +35,7 @@ final class MainCellItem: CollectionViewDiffCellItem {
         }
 
         cell.titleLabel.text = mediaItemCollection.title
-        loadThumbnailEventHandler = { image in
+        dependencies.mediaLibraryService.fetchThumbnail(for: mediaItemCollection, size: .zero, contentMode: .aspectFit) { image in
             if image != nil {
                 cell.imageView.image = image
             }
