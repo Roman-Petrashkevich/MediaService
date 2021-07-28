@@ -214,7 +214,6 @@ final class MediaServiceTests: XCTestCase {
             mediaResult.fetchResult.enumerateObjects { _, index, _ in
                 XCTAssertEqual(mediaTypes[index], mediaResult.fetchResult.mediaType(index), "is not equal media type")
             }
-            XCTAssertEqual(mediaTypes.count, mediaResult.fetchResult.count, "is not equal count")
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 4)
