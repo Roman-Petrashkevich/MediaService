@@ -125,17 +125,6 @@
 		A9FC82202622D37B00074494 /* MediaItemsCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaItemsCollection.swift; sourceTree = "<group>"; };
 		A9FC82222622D37B00074494 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		A9FC82232622D37B00074494 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		A9FC82252622D37B00074494 /* FunctionPro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Book.otf"; sourceTree = "<group>"; };
-		A9FC82262622D37B00074494 /* clarikageo-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "clarikageo-medium.otf"; sourceTree = "<group>"; };
-		A9FC82272622D37C00074494 /* Bauhaus_Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bauhaus_Demi.ttf; sourceTree = "<group>"; };
-		A9FC82282622D37C00074494 /* FunctionPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Medium.otf"; sourceTree = "<group>"; };
-		A9FC82292622D37C00074494 /* FunctionPro-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Demi.otf"; sourceTree = "<group>"; };
-		A9FC822A2622D37C00074494 /* LibreBaskerville-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBaskerville-Regular.ttf"; sourceTree = "<group>"; };
-		A9FC822B2622D37C00074494 /* Ayuthaya.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ayuthaya.ttf; sourceTree = "<group>"; };
-		A9FC822C2622D37C00074494 /* Helvetica-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Helvetica-Bold.ttf"; sourceTree = "<group>"; };
-		A9FC822D2622D37C00074494 /* FunctionPro-BookOblique.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-BookOblique.otf"; sourceTree = "<group>"; };
-		A9FC822E2622D37C00074494 /* Bauhaus_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bauhaus_Medium.ttf; sourceTree = "<group>"; };
-		A9FC822F2622D37C00074494 /* FunctionPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Light.otf"; sourceTree = "<group>"; };
 		A9FC82312622D37C00074494 /* MainServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainServiceFactory.swift; sourceTree = "<group>"; };
 		A9FC82332622D37C00074494 /* MediaLibraryServiceImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaLibraryServiceImp.swift; sourceTree = "<group>"; };
 		A9FC82342622D37C00074494 /* MediaLibraryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaLibraryService.swift; sourceTree = "<group>"; };
@@ -384,27 +373,8 @@
 			children = (
 				A9FC82222622D37B00074494 /* Strings.swift */,
 				A9FC82232622D37B00074494 /* Localizable.strings */,
-				A9FC82242622D37B00074494 /* Fonts */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		A9FC82242622D37B00074494 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				A9FC82252622D37B00074494 /* FunctionPro-Book.otf */,
-				A9FC82262622D37B00074494 /* clarikageo-medium.otf */,
-				A9FC82272622D37C00074494 /* Bauhaus_Demi.ttf */,
-				A9FC82282622D37C00074494 /* FunctionPro-Medium.otf */,
-				A9FC82292622D37C00074494 /* FunctionPro-Demi.otf */,
-				A9FC822A2622D37C00074494 /* LibreBaskerville-Regular.ttf */,
-				A9FC822B2622D37C00074494 /* Ayuthaya.ttf */,
-				A9FC822C2622D37C00074494 /* Helvetica-Bold.ttf */,
-				A9FC822D2622D37C00074494 /* FunctionPro-BookOblique.otf */,
-				A9FC822E2622D37C00074494 /* Bauhaus_Medium.ttf */,
-				A9FC822F2622D37C00074494 /* FunctionPro-Light.otf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		A9FC82302622D37C00074494 /* Services */ = {
