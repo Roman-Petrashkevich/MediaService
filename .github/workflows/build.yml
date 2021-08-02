@@ -9,19 +9,19 @@ jobs:
     runs-on: macOS-latest
     strategy:
         matrix:
-          destination: ['platform=iOS Simulator,OS=13.3,name=iPhone 11']
+          destination: ['platform=iOS Simulator,name=iPhone 11']
     steps:
       - name: Checkout
         uses: actions/checkout@master
       - name: Build and Test
         run: |
-          cd MyFramework
-          xcodebuild clean build test -project MyFramework.xcodeproj -scheme MyFramework -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          carthage bootstrap --platform ios --cache-builds --use-xcframeworks
+          xcodebuild clean build test -project MediaService.xcodeproj -scheme MediaService -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}
       - name: Update Code Coverage
         run: |
-          bash <(curl -s https://codecov.io/bash) -J 'MyFramework'
+          bash <(curl -s https://codecov.io/bash) -J 'MediaService'
       - name: Update docs
         run: |
           gem install jazzy
