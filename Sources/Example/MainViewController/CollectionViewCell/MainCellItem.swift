@@ -43,7 +43,11 @@ final class MainCellItem: CollectionViewDiffCellItem {
                 cell.imageView.image = image
             }
             else {
-                cell.imageView.image = UIImage(systemName: "photo.on.rectangle.angled")
+                if #available(iOS 13.0, *) {
+                    cell.imageView.image = UIImage(systemName: "photo.on.rectangle.angled")
+                } else {
+                    // Fallback on earlier versions
+                }
                 cell.imageView.tintColor = .black
             }
         }

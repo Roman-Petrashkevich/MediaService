@@ -23,7 +23,11 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
 
     private(set) lazy var livePhotoIconView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "livephoto")
+        if #available(iOS 13.0, *) {
+            imageView.image = UIImage(systemName: "livephoto")
+        } else {
+            // Fallback on earlier versions
+        }
         imageView.tintColor = .white
         imageView.isHidden = true
         return imageView
