@@ -11,6 +11,9 @@ final class CachingImageManagerMock: CachingImageManager {
     private var bundle: Bundle {
         Bundle(for: Self.self)
     }
+    private var imagePath: String {
+        bundle.path(forResource: "ImageTest", ofType: "png") ?? ""
+    }
     private var videoURL: URL {
         URL(fileURLWithPath: bundle.path(forResource: "VideoTest", ofType: "mov") ?? "")
     }
@@ -54,6 +57,6 @@ final class CachingImageManagerMock: CachingImageManager {
                       contentMode: PHImageContentMode,
                       options: PHImageRequestOptions?,
                       resultHandler: @escaping (UIImage?) -> Void) {
-        resultHandler(UIImage.init(systemName: "pencil"))
+        resultHandler(UIImage(contentsOfFile: imagePath))
     }
 }

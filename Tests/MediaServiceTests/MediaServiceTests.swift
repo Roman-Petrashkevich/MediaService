@@ -47,6 +47,10 @@ final class MediaServiceTests: XCTestCase {
         Bundle(for: Self.self)
     }
 
+    private var imagePath: String {
+        bundle.path(forResource: "ImageTest", ofType: "png") ?? ""
+    }
+
     lazy var service: MediaLibraryService = {
         let service = MediaLibraryServiceImp(dependencies: dependencies)
         return service
@@ -245,7 +249,7 @@ final class MediaServiceTests: XCTestCase {
     func testFetchMediaItemThumbnail() {
         // Given
         let mediaItem: MediaItem = .init(asset: .init())
-        let pencilImage = UIImage(systemName: "pencil")
+        let pencilImage = UIImage(contentsOfFile: imagePath)
         mediaItem.thumbnail = pencilImage
         let expectation = self.expectation(description: "error")
 
@@ -277,7 +281,7 @@ final class MediaServiceTests: XCTestCase {
     func testFetchMediaItemThumbnailFromCache() {
         //Given
         let mediaItem: MediaItem = .dummy
-        let pencilImage = UIImage(systemName: "pencil")
+        let pencilImage = UIImage(contentsOfFile: imagePath)
         let expectation = self.expectation(description: "error")
 
         //When
@@ -299,7 +303,7 @@ final class MediaServiceTests: XCTestCase {
     func testFetchMediaCollectionThumbnail() {
         // Given
         let mediaItemCollections: MediaItemsCollection = .init(identifier: "12", title: "Recents")
-        let pencilImage = UIImage(systemName: "pencil")
+        let pencilImage = UIImage(contentsOfFile: imagePath)
         mediaItemCollections.thumbnail = pencilImage
         let expectation = self.expectation(description: "error")
 
@@ -315,7 +319,7 @@ final class MediaServiceTests: XCTestCase {
     func testFetchMediaCollectionThumbnailFromCache() {
         // Given
         let mediaItemCollection: MediaItemsCollection = .init(identifier: "12", title: "Recents")
-        let pencilImage = UIImage(systemName: "pencil")
+        let pencilImage = UIImage(contentsOfFile: imagePath)
         let expectation = self.expectation(description: "error")
 
         //When
@@ -335,7 +339,7 @@ final class MediaServiceTests: XCTestCase {
     func testFetchImage() {
         // Given
         let mediaItem: MediaItem = .init(asset: .init())
-        let pencilData = UIImage(systemName: "pencil")?.pngData() ?? .init()
+        let pencilData = UIImage(contentsOfFile: imagePath)?.pngData() ?? .init()
         let pencilImage = UIImage(data: pencilData)
         let expectation = self.expectation(description: "error")
 
@@ -353,12 +357,12 @@ final class MediaServiceTests: XCTestCase {
     func testFetchImageIsNotEqual() {
         // Given
         let mediaItem: MediaItem = .init(asset: .init())
-        let pencilData = UIImage(systemName: "pencil")?.pngData() ?? .init()
-        let pencilImage = UIImage(systemName: "pencil")
+        let pencilData = UIImage(contentsOfFile: imagePath)?.pngData() ?? .init()
+        let pencilImage = UIImage(contentsOfFile: imagePath)
         let expectation = self.expectation(description: "error")
 
         //When
-        cachingImageManagerMock.pencilData = pencilData
+        cachingImageManagerMock.pencilData = pencilImage?.jpegData(compressionQuality: 0.5)
 
         //Then
         service.fetchImage(for: mediaItem) { image in
