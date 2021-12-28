@@ -1,4 +1,4 @@
 author: Rosberry
 author_url: https://rosberry.com
 github_url: https://github.com/rosberry/MediaService
-xcodebuild_arguments: [-workspace, 'MediaService.xcodeproj', -scheme, 'MediaService']
+xcodebuild_arguments: [-project, 'MediaService.xcodeproj', -scheme, 'MediaService']
