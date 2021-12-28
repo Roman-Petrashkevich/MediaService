@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MediaLibraryServiceImp Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/MediaLibraryServiceImp" class="dashAnchor"></a>
+    <a title="MediaLibraryServiceImp Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">MediaService 1.0 Docs</a> (4% documented)</p>
+        <p class="header-right"><a href="https://github.com/rosberry/MediaService"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">MediaService Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        MediaLibraryServiceImp Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AssetResourceManagerImp.html">AssetResourceManagerImp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CachingImageManagerImp.html">CachingImageManagerImp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FetchAssetsServiceImp.html">FetchAssetsServiceImp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FetchCollectionsServiceImp.html">FetchCollectionsServiceImp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MainServicesFactory.html">MainServicesFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MediaItem.html">MediaItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MediaItem/SourceType.html">– SourceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MediaItemsCollection.html">MediaItemsCollection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MediaItemsFetchResult.html">MediaItemsFetchResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MediaLibraryServiceImp.html">MediaLibraryServiceImp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PermissionsServiceImp.html">PermissionsServiceImp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ThumbnailCacheServiceImp.html">ThumbnailCacheServiceImp</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:12MediaService8ServicesAA04MainC7FactoryCvp">Services</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/MediaItemsFilter.html">MediaItemsFilter</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AssetResourceManager.html">AssetResourceManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CachingImageManager.html">CachingImageManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/FetchAssetsService.html">FetchAssetsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/FetchCollectionsService.html">FetchCollectionsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasAssetResourceManager.html">HasAssetResourceManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasCachingImageManager.html">HasCachingImageManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasFetchAssetsService.html">HasFetchAssetsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasFetchCollectionsService.html">HasFetchCollectionsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasMediaLibraryService.html">HasMediaLibraryService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasPermissionsService.html">HasPermissionsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasThumbnailCacheService.html">HasThumbnailCacheService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MediaLibraryService.html">MediaLibraryService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PermissionsService.html">PermissionsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ThumbnailCacheService.html">ThumbnailCacheService</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MediaLibraryServiceImp</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">MediaLibraryServiceImp</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt"><a href="../Protocols/MediaLibraryService.html">MediaLibraryService</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">MediaLibraryServiceImp</span><span class="p">:</span> <span class="kt">PHPhotoLibraryChangeObserver</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC27permissionStatusEventSource3Ion03AnygH0VySo015PHAuthorizationF0VGvp"></a>
+                    <a name="//apple_ref/swift/Property/permissionStatusEventSource" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC27permissionStatusEventSource3Ion03AnygH0VySo015PHAuthorizationF0VGvp">permissionStatusEventSource</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">permissionStatusEventSource</span><span class="p">:</span> <span class="kt">AnyEventSource</span><span class="o">&lt;</span><span class="kt">PHAuthorizationStatus</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC21mediaItemsEventSource3Ion03AnygH0VyAA0aF11FetchResultCGvp"></a>
+                    <a name="//apple_ref/swift/Property/mediaItemsEventSource" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC21mediaItemsEventSource3Ion03AnygH0VyAA0aF11FetchResultCGvp">mediaItemsEventSource</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">mediaItemsEventSource</span><span class="p">:</span> <span class="kt">AnyEventSource</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/MediaItemsFetchResult.html">MediaItemsFetchResult</a></span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC22collectionsEventSource3Ion03AnyfG0VySayAA0A15ItemsCollectionCGGvp"></a>
+                    <a name="//apple_ref/swift/Property/collectionsEventSource" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC22collectionsEventSource3Ion03AnyfG0VySayAA0A15ItemsCollectionCGGvp">collectionsEventSource</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">collectionsEventSource</span><span class="p">:</span> <span class="kt">AnyEventSource</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/MediaItemsCollection.html">MediaItemsCollection</a></span><span class="p">]</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC05mediaC17UpdateEventSource3Ion03AnygH0VySo8PHChangeCGvp"></a>
+                    <a name="//apple_ref/swift/Property/mediaLibraryUpdateEventSource" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC05mediaC17UpdateEventSource3Ion03AnygH0VySo8PHChangeCGvp">mediaLibraryUpdateEventSource</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">mediaLibraryUpdateEventSource</span><span class="p">:</span> <span class="kt">AnyEventSource</span><span class="o">&lt;</span><span class="kt">PHChange</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC33mediaItemFetchProgressEventSource3Ion03AnyiJ0VySfGvp"></a>
+                    <a name="//apple_ref/swift/Property/mediaItemFetchProgressEventSource" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC33mediaItemFetchProgressEventSource3Ion03AnyiJ0VySfGvp">mediaItemFetchProgressEventSource</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">mediaItemFetchProgressEventSource</span><span class="p">:</span> <span class="kt">AnyEventSource</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC12Dependenciesa"></a>
+                    <a name="//apple_ref/swift/Alias/Dependencies" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC12Dependenciesa">Dependencies</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Dependencies</span> <span class="o">=</span> <span class="kt"><a href="../Protocols/HasFetchCollectionsService.html">HasFetchCollectionsService</a></span> <span class="o">&amp;</span>
+                                <span class="kt"><a href="../Protocols/HasPermissionsService.html">HasPermissionsService</a></span> <span class="o">&amp;</span>
+                                <span class="kt"><a href="../Protocols/HasFetchAssetsService.html">HasFetchAssetsService</a></span> <span class="o">&amp;</span>
+                                <span class="kt"><a href="../Protocols/HasThumbnailCacheService.html">HasThumbnailCacheService</a></span> <span class="o">&amp;</span>
+                                <span class="kt"><a href="../Protocols/HasCachingImageManager.html">HasCachingImageManager</a></span> <span class="o">&amp;</span>
+                                <span class="kt"><a href="../Protocols/HasAssetResourceManager.html">HasAssetResourceManager</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC12dependenciesAcA23HasAssetResourceManager_AA0f12CachingImageI0AA0f11FetchAssetsB0AA0fl11CollectionsB0AA0f11PermissionsB0AA0f14ThumbnailCacheB0p_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(dependencies:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC12dependenciesAcA23HasAssetResourceManager_AA0f12CachingImageI0AA0f11FetchAssetsB0AA0fl11CollectionsB0AA0f11PermissionsB0AA0f14ThumbnailCacheB0p_tcfc">init(dependencies:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">dependencies</span><span class="p">:</span> <span class="kt"><a href="../Classes/MediaLibraryServiceImp.html#/s:12MediaService0a7LibraryB3ImpC12Dependenciesa">Dependencies</a></span> <span class="o">=</span> <span class="kt"><a href="../Global%20Variables.html#/s:12MediaService8ServicesAA04MainC7FactoryCvp">Services</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Permissions"></a>
+                <a name="//apple_ref/swift/Section/Permissions" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Permissions"></a>
+                  <h3 class="section-name"><span>Permissions</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC07requestaC11PermissionsyyF"></a>
+                    <a name="//apple_ref/swift/Method/requestMediaLibraryPermissions()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC07requestaC11PermissionsyyF">requestMediaLibraryPermissions()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">requestMediaLibraryPermissions</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Lists"></a>
+                <a name="//apple_ref/swift/Section/Lists" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Lists"></a>
+                  <h3 class="section-name"><span>Lists</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC05fetchA15ItemCollectionsyyF"></a>
+                    <a name="//apple_ref/swift/Method/fetchMediaItemCollections()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC05fetchA15ItemCollectionsyyF">fetchMediaItemCollections()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchMediaItemCollections</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC05fetchA5Items2in6filteryAA0aF10CollectionCSg_AA0aF6FilterOtF"></a>
+                    <a name="//apple_ref/swift/Method/fetchMediaItems(in:filter:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC05fetchA5Items2in6filteryAA0aF10CollectionCSg_AA0aF6FilterOtF">fetchMediaItems(in:<wbr>filter:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchMediaItems</span><span class="p">(</span><span class="k">in</span> <span class="nv">collection</span><span class="p">:</span> <span class="kt"><a href="../Classes/MediaItemsCollection.html">MediaItemsCollection</a></span><span class="p">?,</span> <span class="nv">filter</span><span class="p">:</span> <span class="kt"><a href="../Enums/MediaItemsFilter.html">MediaItemsFilter</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">all</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Thumbnails"></a>
+                <a name="//apple_ref/swift/Section/Thumbnails" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Thumbnails"></a>
+                  <h3 class="section-name"><span>Thumbnails</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC14fetchThumbnail3for4size11contentMode10completionyAA0A4ItemC_So6CGSizeVSo014PHImageContentJ0VySo7UIImageCSgctF"></a>
+                    <a name="//apple_ref/swift/Method/fetchThumbnail(for:size:contentMode:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC14fetchThumbnail3for4size11contentMode10completionyAA0A4ItemC_So6CGSizeVSo014PHImageContentJ0VySo7UIImageCSgctF">fetchThumbnail(for:<wbr>size:<wbr>contentMode:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchThumbnail</span><span class="p">(</span><span class="k">for</span> <span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Classes/MediaItem.html">MediaItem</a></span><span class="p">,</span>
+                           <span class="nv">size</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">,</span>
+                           <span class="nv">contentMode</span><span class="p">:</span> <span class="kt">PHImageContentMode</span><span class="p">,</span>
+                           <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt">UIImage</span><span class="p">?</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC14fetchThumbnail3for4size11contentMode10completionyAA0A15ItemsCollectionC_So6CGSizeVSo014PHImageContentJ0VySo7UIImageCSgctF"></a>
+                    <a name="//apple_ref/swift/Method/fetchThumbnail(for:size:contentMode:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC14fetchThumbnail3for4size11contentMode10completionyAA0A15ItemsCollectionC_So6CGSizeVSo014PHImageContentJ0VySo7UIImageCSgctF">fetchThumbnail(for:<wbr>size:<wbr>contentMode:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchThumbnail</span><span class="p">(</span><span class="k">for</span> <span class="nv">collection</span><span class="p">:</span> <span class="kt"><a href="../Classes/MediaItemsCollection.html">MediaItemsCollection</a></span><span class="p">,</span>
+                           <span class="nv">size</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">,</span>
+                           <span class="nv">contentMode</span><span class="p">:</span> <span class="kt">PHImageContentMode</span><span class="p">,</span>
+                           <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt">UIImage</span><span class="p">?</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Data"></a>
+                <a name="//apple_ref/swift/Section/Data" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Data"></a>
+                  <h3 class="section-name"><span>Data</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC10fetchImage3for10completionyAA0A4ItemC_ySo7UIImageCSgctF"></a>
+                    <a name="//apple_ref/swift/Method/fetchImage(for:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC10fetchImage3for10completionyAA0A4ItemC_ySo7UIImageCSgctF">fetchImage(for:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchImage</span><span class="p">(</span><span class="k">for</span> <span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Classes/MediaItem.html">MediaItem</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt">UIImage</span><span class="p">?</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC10fetchImage3for7options10completionyAA0A4ItemC_So21PHImageRequestOptionsCySo7UIImageCSgctF"></a>
+                    <a name="//apple_ref/swift/Method/fetchImage(for:options:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC10fetchImage3for7options10completionyAA0A4ItemC_So21PHImageRequestOptionsCySo7UIImageCSgctF">fetchImage(for:<wbr>options:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchImage</span><span class="p">(</span><span class="k">for</span> <span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Classes/MediaItem.html">MediaItem</a></span><span class="p">,</span>
+                       <span class="nv">options</span><span class="p">:</span> <span class="kt">PHImageRequestOptions</span><span class="p">,</span>
+                       <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt">UIImage</span><span class="p">?</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService0a7LibraryB3ImpC15fetchVideoAsset3for10completionyAA0A4ItemC_ySo7AVAssetCSgctF"></a>
+                    <a name="//apple_ref/swift/Method/fetchVideoAsset(for:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService0a7LibraryB3ImpC15fetchVideoAsset3for10completionyAA0A4ItemC_ySo7AVAssetCSgctF">fetchVideoAsset(for:<wbr>completion:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchVideoAsset</span><span class="p">(</span><span class="k">for</span> <span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Classes/MediaItem.html">MediaItem</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">Completion</span><span class="o">&lt;</span><span class="kt">AVAsset</span><span class="p">?</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/PHPhotoLibraryChangeObserver"></a>
+                <a name="//apple_ref/swift/Section/PHPhotoLibraryChangeObserver" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/PHPhotoLibraryChangeObserver"></a>
+                  <h3 class="section-name"><span>PHPhotoLibraryChangeObserver</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@MediaService@objc(cs)MediaLibraryServiceImp(im)photoLibraryDidChange:"></a>
+                    <a name="//apple_ref/swift/Method/photoLibraryDidChange(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@MediaService@objc(cs)MediaLibraryServiceImp(im)photoLibraryDidChange:">photoLibraryDidChange(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">photoLibraryDidChange</span><span class="p">(</span><span class="n">_</span> <span class="nv">changeInstance</span><span class="p">:</span> <span class="kt">PHChange</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="https://rosberry.com" target="_blank" rel="external noopener">Rosberry</a>. All rights reserved. (Last updated: 2021-12-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

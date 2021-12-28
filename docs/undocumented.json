@@ -1,0 +1,1013 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 8,
+      "symbol": "MediaItem",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 16,
+      "symbol": "MediaItem.SourceType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 17,
+      "symbol": "MediaItem.SourceType.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 18,
+      "symbol": "MediaItem.SourceType.photo",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 19,
+      "symbol": "MediaItem.SourceType.video(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 20,
+      "symbol": "MediaItem.SourceType.sloMoVideo(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 21,
+      "symbol": "MediaItem.SourceType.livePhoto",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 38,
+      "symbol": "MediaItem.SourceType.isVideo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 47,
+      "symbol": "MediaItem.SourceType.isLivePhoto",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 56,
+      "symbol": "MediaItem.SourceType.isSloMoVideo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 65,
+      "symbol": "MediaItem.SourceType.isUnknown",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 74,
+      "symbol": "MediaItem.SourceType.isPhoto",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 84,
+      "symbol": "MediaItem.asset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 85,
+      "symbol": "MediaItem.identifier",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 86,
+      "symbol": "MediaItem.thumbnail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 88,
+      "symbol": "MediaItem.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 89,
+      "symbol": "MediaItem.date",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 91,
+      "symbol": "MediaItem.duration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 102,
+      "symbol": "MediaItem.init(identifier:type:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 120,
+      "symbol": "MediaItem",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 122,
+      "symbol": "MediaItem.init(asset:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 150,
+      "symbol": "MediaItem",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
+      "line": 157,
+      "symbol": "MediaItem",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
+      "line": 8,
+      "symbol": "MediaItemsCollection",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
+      "line": 10,
+      "symbol": "MediaItemsCollection.identifier",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
+      "line": 11,
+      "symbol": "MediaItemsCollection.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
+      "line": 12,
+      "symbol": "MediaItemsCollection.thumbnail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
+      "line": 13,
+      "symbol": "MediaItemsCollection.mediaItems",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
+      "line": 14,
+      "symbol": "MediaItemsCollection.estimatedMediaItemsCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
+      "line": 15,
+      "symbol": "MediaItemsCollection.isFavorite",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
+      "line": 17,
+      "symbol": "MediaItemsCollection.init(identifier:title:mediaItems:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
+      "line": 23,
+      "symbol": "MediaItemsCollection.flush()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
+      "line": 28,
+      "symbol": "MediaItemsCollection",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
+      "line": 30,
+      "symbol": "MediaItemsCollection.init(collection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
+      "line": 36,
+      "symbol": "MediaItemsCollection",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFetchResult.swift",
+      "line": 7,
+      "symbol": "MediaItemsFetchResult",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFetchResult.swift",
+      "line": 8,
+      "symbol": "MediaItemsFetchResult.collection",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFetchResult.swift",
+      "line": 9,
+      "symbol": "MediaItemsFetchResult.filter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFetchResult.swift",
+      "line": 10,
+      "symbol": "MediaItemsFetchResult.fetchResult",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFetchResult.swift",
+      "line": 12,
+      "symbol": "MediaItemsFetchResult.init(collection:filter:fetchResult:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFilter.swift",
+      "line": 7,
+      "symbol": "MediaItemsFilter",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFilter.swift",
+      "line": 8,
+      "symbol": "MediaItemsFilter.video",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFilter.swift",
+      "line": 9,
+      "symbol": "MediaItemsFilter.sloMoVideo",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFilter.swift",
+      "line": 10,
+      "symbol": "MediaItemsFilter.livePhoto",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFilter.swift",
+      "line": 11,
+      "symbol": "MediaItemsFilter.photo",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFilter.swift",
+      "line": 12,
+      "symbol": "MediaItemsFilter.all",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFilter.swift",
+      "line": 13,
+      "symbol": "MediaItemsFilter.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsFilter.swift",
+      "line": 15,
+      "symbol": "MediaItemsFilter.matches(item:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/AssetResourceManager/AssetResourceManager.swift",
+      "line": 7,
+      "symbol": "HasAssetResourceManager",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/AssetResourceManager/AssetResourceManager.swift",
+      "line": 8,
+      "symbol": "HasAssetResourceManager.assetResourceManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/AssetResourceManager/AssetResourceManager.swift",
+      "line": 11,
+      "symbol": "AssetResourceManager",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/AssetResourceManager/AssetResourceManager.swift",
+      "line": 12,
+      "symbol": "AssetResourceManager.writeData(for:toFile:options:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/AssetResourceManager/AssetResourceManagerImp.swift",
+      "line": 8,
+      "symbol": "AssetResourceManagerImp",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/AssetResourceManager/AssetResourceManagerImp.swift",
+      "line": 9,
+      "symbol": "AssetResourceManagerImp.writeData(for:toFile:options:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/AssetResourceManager/AssetResourceManagerImp.swift",
+      "line": 21,
+      "symbol": "AssetResourceManagerImp.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/CachingImageManager/CachingImageManagerImp.swift",
+      "line": 9,
+      "symbol": "CachingImageManagerImp",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/CachingImageManager/CachingImageManagerImp.swift",
+      "line": 10,
+      "symbol": "CachingImageManagerImp.requestImageData(for:options:resultHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/CachingImageManager/CachingImageManagerImp.swift",
+      "line": 18,
+      "symbol": "CachingImageManagerImp.requestAVAsset(forVideo:options:resultHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/CachingImageManager/CachingImageManagerImp.swift",
+      "line": 26,
+      "symbol": "CachingImageManagerImp.requestLivePhoto(for:targetSize:contentMode:options:resultHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/CachingImageManager/CachingImageManagerImp.swift",
+      "line": 36,
+      "symbol": "CachingImageManagerImp.requestImage(for:targetSize:contentMode:options:resultHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/CachingImageManager/HasCachingImageManager.swift",
+      "line": 9,
+      "symbol": "HasCachingImageManager",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/CachingImageManager/HasCachingImageManager.swift",
+      "line": 10,
+      "symbol": "HasCachingImageManager.cachingImageManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/CachingImageManager/HasCachingImageManager.swift",
+      "line": 13,
+      "symbol": "CachingImageManager",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/CachingImageManager/HasCachingImageManager.swift",
+      "line": 14,
+      "symbol": "CachingImageManager.requestImageData(for:options:resultHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/CachingImageManager/HasCachingImageManager.swift",
+      "line": 17,
+      "symbol": "CachingImageManager.requestAVAsset(forVideo:options:resultHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/CachingImageManager/HasCachingImageManager.swift",
+      "line": 20,
+      "symbol": "CachingImageManager.requestLivePhoto(for:targetSize:contentMode:options:resultHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/CachingImageManager/HasCachingImageManager.swift",
+      "line": 25,
+      "symbol": "CachingImageManager.requestImage(for:targetSize:contentMode:options:resultHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchAssetsService/FetchAssetsService.swift",
+      "line": 7,
+      "symbol": "HasFetchAssetsService",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchAssetsService/FetchAssetsService.swift",
+      "line": 8,
+      "symbol": "HasFetchAssetsService.fetchAssetsService",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchAssetsService/FetchAssetsService.swift",
+      "line": 11,
+      "symbol": "FetchAssetsService",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchAssetsService/FetchAssetsService.swift",
+      "line": 12,
+      "symbol": "FetchAssetsService.fetchAssets(assetCollection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchAssetsService/FetchAssetsService.swift",
+      "line": 13,
+      "symbol": "FetchAssetsService.makeAsset(item:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchAssetsService/FetchAssetsServiceImp.swift",
+      "line": 7,
+      "symbol": "FetchAssetsServiceImp",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchAssetsService/FetchAssetsServiceImp.swift",
+      "line": 8,
+      "symbol": "FetchAssetsServiceImp.fetchAssets(assetCollection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchAssetsService/FetchAssetsServiceImp.swift",
+      "line": 18,
+      "symbol": "FetchAssetsServiceImp.makeAsset(item:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchAssetsService/FetchAssetsServiceImp.swift",
+      "line": 27,
+      "symbol": "FetchAssetsServiceImp.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchCollectionsService/FetchCollectionsService.swift",
+      "line": 7,
+      "symbol": "HasFetchCollectionsService",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchCollectionsService/FetchCollectionsService.swift",
+      "line": 8,
+      "symbol": "HasFetchCollectionsService.fetchCollectionsService",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchCollectionsService/FetchCollectionsService.swift",
+      "line": 11,
+      "symbol": "FetchCollectionsService",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchCollectionsService/FetchCollectionsService.swift",
+      "line": 12,
+      "symbol": "FetchCollectionsService.fetchCollections(with:subtype:options:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchCollectionsService/FetchCollectionsService.swift",
+      "line": 15,
+      "symbol": "FetchCollectionsService.fetchAssetCollections(localIdentifiers:options:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchCollectionsService/FetchCollectionsService.swift",
+      "line": 16,
+      "symbol": "FetchCollectionsService.fetchMediaItems(in:mediaType:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchCollectionsService/FetchCollectionsServiceImp.swift",
+      "line": 7,
+      "symbol": "FetchCollectionsServiceImp",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchCollectionsService/FetchCollectionsServiceImp.swift",
+      "line": 8,
+      "symbol": "FetchCollectionsServiceImp.fetchCollections(with:subtype:options:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchCollectionsService/FetchCollectionsServiceImp.swift",
+      "line": 22,
+      "symbol": "FetchCollectionsServiceImp.fetchAssetCollections(localIdentifiers:options:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchCollectionsService/FetchCollectionsServiceImp.swift",
+      "line": 30,
+      "symbol": "FetchCollectionsServiceImp.fetchMediaItems(in:mediaType:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/FetchCollectionsService/FetchCollectionsServiceImp.swift",
+      "line": 41,
+      "symbol": "FetchCollectionsServiceImp.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MainServiceFactory.swift",
+      "line": 16,
+      "symbol": "Services",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MainServiceFactory.swift",
+      "line": 18,
+      "symbol": "MainServicesFactory",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MainServiceFactory.swift",
+      "line": 19,
+      "symbol": "MainServicesFactory.fetchCollectionsService",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MainServiceFactory.swift",
+      "line": 20,
+      "symbol": "MainServicesFactory.permissionsService",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MainServiceFactory.swift",
+      "line": 21,
+      "symbol": "MainServicesFactory.fetchAssetsService",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MainServiceFactory.swift",
+      "line": 22,
+      "symbol": "MainServicesFactory.thumbnailCacheService",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MainServiceFactory.swift",
+      "line": 23,
+      "symbol": "MainServicesFactory.cachingImageManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MainServiceFactory.swift",
+      "line": 24,
+      "symbol": "MainServicesFactory.assetResourceManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 9,
+      "symbol": "HasMediaLibraryService",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 10,
+      "symbol": "HasMediaLibraryService.mediaLibraryService",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 13,
+      "symbol": "MediaLibraryService",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 15,
+      "symbol": "MediaLibraryService.Completion",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 19,
+      "symbol": "MediaLibraryService.permissionStatusEventSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 20,
+      "symbol": "MediaLibraryService.mediaItemsEventSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 21,
+      "symbol": "MediaLibraryService.collectionsEventSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 22,
+      "symbol": "MediaLibraryService.mediaLibraryUpdateEventSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 23,
+      "symbol": "MediaLibraryService.mediaItemFetchProgressEventSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 27,
+      "symbol": "MediaLibraryService.requestMediaLibraryPermissions()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 31,
+      "symbol": "MediaLibraryService.fetchMediaItemCollections()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 32,
+      "symbol": "MediaLibraryService.fetchMediaItems(in:filter:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 36,
+      "symbol": "MediaLibraryService.fetchThumbnail(for:size:contentMode:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 37,
+      "symbol": "MediaLibraryService.fetchThumbnail(for:size:contentMode:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 44,
+      "symbol": "MediaLibraryService.fetchImage(for:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 45,
+      "symbol": "MediaLibraryService.fetchImage(for:options:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryService.swift",
+      "line": 46,
+      "symbol": "MediaLibraryService.fetchVideoAsset(for:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 9,
+      "symbol": "MediaLibraryServiceImp",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 12,
+      "symbol": "MediaLibraryServiceImp.permissionStatusEventSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 15,
+      "symbol": "MediaLibraryServiceImp.mediaItemsEventSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 18,
+      "symbol": "MediaLibraryServiceImp.collectionsEventSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 21,
+      "symbol": "MediaLibraryServiceImp.mediaLibraryUpdateEventSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 24,
+      "symbol": "MediaLibraryServiceImp.mediaItemFetchProgressEventSource",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 28,
+      "symbol": "MediaLibraryServiceImp.Dependencies",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 36,
+      "symbol": "MediaLibraryServiceImp.init(dependencies:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 42,
+      "symbol": "MediaLibraryServiceImp.requestMediaLibraryPermissions()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 52,
+      "symbol": "MediaLibraryServiceImp.fetchMediaItemCollections()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 84,
+      "symbol": "MediaLibraryServiceImp.fetchMediaItems(in:filter:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 124,
+      "symbol": "MediaLibraryServiceImp.fetchThumbnail(for:size:contentMode:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 150,
+      "symbol": "MediaLibraryServiceImp.fetchThumbnail(for:size:contentMode:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 186,
+      "symbol": "MediaLibraryServiceImp.fetchImage(for:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 198,
+      "symbol": "MediaLibraryServiceImp.fetchImage(for:options:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 221,
+      "symbol": "MediaLibraryServiceImp.fetchVideoAsset(for:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 333,
+      "symbol": "MediaLibraryServiceImp",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
+      "line": 335,
+      "symbol": "MediaLibraryServiceImp.photoLibraryDidChange(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/PermissionsService/PermissionsService.swift",
+      "line": 7,
+      "symbol": "HasPermissionsService",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/PermissionsService/PermissionsService.swift",
+      "line": 8,
+      "symbol": "HasPermissionsService.permissionsService",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/PermissionsService/PermissionsService.swift",
+      "line": 11,
+      "symbol": "PermissionsService",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/PermissionsService/PermissionsService.swift",
+      "line": 12,
+      "symbol": "PermissionsService.requestMediaLibraryPermissions(handler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/PermissionsService/PermissionsServiceImp.swift",
+      "line": 7,
+      "symbol": "PermissionsServiceImp",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/PermissionsService/PermissionsServiceImp.swift",
+      "line": 8,
+      "symbol": "PermissionsServiceImp.requestMediaLibraryPermissions(handler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/PermissionsService/PermissionsServiceImp.swift",
+      "line": 13,
+      "symbol": "PermissionsServiceImp.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/ThumbnailCacheService/ThumbnailCacheService.swift",
+      "line": 8,
+      "symbol": "HasThumbnailCacheService",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/ThumbnailCacheService/ThumbnailCacheService.swift",
+      "line": 9,
+      "symbol": "HasThumbnailCacheService.thumbnailCacheService",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/ThumbnailCacheService/ThumbnailCacheService.swift",
+      "line": 12,
+      "symbol": "ThumbnailCacheService",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/ThumbnailCacheService/ThumbnailCacheService.swift",
+      "line": 13,
+      "symbol": "ThumbnailCacheService.thumbnailCache",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/ThumbnailCacheService/ThumbnailCacheServiceImp.swift",
+      "line": 8,
+      "symbol": "ThumbnailCacheServiceImp",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/ThumbnailCacheService/ThumbnailCacheServiceImp.swift",
+      "line": 9,
+      "symbol": "ThumbnailCacheServiceImp.thumbnailCache",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/ThumbnailCacheService/ThumbnailCacheServiceImp.swift",
+      "line": 10,
+      "symbol": "ThumbnailCacheServiceImp.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/runner/work/MediaService/MediaService"
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FetchCollectionsServiceImp Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/FetchCollectionsServiceImp" class="dashAnchor"></a>
+    <a title="FetchCollectionsServiceImp Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">MediaService 1.0 Docs</a> (4% documented)</p>
+        <p class="header-right"><a href="https://github.com/rosberry/MediaService"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">MediaService Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        FetchCollectionsServiceImp Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AssetResourceManagerImp.html">AssetResourceManagerImp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CachingImageManagerImp.html">CachingImageManagerImp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FetchAssetsServiceImp.html">FetchAssetsServiceImp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FetchCollectionsServiceImp.html">FetchCollectionsServiceImp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MainServicesFactory.html">MainServicesFactory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MediaItem.html">MediaItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MediaItem/SourceType.html">– SourceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MediaItemsCollection.html">MediaItemsCollection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MediaItemsFetchResult.html">MediaItemsFetchResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MediaLibraryServiceImp.html">MediaLibraryServiceImp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PermissionsServiceImp.html">PermissionsServiceImp</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ThumbnailCacheServiceImp.html">ThumbnailCacheServiceImp</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:12MediaService8ServicesAA04MainC7FactoryCvp">Services</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/MediaItemsFilter.html">MediaItemsFilter</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AssetResourceManager.html">AssetResourceManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CachingImageManager.html">CachingImageManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/FetchAssetsService.html">FetchAssetsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/FetchCollectionsService.html">FetchCollectionsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasAssetResourceManager.html">HasAssetResourceManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasCachingImageManager.html">HasCachingImageManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasFetchAssetsService.html">HasFetchAssetsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasFetchCollectionsService.html">HasFetchCollectionsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasMediaLibraryService.html">HasMediaLibraryService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasPermissionsService.html">HasPermissionsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasThumbnailCacheService.html">HasThumbnailCacheService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/MediaLibraryService.html">MediaLibraryService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PermissionsService.html">PermissionsService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ThumbnailCacheService.html">ThumbnailCacheService</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>FetchCollectionsServiceImp</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">FetchCollectionsServiceImp</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/FetchCollectionsService.html">FetchCollectionsService</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService016FetchCollectionsB3ImpC05fetchD04with7subtype7optionsSayAA0A15ItemsCollectionCGSo07PHAssetK4TypeV_So0lK7SubtypeVSo14PHFetchOptionsCSgtF"></a>
+                    <a name="//apple_ref/swift/Method/fetchCollections(with:subtype:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService016FetchCollectionsB3ImpC05fetchD04with7subtype7optionsSayAA0A15ItemsCollectionCGSo07PHAssetK4TypeV_So0lK7SubtypeVSo14PHFetchOptionsCSgtF">fetchCollections(with:<wbr>subtype:<wbr>options:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchCollections</span><span class="p">(</span><span class="n">with</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">PHAssetCollectionType</span><span class="p">,</span>
+                             <span class="nv">subtype</span><span class="p">:</span> <span class="kt">PHAssetCollectionSubtype</span><span class="p">,</span>
+                             <span class="nv">options</span><span class="p">:</span> <span class="kt">PHFetchOptions</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/MediaItemsCollection.html">MediaItemsCollection</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService016FetchCollectionsB3ImpC010fetchAssetD016localIdentifiers7optionsSo17PHAssetCollectionCSgSaySSG_So14PHFetchOptionsCSgtF"></a>
+                    <a name="//apple_ref/swift/Method/fetchAssetCollections(localIdentifiers:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService016FetchCollectionsB3ImpC010fetchAssetD016localIdentifiers7optionsSo17PHAssetCollectionCSgSaySSG_So14PHFetchOptionsCSgtF">fetchAssetCollections(localIdentifiers:<wbr>options:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchAssetCollections</span><span class="p">(</span><span class="nv">localIdentifiers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">options</span><span class="p">:</span> <span class="kt">PHFetchOptions</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">PHAssetCollection</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService016FetchCollectionsB3ImpC05fetchA5Items2in9mediaTypeSo13PHFetchResultCySo7PHAssetCGSgSo0M10CollectionC_So0maJ0VSgtF"></a>
+                    <a name="//apple_ref/swift/Method/fetchMediaItems(in:mediaType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService016FetchCollectionsB3ImpC05fetchA5Items2in9mediaTypeSo13PHFetchResultCySo7PHAssetCGSgSo0M10CollectionC_So0maJ0VSgtF">fetchMediaItems(in:<wbr>mediaType:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetchMediaItems</span><span class="p">(</span><span class="k">in</span> <span class="nv">collection</span><span class="p">:</span> <span class="kt">PHAssetCollection</span><span class="p">,</span>
+                            <span class="nv">mediaType</span><span class="p">:</span> <span class="kt">PHAssetMediaType</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">PHFetchResult</span><span class="o">&lt;</span><span class="kt">PHAsset</span><span class="o">&gt;</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:12MediaService016FetchCollectionsB3ImpCACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:12MediaService016FetchCollectionsB3ImpCACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="https://rosberry.com" target="_blank" rel="external noopener">Rosberry</a>. All rights reserved. (Last updated: 2021-12-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
