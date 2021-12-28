@@ -1,4 +1,4 @@
 github "rosberry/ion"
 github "rosberry/Texstyle"
 github "rosberry/Framezilla"
-github "rosberry/CollectionViewTools" "master"
+github "rosberry/CollectionViewTools"

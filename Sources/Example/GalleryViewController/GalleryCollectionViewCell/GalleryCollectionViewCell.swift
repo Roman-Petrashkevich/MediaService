@@ -3,6 +3,7 @@
 //
 
 import Framezilla
+import UIKit
 
 final class GalleryCollectionViewCell: UICollectionViewCell {
 

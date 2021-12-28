@@ -24,7 +24,6 @@
 		A96DE7792649299600B77613 /* FetchAssetsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E76095263AD74800929668 /* FetchAssetsServiceMock.swift */; };
 		A979900F262F2DDA00AA65E3 /* FetchCollectionsServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799007262F2DB900AA65E3 /* FetchCollectionsServiceImp.swift */; };
 		A98628BB2696FE6100FB2AC2 /* MediaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FFCED00C8054113707C0A /* MediaService.framework */; };
-		A98628C32697117300FB2AC2 /* Ion.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BE2697117300FB2AC2 /* Ion.xcframework */; };
 		A98628C72697118800FB2AC2 /* CollectionViewTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628C02697117300FB2AC2 /* CollectionViewTools.xcframework */; };
 		A98628C82697118900FB2AC2 /* DeepDiff.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BD2697117300FB2AC2 /* DeepDiff.xcframework */; };
 		A98628C92697118900FB2AC2 /* Framezilla.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BF2697117300FB2AC2 /* Framezilla.xcframework */; };
@@ -96,6 +95,7 @@
 		A9E76092263AD01D00929668 /* ThumbnailCacheServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCacheServiceImp.swift; sourceTree = "<group>"; };
 		A9E76095263AD74800929668 /* FetchAssetsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAssetsServiceMock.swift; sourceTree = "<group>"; };
 		A9E76098263AD76800929668 /* ThumbnailCacheServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCacheServiceMock.swift; sourceTree = "<group>"; };
+		A9EF295B277B113000D6D2F7 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Example.entitlements; path = Example/Example.entitlements; sourceTree = SOURCE_ROOT; };
 		A9F332A5268DC96E000AC5AA /* HasCachingImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasCachingImageManager.swift; sourceTree = "<group>"; };
 		A9F332A7268DD602000AC5AA /* AssetResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetResourceManager.swift; sourceTree = "<group>"; };
 		A9F332A9268DD68F000AC5AA /* ThumbnailCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCacheService.swift; sourceTree = "<group>"; };
@@ -147,7 +147,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A98628C32697117300FB2AC2 /* Ion.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +180,7 @@
 		581C82E1050AD84390F4EC4B /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				A9EF295B277B113000D6D2F7 /* Example.entitlements */,
 				A9F332B1268DDBEB000AC5AA /* MainServiceFactory */,
 				A9FC81FD2622C71900074494 /* GalleryViewController */,
 				A9FC81DD2622BC3500074494 /* MainViewController */,
@@ -647,7 +647,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = GPVA8JVMU3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build",
@@ -660,6 +662,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.Example;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -726,7 +729,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = GPVA8JVMU3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build",
@@ -739,6 +744,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.Example;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -786,6 +792,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.MediaService;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -895,6 +902,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rosberry.MediaService;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
