@@ -1,4 +1,5 @@
 author: Rosberry
 author_url: https://rosberry.com
 github_url: https://github.com/rosberry/MediaService
-xcodebuild_arguments: [-project, 'MediaService.xcodeproj', -scheme, 'MediaService']
+swift_build_tool: "xcodebuild"
+xcodebuild_arguments: [-project, 'MediaService.xcodeproj', -scheme, 'MediaService', -destination, "name=iPhone 12 Pro", -sdk, "iphonesimulator"]
