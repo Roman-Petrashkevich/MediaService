@@ -856,56 +856,56 @@
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
-      "line": 76,
+      "line": 84,
       "symbol": "MediaLibraryServiceImp.fetchMediaItems(in:filter:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
-      "line": 116,
+      "line": 124,
       "symbol": "MediaLibraryServiceImp.fetchThumbnail(for:size:contentMode:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
-      "line": 142,
+      "line": 150,
       "symbol": "MediaLibraryServiceImp.fetchThumbnail(for:size:contentMode:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
-      "line": 178,
+      "line": 186,
       "symbol": "MediaLibraryServiceImp.fetchImage(for:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
-      "line": 190,
+      "line": 198,
       "symbol": "MediaLibraryServiceImp.fetchImage(for:options:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
-      "line": 213,
+      "line": 221,
       "symbol": "MediaLibraryServiceImp.fetchVideoAsset(for:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
-      "line": 325,
+      "line": 333,
       "symbol": "MediaLibraryServiceImp",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/Services/MediaLibraryService/MediaLibraryServiceImp.swift",
-      "line": 327,
+      "line": 335,
       "symbol": "MediaLibraryServiceImp.photoLibraryDidChange(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
