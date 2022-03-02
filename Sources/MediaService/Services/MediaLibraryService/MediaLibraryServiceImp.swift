@@ -59,14 +59,6 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                 collections.append(userLibraryCollection)
             }
 
-            if let favoritesCollection = self.dependencies.fetchCollectionsService.fetchCollections(with: .smartAlbum,
-                                                                                                    subtype: .smartAlbumFavorites,
-                                                                                                    options: nil).first,
-                favoritesCollection.estimatedMediaItemsCount != 0 {
-                favoritesCollection.isFavorite = true
-                collections.append(favoritesCollection)
-            }
-
             let allCollections = self.dependencies.fetchCollectionsService.fetchCollections(with: .album,
                                                                                             subtype: .any,
                                                                                             options: nil).filter { collection in
