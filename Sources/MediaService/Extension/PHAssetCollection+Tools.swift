@@ -6,7 +6,10 @@ import Photos
 
 extension PHAssetCollection {
     public var currentAssetItemsCount: Int {
-        currentAssetCount(.image) + currentAssetCount(.video) + currentAssetCount(.unknown) + currentAssetCount(.audio)
+        currentAssetCount(.image) +
+        currentAssetCount(.video) +
+        currentAssetCount(.unknown) +
+        currentAssetCount(.audio)
     }
 
     public func currentAssetCount(_ type: PHAssetMediaType) -> Int {
