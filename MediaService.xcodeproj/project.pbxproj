@@ -34,6 +34,7 @@
 		A9E76090263ACE8000929668 /* FetchAssetsServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E7608E263ACD4100929668 /* FetchAssetsServiceImp.swift */; };
 		A9E76094263AD02A00929668 /* ThumbnailCacheServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E76092263AD01D00929668 /* ThumbnailCacheServiceImp.swift */; };
 		A9EF295C277B171200D6D2F7 /* Ion.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BE2697117300FB2AC2 /* Ion.xcframework */; };
+		A9F1C40727D0862900937FC6 /* PHAssetCollection+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F1C40427D076FA00937FC6 /* PHAssetCollection+Tools.swift */; };
 		A9F332A6268DC96E000AC5AA /* HasCachingImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F332A5268DC96E000AC5AA /* HasCachingImageManager.swift */; };
 		A9F332A8268DD602000AC5AA /* AssetResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F332A7268DD602000AC5AA /* AssetResourceManager.swift */; };
 		A9F332AA268DD68F000AC5AA /* ThumbnailCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F332A9268DD68F000AC5AA /* ThumbnailCacheService.swift */; };
@@ -97,6 +98,7 @@
 		A9E76095263AD74800929668 /* FetchAssetsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAssetsServiceMock.swift; sourceTree = "<group>"; };
 		A9E76098263AD76800929668 /* ThumbnailCacheServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCacheServiceMock.swift; sourceTree = "<group>"; };
 		A9EF295B277B113000D6D2F7 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Example.entitlements; path = Example/Example.entitlements; sourceTree = SOURCE_ROOT; };
+		A9F1C40427D076FA00937FC6 /* PHAssetCollection+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAssetCollection+Tools.swift"; sourceTree = "<group>"; };
 		A9F332A5268DC96E000AC5AA /* HasCachingImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasCachingImageManager.swift; sourceTree = "<group>"; };
 		A9F332A7268DD602000AC5AA /* AssetResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetResourceManager.swift; sourceTree = "<group>"; };
 		A9F332A9268DD68F000AC5AA /* ThumbnailCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCacheService.swift; sourceTree = "<group>"; };
@@ -276,6 +278,14 @@
 			path = ThumbnailCacheService;
 			sourceTree = "<group>";
 		};
+		A9F1C40327D076CF00937FC6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A9F1C40427D076FA00937FC6 /* PHAssetCollection+Tools.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		A9F332B1268DDBEB000AC5AA /* MainServiceFactory */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +361,7 @@
 		A9FC821B2622D37B00074494 /* MediaService */ = {
 			isa = PBXGroup;
 			children = (
+				A9F1C40327D076CF00937FC6 /* Extension */,
 				A9FC821C2622D37B00074494 /* MediaItem */,
 				A9FC82212622D37B00074494 /* Resource */,
 				A9FC82302622D37C00074494 /* Services */,
@@ -629,6 +640,7 @@
 				A9629B692657818200A1F85E /* CachingImageManagerImp.swift in Sources */,
 				A9F332AA268DD68F000AC5AA /* ThumbnailCacheService.swift in Sources */,
 				A9E76090263ACE8000929668 /* FetchAssetsServiceImp.swift in Sources */,
+				A9F1C40727D0862900937FC6 /* PHAssetCollection+Tools.swift in Sources */,
 				A9FC82382622D37C00074494 /* MediaItemsCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

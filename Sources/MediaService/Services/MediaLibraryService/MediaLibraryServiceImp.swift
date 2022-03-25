@@ -64,6 +64,14 @@ public final class MediaLibraryServiceImp: NSObject, MediaLibraryService {
                                                                                             options: nil).filter { collection in
                 collection.estimatedMediaItemsCount != 0
             }
+
+            if let favoritesCollection = self.dependencies.fetchCollectionsService.fetchCollections(with: .smartAlbum,
+                                                                                                    subtype: .smartAlbumFavorites,
+                                                                                                    options: nil).first,
+               favoritesCollection.estimatedMediaItemsCount != 0 {
+                collections.append(favoritesCollection)
+            }
+
             collections.append(contentsOf: allCollections)
 
             DispatchQueue.main.async {
