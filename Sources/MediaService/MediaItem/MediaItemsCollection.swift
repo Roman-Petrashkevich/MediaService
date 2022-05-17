@@ -30,7 +30,7 @@ public extension MediaItemsCollection {
     convenience init(collection: PHAssetCollection) {
         self.init(identifier: collection.localIdentifier, title: collection.localizedTitle)
         isFavorite = collection.assetCollectionSubtype == .smartAlbumFavorites
-        estimatedMediaItemsCount = isFavorite ? collection.currentAssetItemsCount : collection.estimatedAssetCount
+        estimatedMediaItemsCount = collection.currentAssetItemsCount
     }
 }
 
