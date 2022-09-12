@@ -26,7 +26,8 @@ final class GalleryCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         if #available(iOS 13.0, *) {
             imageView.image = UIImage(systemName: "livephoto")
-        } else {
+        }
+        else {
             // Fallback on earlier versions
         }
         imageView.tintColor = .white

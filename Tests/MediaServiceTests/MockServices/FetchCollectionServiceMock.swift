@@ -27,5 +27,5 @@ final class FetchCollectionServiceMock: FetchCollectionsService {
         }
 
         return PHAsset.fetchAssets(in: collection, options: options)
-    }    
+    }
 }

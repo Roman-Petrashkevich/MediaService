@@ -156,7 +156,7 @@ final class MediaServiceTests: XCTestCase {
     }
 
     func testPermissionAuthorizedStatusIsNotEqual() {
-        //Given
+        // Given
         let authStatus: PHAuthorizationStatus = .authorized
         let expectation = self.expectation(description: "error")
         // When
@@ -329,9 +329,9 @@ final class MediaServiceTests: XCTestCase {
         let pencilData = UIImage(contentsOfFile: imagePath)?.pngData() ?? .init()
         let pencilImage = UIImage(contentsOfFile: imagePath)
         let expectation = self.expectation(description: "error")
-        //When
+        // When
         cachingImageManagerMock.pencilData = pencilImage?.jpegData(compressionQuality: 0.5)
-        //Then
+        // Then
         service.fetchImage(for: mediaItem) { image in
             XCTAssertNotEqual(pencilImage?.pngData(), image?.pngData(), "is equal image")
             expectation.fulfill()
