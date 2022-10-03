@@ -1,0 +1,50 @@
+{
+  "pins" : [
+    {
+      "identity" : "collectionviewtools",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rosberry/CollectionViewTools",
+      "state" : {
+        "revision" : "916345b130c8ac35252e44ffcd1f67a0e9d27702",
+        "version" : "0.1.7"
+      }
+    },
+    {
+      "identity" : "deepdiff",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onmyway133/DeepDiff",
+      "state" : {
+        "revision" : "2639b3a11054d666a4c5ec1b7dd2808e437f3289",
+        "version" : "2.3.3"
+      }
+    },
+    {
+      "identity" : "framezilla",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rosberry/Framezilla",
+      "state" : {
+        "revision" : "1a757e608731f8d51accc1e9864edc1c41d9e75e",
+        "version" : "5.1.2"
+      }
+    },
+    {
+      "identity" : "ion",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rosberry/ion",
+      "state" : {
+        "branch" : "master",
+        "revision" : "536a941f1abff714f50ad8a06f2fe1f05f832494"
+      }
+    },
+    {
+      "identity" : "texstyle",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rosberry/texstyle",
+      "state" : {
+        "branch" : "master",
+        "revision" : "93f75bf84717753fd0f00fb54181065f4b285849"
+      }
+    }
+  ],
+  "version" : 2
+}
