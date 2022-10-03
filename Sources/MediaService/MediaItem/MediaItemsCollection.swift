@@ -2,7 +2,9 @@
 //  Copyright © 2018 Rosberry. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
+#endif
 import Photos
 
 public final class MediaItemsCollection {
