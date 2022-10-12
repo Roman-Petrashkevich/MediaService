@@ -16,245 +16,245 @@
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 8,
+      "line": 10,
       "symbol": "MediaItem",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 16,
+      "line": 18,
       "symbol": "MediaItem.SourceType",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 17,
+      "line": 19,
       "symbol": "MediaItem.SourceType.unknown",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 18,
+      "line": 20,
       "symbol": "MediaItem.SourceType.photo",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 19,
+      "line": 21,
       "symbol": "MediaItem.SourceType.video(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 20,
+      "line": 22,
       "symbol": "MediaItem.SourceType.sloMoVideo(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 21,
+      "line": 23,
       "symbol": "MediaItem.SourceType.livePhoto",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 38,
+      "line": 40,
       "symbol": "MediaItem.SourceType.isVideo",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 47,
+      "line": 49,
       "symbol": "MediaItem.SourceType.isLivePhoto",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 56,
+      "line": 58,
       "symbol": "MediaItem.SourceType.isSloMoVideo",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 65,
+      "line": 67,
       "symbol": "MediaItem.SourceType.isUnknown",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 74,
+      "line": 76,
       "symbol": "MediaItem.SourceType.isPhoto",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 84,
+      "line": 86,
       "symbol": "MediaItem.asset",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 85,
+      "line": 87,
       "symbol": "MediaItem.identifier",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 86,
+      "line": 88,
       "symbol": "MediaItem.thumbnail",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 88,
+      "line": 90,
       "symbol": "MediaItem.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 89,
+      "line": 91,
       "symbol": "MediaItem.date",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 91,
+      "line": 93,
       "symbol": "MediaItem.duration",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 102,
+      "line": 104,
       "symbol": "MediaItem.init(identifier:type:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 120,
+      "line": 122,
       "symbol": "MediaItem",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 122,
+      "line": 124,
       "symbol": "MediaItem.init(asset:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 150,
+      "line": 152,
       "symbol": "MediaItem",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItem.swift",
-      "line": 157,
+      "line": 159,
       "symbol": "MediaItem",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
-      "line": 8,
+      "line": 10,
       "symbol": "MediaItemsCollection",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
-      "line": 10,
+      "line": 12,
       "symbol": "MediaItemsCollection.identifier",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
-      "line": 11,
+      "line": 13,
       "symbol": "MediaItemsCollection.title",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
-      "line": 12,
+      "line": 14,
       "symbol": "MediaItemsCollection.thumbnail",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
-      "line": 13,
+      "line": 15,
       "symbol": "MediaItemsCollection.mediaItems",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
-      "line": 14,
+      "line": 16,
       "symbol": "MediaItemsCollection.estimatedMediaItemsCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
-      "line": 15,
+      "line": 17,
       "symbol": "MediaItemsCollection.isFavorite",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
-      "line": 17,
+      "line": 19,
       "symbol": "MediaItemsCollection.init(identifier:title:mediaItems:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
-      "line": 23,
+      "line": 25,
       "symbol": "MediaItemsCollection.flush()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
-      "line": 28,
+      "line": 30,
       "symbol": "MediaItemsCollection",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
-      "line": 30,
+      "line": 32,
       "symbol": "MediaItemsCollection.init(collection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/MediaService/MediaService/Sources/MediaService/MediaItem/MediaItemsCollection.swift",
-      "line": 37,
+      "line": 39,
       "symbol": "MediaItemsCollection",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
