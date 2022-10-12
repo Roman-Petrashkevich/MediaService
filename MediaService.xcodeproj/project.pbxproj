@@ -15,6 +15,18 @@
 		A92E3F8A2684826A00B98587 /* ImageTest.png in Resources */ = {isa = PBXBuildFile; fileRef = A95B238B2684819300BEA3D3 /* ImageTest.png */; };
 		A92E3F8B2684826A00B98587 /* VideoTest.mov in Resources */ = {isa = PBXBuildFile; fileRef = A95B238C2684819300BEA3D3 /* VideoTest.mov */; };
 		A92E3F8D2684870F00B98587 /* VideoTest2.mov in Resources */ = {isa = PBXBuildFile; fileRef = A92E3F8C2684870F00B98587 /* VideoTest2.mov */; };
+		A93AA72928F5787A0079B575 /* MediaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FFCED00C8054113707C0A /* MediaService.framework */; };
+		A93AA72A28F5787A0079B575 /* MediaService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FFCED00C8054113707C0A /* MediaService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A93AA72C28F5789D0079B575 /* Ion.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BE2697117300FB2AC2 /* Ion.xcframework */; };
+		A93AA72D28F5789D0079B575 /* Ion.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BE2697117300FB2AC2 /* Ion.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A93AA72E28F5789E0079B575 /* Texstyle.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628C12697117300FB2AC2 /* Texstyle.xcframework */; };
+		A93AA72F28F5789E0079B575 /* Texstyle.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A98628C12697117300FB2AC2 /* Texstyle.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A93AA73028F578A00079B575 /* Framezilla.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BF2697117300FB2AC2 /* Framezilla.xcframework */; };
+		A93AA73128F578A00079B575 /* Framezilla.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BF2697117300FB2AC2 /* Framezilla.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A93AA73228F578A10079B575 /* DeepDiff.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BD2697117300FB2AC2 /* DeepDiff.xcframework */; };
+		A93AA73328F578A10079B575 /* DeepDiff.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BD2697117300FB2AC2 /* DeepDiff.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A93AA73428F578A20079B575 /* CollectionViewTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628C02697117300FB2AC2 /* CollectionViewTools.xcframework */; };
+		A93AA73528F578A20079B575 /* CollectionViewTools.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A98628C02697117300FB2AC2 /* CollectionViewTools.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A9629B5E2656869300A1F85E /* FetchResultMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9629B5B2656863100A1F85E /* FetchResultMock.swift */; };
 		A9629B692657818200A1F85E /* CachingImageManagerImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9629B67265780C100A1F85E /* CachingImageManagerImp.swift */; };
 		A9629B6C265789A500A1F85E /* CachingImageManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9629B6A2657890400A1F85E /* CachingImageManagerMock.swift */; };
@@ -24,12 +36,6 @@
 		A96DE7792649299600B77613 /* FetchAssetsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E76095263AD74800929668 /* FetchAssetsServiceMock.swift */; };
 		A979900F262F2DDA00AA65E3 /* FetchCollectionsServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9799007262F2DB900AA65E3 /* FetchCollectionsServiceImp.swift */; };
 		A98628BB2696FE6100FB2AC2 /* MediaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FFCED00C8054113707C0A /* MediaService.framework */; };
-		A98628C72697118800FB2AC2 /* CollectionViewTools.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628C02697117300FB2AC2 /* CollectionViewTools.xcframework */; };
-		A98628C82697118900FB2AC2 /* DeepDiff.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BD2697117300FB2AC2 /* DeepDiff.xcframework */; };
-		A98628C92697118900FB2AC2 /* Framezilla.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BF2697117300FB2AC2 /* Framezilla.xcframework */; };
-		A98628CA2697118900FB2AC2 /* Ion.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BE2697117300FB2AC2 /* Ion.xcframework */; };
-		A98628CB2697118900FB2AC2 /* Texstyle.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628C12697117300FB2AC2 /* Texstyle.xcframework */; };
-		A98628CC2697118E00FB2AC2 /* MediaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FFCED00C8054113707C0A /* MediaService.framework */; };
 		A98628CD2697119500FB2AC2 /* Ion.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98628BE2697117300FB2AC2 /* Ion.xcframework */; };
 		A9E76090263ACE8000929668 /* FetchAssetsServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E7608E263ACD4100929668 /* FetchAssetsServiceImp.swift */; };
 		A9E76094263AD02A00929668 /* ThumbnailCacheServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E76092263AD01D00929668 /* ThumbnailCacheServiceImp.swift */; };
@@ -71,6 +77,25 @@
 			remoteInfo = MediaService;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A93AA72B28F5787A0079B575 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A93AA73328F578A10079B575 /* DeepDiff.xcframework in Embed Frameworks */,
+				A93AA73128F578A00079B575 /* Framezilla.xcframework in Embed Frameworks */,
+				A93AA73528F578A20079B575 /* CollectionViewTools.xcframework in Embed Frameworks */,
+				A93AA72F28F5789E0079B575 /* Texstyle.xcframework in Embed Frameworks */,
+				A93AA72D28F5789D0079B575 /* Ion.xcframework in Embed Frameworks */,
+				A93AA72A28F5787A0079B575 /* MediaService.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2240A87F57FB038C7EC1C5D2 /* MediaServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaServiceTests.swift; sourceTree = "<group>"; };
@@ -158,12 +183,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A98628CC2697118E00FB2AC2 /* MediaService.framework in Frameworks */,
-				A98628C72697118800FB2AC2 /* CollectionViewTools.xcframework in Frameworks */,
-				A98628C82697118900FB2AC2 /* DeepDiff.xcframework in Frameworks */,
-				A98628C92697118900FB2AC2 /* Framezilla.xcframework in Frameworks */,
-				A98628CA2697118900FB2AC2 /* Ion.xcframework in Frameworks */,
-				A98628CB2697118900FB2AC2 /* Texstyle.xcframework in Frameworks */,
+				A93AA72E28F5789E0079B575 /* Texstyle.xcframework in Frameworks */,
+				A93AA72928F5787A0079B575 /* MediaService.framework in Frameworks */,
+				A93AA73428F578A20079B575 /* CollectionViewTools.xcframework in Frameworks */,
+				A93AA73028F578A00079B575 /* Framezilla.xcframework in Frameworks */,
+				A93AA73228F578A10079B575 /* DeepDiff.xcframework in Frameworks */,
+				A93AA72C28F5789D0079B575 /* Ion.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +478,7 @@
 				3D837A404CF34D6A4C6C4BA0 /* Swiftlint */,
 				F0FAD58677086F61580F6D0E /* Frameworks */,
 				085E2653BF71512268D3D8B3 /* Carthage */,
+				A93AA72B28F5787A0079B575 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
